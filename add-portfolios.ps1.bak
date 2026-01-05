@@ -1,0 +1,95 @@
+# PowerShell script to add PORTFOLIO.md files to GitHub repositories
+# Run this from: C:\Users\rcush\Projects\ai-portfolio
+
+$repos = @(
+    @{name="ai-webscraper"; file="PORTFOLIO-ai-webscraper.md"},
+    @{name="ny-ai-chatbot"; file="PORTFOLIO-ny-ai-chatbot.md"},
+    @{name="ny-eng"; file="PORTFOLIO-ny-eng.md"},
+    @{name="ai-resume-tailor"; file="PORTFOLIO-ai-resume-tailor.md"},
+    @{name="ai-chatbot-saas"; file="PORTFOLIO-ai-chatbot-saas.md"},
+    @{name="ai-income-generator"; file="PORTFOLIO-ai-income-generator.md"},
+    @{name="ai-coach-vince"; file="PORTFOLIO-ai-coach-vince.md"},
+    @{name="nextjs-supabase-auth-starter"; file="PORTFOLIO-nextjs-supabase-auth-starter.md"},
+    @{name="nextjs-react-agency-starter"; file="PORTFOLIO-nextjs-react-agency-starter.md"}
+)
+
+Write-Host "Starting to add PORTFOLIO.md files to repositories..." -ForegroundColor Cyan
+Write-Host ""
+
+$projectsDir = "C:\Users\rcush\Projects"
+$sourceDir = "C:\Users\rcush\Projects\ai-portfolio\portfolio-files"
+
+foreach ($repo in $repos) {
+    Write-Host "Processing: $($repo.name)" -ForegroundColor Yellow
+
+    $repoPath = Join-Path $projectsDir $repo.name
+    $sourceFile = Join-Path $sourceDir $repo.file
+
+    # Check if source file exists
+    if (!(Test-Path $sourceFile)) {
+        Write-Host "  ❌ Source file not found: $($repo.file)" -ForegroundColor Red
+        continue
+    }
+
+    # Clone repo if it doesn't exist
+    if (!(Test-Path $repoPath)) {
+        Write-Host "  📥 Cloning repository..." -ForegroundColor Gray
+        Set-Location $projectsDir
+        git clone "https://github.com/RCushmaniii/$($repo.name).git" 2>&1 | Out-Null
+
+        if (!(Test-Path $repoPath)) {
+            Write-Host "  ❌ Failed to clone repository" -ForegroundColor Red
+            continue
+        }
+    }
+
+    # Navigate to repo
+    Set-Location $repoPath
+
+    # Pull latest changes
+    Write-Host "  📡 Pulling latest changes..." -ForegroundColor Gray
+    git pull 2>&1 | Out-Null
+
+    # Copy PORTFOLIO.md
+    Write-Host "  📄 Copying PORTFOLIO.md..." -ForegroundColor Gray
+    Copy-Item $sourceFile -Destination "PORTFOLIO.md" -Force
+
+    # Check if file was copied
+    if (!(Test-Path "PORTFOLIO.md")) {
+        Write-Host "  ❌ Failed to copy PORTFOLIO.md" -ForegroundColor Red
+        continue
+    }
+
+    # Git add
+    git add PORTFOLIO.md
+
+    # Check if there are changes
+    $status = git status --porcelain
+    if (!$status) {
+        Write-Host "  ⏭️  No changes (PORTFOLIO.md already up to date)" -ForegroundColor Gray
+        continue
+    }
+
+    # Commit
+    Write-Host "  💾 Committing changes..." -ForegroundColor Gray
+    git commit -m "Add portfolio metadata" 2>&1 | Out-Null
+
+    # Push
+    Write-Host "  🚀 Pushing to GitHub..." -ForegroundColor Gray
+    git push 2>&1 | Out-Null
+
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "  ✅ Successfully added PORTFOLIO.md" -ForegroundColor Green
+    } else {
+        Write-Host "  ❌ Failed to push changes" -ForegroundColor Red
+    }
+
+    Write-Host ""
+}
+
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "Done! Now run the sync script:" -ForegroundColor Cyan
+Write-Host "  cd C:\Users\rcush\Projects\ai-portfolio" -ForegroundColor White
+Write-Host "  pnpm sync" -ForegroundColor White
+Write-Host "  pnpm dev" -ForegroundColor White
+Write-Host "========================================" -ForegroundColor Cyan
