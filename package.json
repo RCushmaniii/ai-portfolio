@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "sync": "npx tsx scripts/sync-portfolio.ts",
+    "sync:local": "npx tsx scripts/sync-local.ts",
+    "sync:images": "npx tsx scripts/sync-images.ts",
+    "generate": "npx tsx scripts/generate-portfolio.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -21,8 +21,10 @@ tags:
   - "ai-automation"
   - "embeddable-widget"
 
-thumbnail: ""
-hero_images: []
+thumbnail: "https://raw.githubusercontent.com/RCushmaniii/ny-ai-chatbot/main/public/images/demo-thumbnail.png"
+hero_images:
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-ai-chatbot/main/public/images/demo-thumbnail.png"
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-ai-chatbot/main/public/images/chatbot-icon.jpg"
 demo_video_url: ""
 
 live_url: ""

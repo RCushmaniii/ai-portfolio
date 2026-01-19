@@ -1,0 +1,22 @@
+{
+  "_comment": "Override display order for portfolio projects. Projects listed here appear first in this order. Unlisted projects fall back to their portfolio_priority value.",
+  "order": [
+    "ai-support-chatbot",
+    "ai-filesense",
+    "ai-filesense-website",
+    "ai-resume-tailor",
+    "freelance-income-planner",
+    "marble-does-not-yield",
+    "ny-english-teacher",
+    "ai-webscraper",
+    "ai-chatbot-saas",
+    "nextjs-supabase-auth-starter",
+    "nextjs-react-agency-starter",
+    "react-vite-tailwind-base"
+  ],
+  "featured": [
+    "ai-support-chatbot",
+    "ai-filesense",
+    "freelance-income-planner"
+  ]
+}

@@ -1,28 +1,36 @@
 export type PortfolioCategory = 'AI Automation' | 'Templates' | 'Tools' | 'Client Work';
-export type ProjectComplexity = 'MVP' | 'Production' | 'Enterprise';
+export type ProjectStatus = 'Production' | 'MVP' | 'Demo' | 'Archived';
 export type SortOption = 'priority' | 'recent' | 'popular';
 
 export interface PortfolioProject {
-  // From PORTFOLIO.md frontmatter
+  // Control flags
   portfolio_enabled: boolean;
   portfolio_priority: number;
   portfolio_featured: boolean;
-  portfolio_last_reviewed: string;
+
+  // Card display
   title: string;
   tagline: string;
   slug: string;
   category: PortfolioCategory;
-  target_audience: string;
-  tags: string[];
-  thumbnail: string;
-  hero_images: string[];
-  demo_video_url: string;
-  live_url: string;
-  case_study_url: string;
-  problem_solved: string;
-  key_outcomes: string[];
   tech_stack: string[];
-  complexity: ProjectComplexity;
+  thumbnail: string;
+  status: ProjectStatus;
+
+  // Detail page
+  problem: string;
+  solution: string;
+  key_features: string[];
+  metrics: string[];
+
+  // Links
+  demo_url: string;
+  live_url: string;
+
+  // Optional extras
+  hero_images: string[];
+  tags: string[];
+  date_completed?: string;
 
   // From PORTFOLIO.md body
   body_markdown: string;
@@ -36,6 +44,17 @@ export interface PortfolioProject {
   github_updated_at: string;
   github_description: string;
   github_topics: string[];
+}
+
+// Backward compatibility - these fields may exist in old portfolio.json files
+export interface LegacyPortfolioProject extends Omit<PortfolioProject, 'status' | 'problem' | 'solution' | 'key_features' | 'metrics' | 'demo_url'> {
+  complexity?: 'MVP' | 'Production' | 'Enterprise';
+  problem_solved?: string;
+  key_outcomes?: string[];
+  target_audience?: string;
+  case_study_url?: string;
+  demo_video_url?: string;
+  portfolio_last_reviewed?: string;
 }
 
 export interface PortfolioData {

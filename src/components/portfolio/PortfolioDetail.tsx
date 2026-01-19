@@ -21,10 +21,24 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
           </Link>
         </Button>
         <div className="flex gap-2">
-          {project.live_url && (
+          {project.demo_url && (
+            <Button asChild>
+              <a href={project.demo_url} target="_blank" rel="noopener noreferrer">
+                Try Demo <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          )}
+          {project.live_url && !project.demo_url && (
             <Button asChild>
               <a href={project.live_url} target="_blank" rel="noopener noreferrer">
                 View Live <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          )}
+          {project.live_url && project.demo_url && (
+            <Button variant="secondary" asChild>
+              <a href={project.live_url} target="_blank" rel="noopener noreferrer">
+                Production <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
           )}
@@ -43,7 +57,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
       <div className="mt-8">
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <Badge>{project.category}</Badge>
-          <Badge variant="outline">{project.complexity}</Badge>
+          <Badge variant="outline">{project.status}</Badge>
           {project.github_stars > 0 && (
             <span className="flex items-center gap-1 text-sm text-muted-foreground">
               <Star className="h-4 w-4 fill-current" />
@@ -65,26 +79,50 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
         </div>
       </div>
 
-      {/* Problem */}
-      {project.problem_solved && (
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-3">The Problem</h2>
-          <p className="text-muted-foreground">{project.problem_solved}</p>
+      {/* Problem & Solution */}
+      {(project.problem || project.solution) && (
+        <section className="mb-8 grid md:grid-cols-2 gap-6">
+          {project.problem && (
+            <div>
+              <h2 className="text-xl font-semibold mb-3">The Problem</h2>
+              <p className="text-muted-foreground">{project.problem}</p>
+            </div>
+          )}
+          {project.solution && (
+            <div>
+              <h2 className="text-xl font-semibold mb-3">The Solution</h2>
+              <p className="text-muted-foreground">{project.solution}</p>
+            </div>
+          )}
         </section>
       )}
 
-      {/* Key Outcomes */}
-      {project.key_outcomes.length > 0 && (
+      {/* Key Features */}
+      {project.key_features.length > 0 && (
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-3">Key Outcomes</h2>
+          <h2 className="text-xl font-semibold mb-3">Key Features</h2>
           <ul className="space-y-2">
-            {project.key_outcomes.map((outcome, i) => (
+            {project.key_features.map((feature, i) => (
               <li key={i} className="flex items-start gap-2">
                 <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>{outcome}</span>
+                <span>{feature}</span>
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {/* Metrics */}
+      {project.metrics.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">Results</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {project.metrics.map((metric, i) => (
+              <div key={i} className="p-4 bg-muted rounded-lg text-center">
+                <span className="font-semibold">{metric}</span>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 

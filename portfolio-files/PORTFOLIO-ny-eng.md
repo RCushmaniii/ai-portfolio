@@ -21,8 +21,14 @@ tags:
   - "client-work"
   - "web-development"
 
-thumbnail: ""
-hero_images: []
+thumbnail: "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(1).jpg"
+hero_images:
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(1).jpg"
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(2).jpg"
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(3).jpg"
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(4).jpg"
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(5).jpg"
+  - "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(6).jpg"
 demo_video_url: ""
 
 live_url: ""

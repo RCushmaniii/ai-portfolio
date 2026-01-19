@@ -22,8 +22,9 @@ tags:
   - "white-label"
   - "platform"
 
-thumbnail: ""
-hero_images: []
+thumbnail: "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/demo-thumbnail.png"
+hero_images:
+  - "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/demo-thumbnail.png"
 demo_video_url: ""
 
 live_url: ""
