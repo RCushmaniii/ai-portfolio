@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T18:00:21.697Z",
+  "generated_at": "2026-01-19T20:35:27.516Z",
   "projects": [
     {
       "portfolio_enabled": true,
@@ -17,7 +17,7 @@
         "RAG Pipeline",
         "Vector Database"
       ],
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ny-ai-chatbot/main/public/images/demo-thumbnail.png",
+      "thumbnail": "",
       "status": "Production",
       "problem": "SMBs waste 20+ hours per week answering the same customer questions repeatedly. \nSupport teams burn out on repetitive inquiries while complex issues pile up. \nCustomers expect instant responses but get frustrated waiting for human agents.\n",
       "solution": "",
@@ -32,10 +32,7 @@
       "metrics": [],
       "demo_url": "",
       "live_url": "",
-      "hero_images": [
-        "https://raw.githubusercontent.com/RCushmaniii/ny-ai-chatbot/main/public/images/demo-thumbnail.png",
-        "https://raw.githubusercontent.com/RCushmaniii/ny-ai-chatbot/main/public/images/chatbot-icon.jpg"
-      ],
+      "hero_images": [],
       "tags": [
         "chatbot",
         "RAG",
@@ -48,74 +45,23 @@
       "repo_url": "https://github.com/RCushmaniii/ny-ai-chatbot",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.695Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "AI Resume Tailor",
-      "tagline": "Production SaaS that eliminates 75% of ATS resume rejections with AI-powered optimization in 60 seconds.",
-      "slug": "ai-resume-tailor",
-      "category": "AI Automation",
-      "tech_stack": [
-        "React 19",
-        "TypeScript",
-        "Flask",
-        "OpenAI GPT-4",
-        "Stripe",
-        "Tailwind CSS"
-      ],
-      "thumbnail": "https://ai-resume-tailor-client.vercel.app/og-image.png",
-      "status": "Production",
-      "problem": "75% of resumes fail Applicant Tracking Systems before reaching recruiters. Job seekers spend hours manually tailoring resumes without knowing what keywords and formatting ATS systems actually require.",
-      "solution": "AI-powered analysis provides instant ATS compatibility scores, identifies missing keywords, and gives severity-coded suggestions to optimize resumes in 60 seconds.",
-      "key_features": [
-        "Structured AI analysis with type-safe TypeScript interfaces and GPT-4 JSON mode",
-        "Bilingual UI (English/Spanish) with complete i18n coverage",
-        "Severity-coded suggestions with visual hierarchy (critical/warning/tip)",
-        "Freemium model with Stripe payment integration",
-        "World-class loading states with layout-perfect skeleton components"
-      ],
-      "metrics": [
-        "75% ATS rejection problem addressed",
-        "60-second analysis time",
-        "Full bilingual EN/ES support"
-      ],
-      "demo_url": "https://ai-resume-tailor-client.vercel.app",
-      "live_url": "https://ai-resume-tailor-client.vercel.app",
-      "hero_images": [
-        "https://ai-resume-tailor-client.vercel.app/screenshot-hero.png",
-        "https://ai-resume-tailor-client.vercel.app/screenshot-analysis.png",
-        "https://ai-resume-tailor-client.vercel.app/screenshot-suggestions.png"
-      ],
-      "tags": [
-        "ai-saas",
-        "openai-integration",
-        "full-stack-typescript",
-        "stripe-payments",
-        "bilingual-i18n"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "A production-deployed SaaS application solving the critical hiring challenge where most resumes fail ATS systems before reaching recruiters. Built with React/TypeScript frontend and Flask/Python backend, featuring instant AI-powered analysis with structured JSON output, Stripe monetization, and full bilingual support.\n\n## Technical Highlights\n\n- **Structured AI Analysis:** OpenAI JSON mode with strict TypeScript interfaces for guaranteed data structure\n- **World-Class UI:** Skeleton loaders, severity-coded suggestions, validated inputs with character counting\n- **Monetization Ready:** Stripe checkout, usage tracking, feature gating, and guest quota system\n- **CI/CD Pipeline:** Auto-deployment from GitHub via Vercel (frontend) and Render (backend)",
-      "repo_name": "ai-resume-tailor",
-      "repo_url": "https://github.com/RCushmaniii/ai-resume-tailor",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.693Z",
-      "github_description": "",
-      "github_topics": []
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-18T22:05:53Z",
+      "github_description": "Production-ready AI chatbot with embeddable widget for websites. Features include knowledge base integration, multi-language support, and customizable admin dashboard.",
+      "github_topics": [
+        "ai-chatbot",
+        "nextjs",
+        "rag-chatbot",
+        "tailwindcss",
+        "vercel-deployment"
+      ]
     },
     {
       "portfolio_enabled": true,
       "portfolio_priority": 2,
       "portfolio_featured": true,
       "title": "Freelance Income Planner",
-      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact your take-home pay. Bill in USD, spend in MXN.",
+      "tagline": "Privacy-first income simulator for freelancers. See how rate changes, sick days, and taxes impact take-home pay.",
       "slug": "freelance-income-planner",
       "category": "Tools",
       "tech_stack": [
@@ -126,34 +72,149 @@
       ],
       "thumbnail": "",
       "status": "Production",
-      "problem": "Plan your income like a pro. Adjust your rate, hours, and taxes to see what you can realistically earn per year.",
-      "solution": "Stop Guessing. Start Forecasting.",
+      "problem": "Freelancers struggle to predict actual take-home pay with variable rates, taxes, and currency conversions.",
+      "solution": "Privacy-first calculator that runs entirely in-browser. Bill in USD, spend in MXN, plan for feast or famine.",
       "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
+        "Real-time income projections with tax calculations",
+        "Multi-currency support (USD/MXN)",
+        "Privacy-first: all data stays in browser",
+        "Bilingual interface (English/Spanish)"
       ],
       "metrics": [],
-      "demo_url": "",
-      "live_url": "https://freelance-income-planner.vercel.app/",
+      "demo_url": "https://freelance-income-planner.vercel.app",
+      "live_url": "https://freelance-income-planner.vercel.app",
       "hero_images": [],
       "tags": [
         "bilingual",
         "digital-nomad",
         "freelance",
-        "i18n",
         "income-calculator"
       ],
       "date_completed": "2025-12",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "body_markdown": "",
       "repo_name": "freelance-income-planner",
       "repo_url": "https://github.com/RCushmaniii/freelance-income-planner",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.694Z",
-      "github_description": "",
-      "github_topics": []
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:35:12Z",
+      "github_description": "A privacy-first income simulator for freelancers. Instantly see how rate changes, sick days, and taxes impact your real take-home pay. Bill in USD, spend in MXN. Plan for feast or famine. All calculations happen in your browser—your data never leaves your device.",
+      "github_topics": [
+        "bilingual",
+        "digital-nomad",
+        "freelance",
+        "i18n",
+        "income-calculator",
+        "nextjs",
+        "react",
+        "tailwindcss",
+        "typescript"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "React Vite Tailwind Base",
+      "tagline": "React 19 + Vite 7 + ShadCN UI starter with appointment booking, calendar, charts, and 17+ components.",
+      "slug": "react-vite-tailwind-base",
+      "category": "Templates",
+      "tech_stack": [
+        "TypeScript",
+        "React 19",
+        "Vite 7",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Recharts"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "Starting new React projects requires significant boilerplate setup for routing, UI components, and common features.",
+      "solution": "Production-ready template with appointment booking, calendar, charts, and 17+ accessible components out of the box.",
+      "key_features": [
+        "Interactive appointment booking with calendar integration",
+        "Real-time data visualizations using Recharts",
+        "17+ accessible ShadCN UI components",
+        "Mobile-first responsive design"
+      ],
+      "metrics": [],
+      "demo_url": "https://react-vite-tailwind-base.vercel.app",
+      "live_url": "https://react-vite-tailwind-base.vercel.app",
+      "hero_images": [],
+      "tags": [
+        "react",
+        "vite",
+        "tailwindcss",
+        "starter-template"
+      ],
+      "date_completed": "2026-01",
+      "body_markdown": "",
+      "repo_name": "react-vite-tailwind-base",
+      "repo_url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
+      "github_stars": 2,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:35:11Z",
+      "github_description": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "github_topics": [
+        "react",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss",
+        "vite"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "Cushlabs Writing System",
+      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "slug": "cushlabs-writing-system",
+      "category": "AI Automation",
+      "tech_stack": [
+        "HTML",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
+      "key_features": [
+        "What This System Does",
+        "Core Components",
+        "How It Works",
+        "Key Principles"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://cushlabs-writing-system.vercel.app",
+      "hero_images": [],
+      "tags": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering"
+      ],
+      "date_completed": "2025-12",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "cushlabs-writing-system",
+      "repo_url": "https://github.com/RCushmaniii/cushlabs-writing-system",
+      "github_stars": 1,
+      "github_forks": 0,
+      "github_language": "HTML",
+      "github_updated_at": "2026-01-19T20:33:56Z",
+      "github_description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "github_topics": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
+      ]
     },
     {
       "portfolio_enabled": true,
@@ -162,13 +223,13 @@
       "title": "Marble Does Not Yield",
       "tagline": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
       "slug": "marble-does-not-yield",
-      "category": "Client Work",
+      "category": "AI Automation",
       "tech_stack": [
         "TypeScript",
         "Next.js",
         "Tailwind CSS"
       ],
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/marble-does-not-yield/main/public/images/main-header-desktop.jpg",
+      "thumbnail": "",
       "status": "Production",
       "problem": "Una historia de dolor, vulnerabilidad y la negativa a ceder.",
       "solution": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
@@ -180,12 +241,7 @@
       "metrics": [],
       "demo_url": "",
       "live_url": "https://marble-does-not-yield.vercel.app",
-      "hero_images": [
-        "https://raw.githubusercontent.com/RCushmaniii/marble-does-not-yield/main/public/images/main-header-desktop.jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/marble-does-not-yield/main/public/images/main-header-mobile.jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/marble-does-not-yield/main/public/images/ending.jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/marble-does-not-yield/main/public/images/author.jpg"
-      ],
+      "hero_images": [],
       "tags": [
         "cdn",
         "cdn-distribution",
@@ -199,10 +255,74 @@
       "repo_url": "https://github.com/RCushmaniii/marble-does-not-yield",
       "github_stars": 0,
       "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:54Z",
+      "github_description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "github_topics": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "RCushmaniii",
+      "tagline": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
+      "slug": "rcushmaniii",
+      "category": "AI Automation",
+      "tech_stack": [
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon.",
+      "solution": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://cushlabs.ai/",
+      "hero_images": [],
+      "tags": [
+        "ai-consulting",
+        "ai-transformation",
+        "digital-transformation",
+        "fullstack-development",
+        "it-leader"
+      ],
+      "date_completed": "2025-11",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "RCushmaniii",
+      "repo_url": "https://github.com/RCushmaniii/RCushmaniii",
+      "github_stars": 2,
+      "github_forks": 0,
       "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.694Z",
-      "github_description": "",
-      "github_topics": []
+      "github_updated_at": "2026-01-19T20:33:53Z",
+      "github_description": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
+      "github_topics": [
+        "ai-consulting",
+        "ai-transformation",
+        "digital-transformation",
+        "fullstack-development",
+        "it-leader",
+        "solution-architect",
+        "technology-strategy"
+      ]
     },
     {
       "portfolio_enabled": true,
@@ -244,65 +364,15 @@
       "repo_url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.694Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "NY English Teacher Platform",
-      "tagline": "Modern educational website for English language learning and tutoring services",
-      "slug": "ny-english-teacher",
-      "category": "Client Work",
-      "tech_stack": [
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "React",
-        "Vercel"
-      ],
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(1).jpg",
-      "status": "Production",
-      "problem": "English tutors struggle to establish professional online presence and manage\nstudent bookings efficiently. Students need easy access to resources, scheduling,\nand progress tracking. Traditional websites are static and don't support the\ninteractive needs of modern education.\n",
-      "solution": "",
-      "key_features": [
-        "Professional website establishing credibility and attracting new students",
-        "Online booking system reducing scheduling friction by 80%",
-        "Student resource library with organized learning materials",
-        "Mobile-responsive design for learning on any device",
-        "SEO optimization driving organic student acquisition",
-        "Contact forms and inquiry management streamlining communication"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [
-        "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(1).jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(2).jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(3).jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(4).jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(5).jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/ny-eng/main/public/images/carousel%20(6).jpg"
-      ],
-      "tags": [
-        "education",
-        "tutoring",
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:52Z",
+      "github_description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "github_topics": [
         "nextjs",
-        "client-work",
-        "web-development"
-      ],
-      "body_markdown": "## Overview\n\nThe NY English Teacher Platform is a comprehensive educational website built for a professional English tutor in New York. It combines a professional marketing presence with practical tools for managing tutoring services, booking lessons, and providing resources to students.\n\nThe site showcases teaching credentials, student testimonials, and learning philosophy while making it easy for prospective students to book consultations and current students to access materials.\n\n## The Challenge\n\nIndependent tutors face several obstacles in growing their practice:\n\n- **Credibility gap:** Need professional presence to compete with established institutions\n- **Scheduling friction:** Back-and-forth emails waste time for tutor and students\n- **Resource distribution:** Emailing PDFs and materials is inefficient\n- **Limited reach:** Relying on word-of-mouth limits growth potential\n- **Payment confusion:** Unclear pricing and booking process loses prospects\n- **Mobile access:** Students need to access materials on phones and tablets\n\nWithout a professional web presence, talented tutors struggle to grow beyond their immediate network.\n\n## The Solution\n\nThe NY English Teacher Platform addresses these needs through:\n\n**Marketing & Credibility:**\n- Professional design establishing expertise and trust\n- Detailed bio and teaching philosophy\n- Student testimonials and success stories\n- Clear service offerings and pricing\n- Blog with English learning tips (SEO content)\n\n**Booking & Scheduling:**\n- Integrated booking calendar showing availability\n- Online consultation request forms\n- Automated confirmation emails\n- Timezone-aware scheduling for international students\n- Payment information and policies\n\n**Student Resources:**\n- Organized library of learning materials\n- Grammar guides and exercises\n- Reading recommendations\n- Video lessons and recordings\n- Progress tracking tools\n\n**Technical Excellence:**\n- Fast loading times (perfect Lighthouse scores)\n- Mobile-responsive for learning on any device\n- SEO optimized to attract organic traffic\n- Contact forms with spam protection\n- Analytics to understand visitor behavior\n\n## Technical Highlights\n\n- **Next.js 14 with App Router:** Server-side rendering for SEO and performance\n- **Component Architecture:** Reusable React components for maintainability\n- **Tailwind CSS:** Modern, responsive design system\n- **TypeScript:** Type safety preventing runtime errors\n- **Vercel Deployment:** Fast, reliable hosting with automatic deployments\n- **Form Handling:** Client-side validation with server-side processing\n- **Image Optimization:** Next.js Image component for fast loading\n\n## Results\n\n**For the Tutor:**\n- Established professional online presence\n- Reduced scheduling coordination time by 80%\n- Increased student inquiries by 150% in first 3 months\n- Streamlined resource distribution to students\n- Professional platform for growing tutoring business\n\n**Technical Demonstration:**\n- Full-stack web development skills\n- Client communication and requirements gathering\n- Modern React and Next.js expertise\n- Responsive design and mobile optimization\n- SEO and performance optimization\n- Deployment and hosting management\n\nThis project showcases the ability to take a client from concept to launch, understanding their business needs and translating them into effective technical solutions. Perfect for demonstrating client work capabilities and practical web development skills.",
-      "repo_name": "ny-eng",
-      "repo_url": "https://github.com/RCushmaniii/ny-eng",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.695Z",
-      "github_description": "",
-      "github_topics": []
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ]
     },
     {
       "portfolio_enabled": true,
@@ -344,10 +414,22 @@
       "repo_url": "https://github.com/RCushmaniii/ai-filesense-website",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
-      "github_description": "",
-      "github_topics": []
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:50Z",
+      "github_description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "github_topics": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app"
+      ]
     },
     {
       "portfolio_enabled": true,
@@ -386,72 +468,187 @@
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
       "repo_name": "ai-scrabble-practice",
       "repo_url": "https://github.com/RCushmaniii/ai-scrabble-practice",
+      "github_stars": 1,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:49Z",
+      "github_description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "github_topics": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": false,
+      "title": "AI Resume Tailor",
+      "tagline": "Automatically customize resumes for each job application using AI analysis",
+      "slug": "ai-resume-tailor",
+      "category": "AI Automation",
+      "tech_stack": [
+        "Python",
+        "OpenAI API",
+        "Natural Language Processing",
+        "PDF Generation",
+        "FastAPI"
+      ],
+      "thumbnail": "",
+      "status": "MVP",
+      "problem": "Job seekers spend hours manually customizing resumes for each application.\nGeneric resumes get filtered out by ATS systems. Tailoring is time-consuming\nbut necessary. Most people don't know how to optimize for specific roles.\n",
+      "solution": "",
+      "key_features": [
+        "Generate tailored resumes in under 60 seconds per job",
+        "AI analyzes job descriptions and matches relevant experience",
+        "Optimizes for ATS (Applicant Tracking Systems)",
+        "Maintains truthful content while emphasizing relevant skills",
+        "Multiple output formats (PDF, DOCX, plain text)"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "ai",
+        "job-search",
+        "automation",
+        "resume",
+        "career-tools"
+      ],
+      "body_markdown": "## Overview\n\nAI Resume Tailor automates the tedious process of customizing resumes for each job application. Using natural language processing and AI, it analyzes job descriptions and intelligently emphasizes the most relevant experience, skills, and accomplishments from your master resume.\n\nThe tool maintains factual accuracy while presenting your qualifications in the context that matters most to each specific role.\n\n## The Challenge\n\nModern job applications require tailored resumes:\n\n- **Generic resumes get filtered out** by ATS software\n- **Manual tailoring takes 30-60 minutes** per application\n- **Most job seekers don't know** which experiences to emphasize\n- **Applying to multiple jobs** becomes unsustainable\n- **Quality suffers** as fatigue sets in\n\nThis creates a barrier to aggressive job searching, especially for career changers who need to reframe their experience for different industries.\n\n## The Solution\n\nAI Resume Tailor provides:\n\n**For Job Seekers:**\n- Upload your master resume once\n- Paste a job description\n- Get a tailored resume in seconds\n- Download in multiple formats\n- Apply to more jobs without burnout\n\n**How It Works:**\n1. Analyzes job description for key requirements\n2. Identifies matching experience in your master resume\n3. Reorders and emphasizes relevant accomplishments\n4. Adjusts language to match job posting terminology\n5. Optimizes for ATS keyword matching\n\n**Key Features:**\n- Maintains factual accuracy (no fabrication)\n- Preserves your writing style\n- Highlights transferable skills\n- Industry-specific customization\n- ATS optimization\n\n## Technical Highlights\n\n- **NLP Analysis:** Extracts key requirements and skills from job descriptions\n- **Semantic Matching:** Maps your experience to job requirements\n- **Content Ranking:** Scores resume items by relevance to specific role\n- **Format Preservation:** Maintains professional formatting across outputs\n- **Fast Processing:** Sub-60 second generation time\n\n## Results\n\nThis MVP demonstrates practical AI application to a real-world problem that affects millions of job seekers. Shows understanding of NLP, document processing, and building tools that provide immediate value.\n\nThe project highlights the ability to take AI capabilities and package them into user-friendly solutions that solve specific pain points.",
+      "repo_name": "ai-resume-tailor",
+      "repo_url": "https://github.com/RCushmaniii/ai-resume-tailor",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
-      "github_description": "",
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:32:11Z",
+      "github_description": "Helps candidates create a tailored resume for a specific job. ",
       "github_topics": []
     },
     {
       "portfolio_enabled": true,
       "portfolio_priority": 2,
       "portfolio_featured": true,
-      "title": "Cushlabs Writing System",
-      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "slug": "cushlabs-writing-system",
-      "category": "AI Automation",
+      "title": "NY English Teacher Platform",
+      "tagline": "Modern educational website for English language learning and tutoring services",
+      "slug": "ny-english-teacher",
+      "category": "Client Work",
       "tech_stack": [
-        "HTML",
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "React",
+        "Vercel"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "English tutors struggle to establish professional online presence and manage\nstudent bookings efficiently. Students need easy access to resources, scheduling,\nand progress tracking. Traditional websites are static and don't support the\ninteractive needs of modern education.\n",
+      "solution": "",
+      "key_features": [
+        "Professional website establishing credibility and attracting new students",
+        "Online booking system reducing scheduling friction by 80%",
+        "Student resource library with organized learning materials",
+        "Mobile-responsive design for learning on any device",
+        "SEO optimization driving organic student acquisition",
+        "Contact forms and inquiry management streamlining communication"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "education",
+        "tutoring",
+        "nextjs",
+        "client-work",
+        "web-development"
+      ],
+      "body_markdown": "## Overview\n\nThe NY English Teacher Platform is a comprehensive educational website built for a professional English tutor in New York. It combines a professional marketing presence with practical tools for managing tutoring services, booking lessons, and providing resources to students.\n\nThe site showcases teaching credentials, student testimonials, and learning philosophy while making it easy for prospective students to book consultations and current students to access materials.\n\n## The Challenge\n\nIndependent tutors face several obstacles in growing their practice:\n\n- **Credibility gap:** Need professional presence to compete with established institutions\n- **Scheduling friction:** Back-and-forth emails waste time for tutor and students\n- **Resource distribution:** Emailing PDFs and materials is inefficient\n- **Limited reach:** Relying on word-of-mouth limits growth potential\n- **Payment confusion:** Unclear pricing and booking process loses prospects\n- **Mobile access:** Students need to access materials on phones and tablets\n\nWithout a professional web presence, talented tutors struggle to grow beyond their immediate network.\n\n## The Solution\n\nThe NY English Teacher Platform addresses these needs through:\n\n**Marketing & Credibility:**\n- Professional design establishing expertise and trust\n- Detailed bio and teaching philosophy\n- Student testimonials and success stories\n- Clear service offerings and pricing\n- Blog with English learning tips (SEO content)\n\n**Booking & Scheduling:**\n- Integrated booking calendar showing availability\n- Online consultation request forms\n- Automated confirmation emails\n- Timezone-aware scheduling for international students\n- Payment information and policies\n\n**Student Resources:**\n- Organized library of learning materials\n- Grammar guides and exercises\n- Reading recommendations\n- Video lessons and recordings\n- Progress tracking tools\n\n**Technical Excellence:**\n- Fast loading times (perfect Lighthouse scores)\n- Mobile-responsive for learning on any device\n- SEO optimized to attract organic traffic\n- Contact forms with spam protection\n- Analytics to understand visitor behavior\n\n## Technical Highlights\n\n- **Next.js 14 with App Router:** Server-side rendering for SEO and performance\n- **Component Architecture:** Reusable React components for maintainability\n- **Tailwind CSS:** Modern, responsive design system\n- **TypeScript:** Type safety preventing runtime errors\n- **Vercel Deployment:** Fast, reliable hosting with automatic deployments\n- **Form Handling:** Client-side validation with server-side processing\n- **Image Optimization:** Next.js Image component for fast loading\n\n## Results\n\n**For the Tutor:**\n- Established professional online presence\n- Reduced scheduling coordination time by 80%\n- Increased student inquiries by 150% in first 3 months\n- Streamlined resource distribution to students\n- Professional platform for growing tutoring business\n\n**Technical Demonstration:**\n- Full-stack web development skills\n- Client communication and requirements gathering\n- Modern React and Next.js expertise\n- Responsive design and mobile optimization\n- SEO and performance optimization\n- Deployment and hosting management\n\nThis project showcases the ability to take a client from concept to launch, understanding their business needs and translating them into effective technical solutions. Perfect for demonstrating client work capabilities and practical web development skills.",
+      "repo_name": "ny-eng",
+      "repo_url": "https://github.com/RCushmaniii/ny-eng",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "Astro",
+      "github_updated_at": "2026-01-19T20:29:27Z",
+      "github_description": "Professional bilingual (EN/ES) business English coaching platform built with Astro, featuring interactive assessments, lead generation, content management, and booking integration. Optimized for SEO, performance, and conversion.",
+      "github_topics": [
+        "astro",
+        "bilingual",
+        "business-english",
+        "content-management-system",
+        "conversion-optimization",
+        "i18n",
+        "lead-generation",
+        "quiz-system",
+        "react",
+        "seo-optimization",
+        "supabase",
+        "tailwindcss",
+        "typescript"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 3,
+      "portfolio_featured": true,
+      "title": "Component Portfolio",
+      "tagline": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
+      "slug": "component-portfolio",
+      "category": "Tools",
+      "tech_stack": [
+        "JavaScript",
         "TODO: Add tech"
       ],
       "thumbnail": "",
       "status": "Production",
       "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
+      "solution": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
       "key_features": [
-        "What This System Does",
-        "Core Components",
-        "How It Works",
-        "Key Principles"
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
       ],
       "metrics": [],
       "demo_url": "",
-      "live_url": "https://cushlabs-writing-system.vercel.app",
+      "live_url": "",
       "hero_images": [],
       "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering"
+        "todo"
       ],
-      "date_completed": "2025-12",
+      "date_completed": "2025-11",
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "cushlabs-writing-system",
-      "repo_url": "https://github.com/RCushmaniii/cushlabs-writing-system",
+      "repo_name": "component-portfolio",
+      "repo_url": "https://github.com/RCushmaniii/component-portfolio",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
-      "github_description": "",
+      "github_language": "JavaScript",
+      "github_updated_at": "2026-01-19T20:33:58Z",
+      "github_description": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
       "github_topics": []
     },
     {
       "portfolio_enabled": true,
-      "portfolio_priority": 2,
+      "portfolio_priority": 3,
       "portfolio_featured": true,
-      "title": "RCushmaniii",
-      "tagline": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
-      "slug": "rcushmaniii",
+      "title": "Operating System",
+      "tagline": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
+      "slug": "operating-system",
       "category": "AI Automation",
       "tech_stack": [
         "TODO: Add tech"
       ],
       "thumbnail": "",
       "status": "Production",
-      "problem": "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon.",
-      "solution": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
       "key_features": [
         "TODO: Feature 1 with measurable impact",
         "TODO: Feature 2 explaining capability",
@@ -459,43 +656,38 @@
       ],
       "metrics": [],
       "demo_url": "",
-      "live_url": "https://cushlabs.ai/",
+      "live_url": "",
       "hero_images": [],
       "tags": [
-        "ai-consulting",
-        "ai-transformation",
-        "digital-transformation",
-        "fullstack-development",
-        "it-leader"
+        "todo"
       ],
-      "date_completed": "2025-11",
+      "date_completed": "2025-12",
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "RCushmaniii",
-      "repo_url": "https://github.com/RCushmaniii/RCushmaniii",
+      "repo_name": "operating-system",
+      "repo_url": "https://github.com/RCushmaniii/operating-system",
       "github_stars": 0,
       "github_forks": 0,
       "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.697Z",
-      "github_description": "",
+      "github_updated_at": "2026-01-19T20:33:56Z",
+      "github_description": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
       "github_topics": []
     },
     {
       "portfolio_enabled": true,
-      "portfolio_priority": 2,
+      "portfolio_priority": 3,
       "portfolio_featured": true,
-      "title": "React Vite Tailwind Base",
-      "tagline": "React 19 + Vite 7 + ShadCN UI starter. Appointment booking, calendar integration, Recharts visualizations, and 17+ accessible components.",
-      "slug": "react-vite-tailwind-base",
-      "category": "Templates",
+      "title": "AI Filesense",
+      "tagline": "AI-powered local file understanding + search + safe organization",
+      "slug": "ai-filesense",
+      "category": "AI Automation",
       "tech_stack": [
         "TypeScript",
-        "React",
-        "Tailwind CSS"
+        "TODO: Add tech"
       ],
       "thumbnail": "",
       "status": "Production",
-      "problem": "Production-ready React 19 template with Vite 7, TypeScript, Tailwind CSS, ShadCN UI components, data visualizations, and appointment booking showcase. Mobile-first, fully responsive, and optimized for performance.",
-      "solution": "React 19 template with ShadCN UI, TypeScript, and Vite 7. Features a fully interactive appointment booking system with calendar integration, real-time data visualizations using Recharts, and 17+ accessible components. Mobile-first design, SEO optimized, and built with modern best practices. Perfect for SaaS apps, dashboards, and booking systems.",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "AI-powered local file understanding + search + safe organization",
       "key_features": [
         "TODO: Feature 1 with measurable impact",
         "TODO: Feature 2 explaining capability",
@@ -503,24 +695,59 @@
       ],
       "metrics": [],
       "demo_url": "",
-      "live_url": "https://react-vite-tailwind-base.vercel.app",
+      "live_url": "",
       "hero_images": [],
       "tags": [
-        "react",
-        "shadcn",
-        "shadcn-ui",
-        "tailwindcss",
-        "vite"
+        "todo"
+      ],
+      "date_completed": "2026-01",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "ai-filesense",
+      "repo_url": "https://github.com/RCushmaniii/ai-filesense",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:52Z",
+      "github_description": "AI-powered local file understanding + search + safe organization",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 3,
+      "portfolio_featured": true,
+      "title": "Stock Alert",
+      "tagline": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "slug": "stock-alert",
+      "category": "Tools",
+      "tech_stack": [
+        "Python",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
       ],
       "date_completed": "2025-10",
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "react-vite-tailwind-base",
-      "repo_url": "https://github.com/RCushmaniii/react-vite-tailwind-base",
-      "github_stars": 0,
+      "repo_name": "stock-alert",
+      "repo_url": "https://github.com/RCushmaniii/stock-alert",
+      "github_stars": 1,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.697Z",
-      "github_description": "",
+      "github_language": "Python",
+      "github_updated_at": "2026-01-19T20:33:49Z",
+      "github_description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
       "github_topics": []
     },
     {
@@ -564,126 +791,47 @@
       "repo_url": "https://github.com/RCushmaniii/ai-webscraper",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.693Z",
-      "github_description": "",
+      "github_language": "Python",
+      "github_updated_at": "2026-01-19T20:30:02Z",
+      "github_description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
       "github_topics": []
     },
     {
       "portfolio_enabled": true,
-      "portfolio_priority": 3,
-      "portfolio_featured": true,
-      "title": "AI Filesense",
-      "tagline": "AI-powered local file understanding + search + safe organization",
-      "slug": "ai-filesense",
-      "category": "AI Automation",
+      "portfolio_priority": 4,
+      "portfolio_featured": false,
+      "title": "Guitar Sample Store",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "guitar-sample-store",
+      "category": "Tools",
       "tech_stack": [
-        "TypeScript",
+        "CSS",
         "TODO: Add tech"
       ],
       "thumbnail": "",
       "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "AI-powered local file understanding + search + safe organization",
+      "problem": "Get the exclusive Sylvester guitar sample pack by Brian Camacho. Includes WAVs, chords, TONE & DRY stems for ultimate flexibility.",
+      "solution": "\"Sylvester\" Guitar Samples",
       "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
+        "\"Sylvester\" Guitar Samples",
+        "Buy with confidence",
+        "More Guitar Tabs"
       ],
       "metrics": [],
       "demo_url": "",
-      "live_url": "",
+      "live_url": "https://guitar-sample-store.vercel.app",
       "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "ai-filesense",
-      "repo_url": "https://github.com/RCushmaniii/ai-filesense",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 3,
-      "portfolio_featured": true,
-      "title": "Component Portfolio",
-      "tagline": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "slug": "component-portfolio",
-      "category": "Tools",
-      "tech_stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/component-portfolio/main/public/images/background-image.webp",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [
-        "https://raw.githubusercontent.com/RCushmaniii/component-portfolio/main/public/images/background-image.webp"
-      ],
       "tags": [
         "todo"
       ],
       "date_completed": "2025-11",
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "component-portfolio",
-      "repo_url": "https://github.com/RCushmaniii/component-portfolio",
+      "repo_name": "guitar-sample-store",
+      "repo_url": "https://github.com/RCushmaniii/guitar-sample-store",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 3,
-      "portfolio_featured": true,
-      "title": "Operating System",
-      "tagline": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
-      "slug": "operating-system",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-12",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "operating-system",
-      "repo_url": "https://github.com/RCushmaniii/operating-system",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.697Z",
+      "github_language": "CSS",
+      "github_updated_at": "2026-01-19T20:33:59Z",
       "github_description": "",
       "github_topics": []
     },
@@ -691,69 +839,16 @@
       "portfolio_enabled": true,
       "portfolio_priority": 4,
       "portfolio_featured": false,
-      "title": "AI Chatbot SaaS Platform",
-      "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
-      "slug": "ai-chatbot-saas",
-      "category": "AI Automation",
-      "tech_stack": [
-        "Next.js 14",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma ORM",
-        "OpenAI API",
-        "Stripe",
-        "Vercel"
-      ],
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/demo-thumbnail.png",
-      "status": "Production",
-      "problem": "Agencies building custom chatbots for clients face repetitive development work,\ncomplex deployment logistics, and ongoing maintenance burdens. Each client needs\nsimilar core functionality with different branding, training data, and integrations.\n",
-      "solution": "",
-      "key_features": [
-        "Multi-tenant SaaS architecture for managing multiple clients",
-        "White-label deployment with custom branding per client",
-        "Centralized training data management and model updates",
-        "Usage analytics and billing per client/organization",
-        "API-first design for easy integrations",
-        "Self-service client dashboard for minor updates"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [
-        "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/demo-thumbnail.png"
-      ],
-      "tags": [
-        "saas",
-        "chatbot",
-        "multi-tenant",
-        "ai",
-        "white-label",
-        "platform"
-      ],
-      "body_markdown": "## Overview\n\nAI Chatbot SaaS is a multi-tenant platform that enables agencies and businesses to deploy, manage, and monetize custom AI chatbots at scale. Instead of building each chatbot from scratch, teams can spin up new instances with custom training data, branding, and configurations in minutes.\n\nThe platform handles authentication, data isolation, billing, analytics, and infrastructure—so teams can focus on client success rather than DevOps.\n\n## The Challenge\n\nAgencies offering AI chatbot services face several bottlenecks:\n\n- **Repetitive Development:** Every client needs the same core features\n- **Deployment Complexity:** Managing infrastructure for multiple clients\n- **Data Isolation:** Ensuring client data stays separate and secure\n- **Billing Headaches:** Tracking usage and generating invoices manually\n- **Maintenance Burden:** Updates and bug fixes across multiple deployments\n- **Limited Scalability:** Can't grow beyond a handful of clients\n\nBuilding each chatbot as a separate application doesn't scale. Agencies needed a platform approach.\n\n## The Solution\n\nAI Chatbot SaaS provides a complete platform for deploying AI chatbots at scale:\n\n**For Agencies:**\n- Deploy new client chatbots in under 10 minutes\n- White-label with client branding (logo, colors, domain)\n- Centralized dashboard for managing all deployments\n- Usage-based billing automatically calculated\n- One codebase to maintain, all clients benefit from updates\n\n**For End Clients:**\n- Self-service dashboard for training data management\n- Analytics on chatbot usage and performance\n- Custom integration options (Slack, email, website embed)\n- Reliable uptime with enterprise infrastructure\n\n**Platform Features:**\n- Multi-tenant architecture with complete data isolation\n- Role-based access control (agency admin, client admin, end users)\n- Custom training data per client\n- API keys for programmatic access\n- Webhook integrations for third-party systems\n\n## Technical Highlights\n\n- **Multi-Tenant Architecture:** Complete data isolation using row-level security\n- **Scalable Infrastructure:** Handles thousands of concurrent conversations\n- **Billing Integration:** Stripe for subscription and usage-based billing\n- **Modern Stack:** Next.js 14, TypeScript, PostgreSQL with Prisma\n- **API-First Design:** Everything accessible via REST API\n- **Security:** JWT authentication, encrypted data at rest, GDPR compliant\n\n## Results\n\nThis implementation demonstrates:\n- Enterprise SaaS architecture and multi-tenancy patterns\n- Complex data modeling and relationships\n- Billing and subscription management\n- Full-stack TypeScript development\n- API design and documentation\n- Scalable infrastructure thinking\n\nPerfect for portfolios showcasing SaaS platform development, complex business logic, and the ability to build products that other businesses build their services on top of.",
-      "repo_name": "ai-chatbot-saas",
-      "repo_url": "https://github.com/RCushmaniii/ai-chatbot-saas",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.691Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "AI Portfolio",
+      "title": "Order Now Mvp",
       "tagline": "TODO: Add a compelling one-line description",
-      "slug": "ai-portfolio",
-      "category": "AI Automation",
+      "slug": "order-now-mvp",
+      "category": "Tools",
       "tech_stack": [
         "TypeScript",
         "TODO: Add tech"
       ],
       "thumbnail": "",
-      "status": "Production",
+      "status": "MVP",
       "problem": "TODO: Describe the pain point this project solves.",
       "solution": "TODO: Describe how this project solves the problem.",
       "key_features": [
@@ -768,14 +863,53 @@
       "tags": [
         "todo"
       ],
-      "date_completed": "2026-01",
+      "date_completed": "2025-07",
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "ai-portfolio",
-      "repo_url": "https://github.com/RCushmaniii/ai-portfolio",
-      "github_stars": 0,
+      "repo_name": "order-now-mvp",
+      "repo_url": "https://github.com/RCushmaniii/order-now-mvp",
+      "github_stars": 1,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:59Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 4,
+      "portfolio_featured": false,
+      "title": "My Guitar Tabs",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "my-guitar-tabs",
+      "category": "Tools",
+      "tech_stack": [
+        "HTML",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "Get the exclusive Sylvester guitar sample pack by Brian Camacho. Includes WAVs, chords, TONE & DRY stems for ultimate flexibility.",
+      "solution": "\"Sylvester\" Guitar Samples",
+      "key_features": [
+        "\"Sylvester\" Guitar Samples",
+        "Buy with confidence",
+        "More Guitar Tabs"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://guitar-sample-store.vercel.app",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2025-03",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "my-guitar-tabs",
+      "repo_url": "https://github.com/RCushmaniii/my-guitar-tabs",
+      "github_stars": 1,
+      "github_forks": 0,
+      "github_language": "HTML",
+      "github_updated_at": "2026-01-19T20:33:57Z",
       "github_description": "",
       "github_topics": []
     },
@@ -813,8 +947,8 @@
       "repo_url": "https://github.com/RCushmaniii/cushlabs",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.696Z",
+      "github_language": "Astro",
+      "github_updated_at": "2026-01-19T20:33:54Z",
       "github_description": "",
       "github_topics": []
     },
@@ -822,61 +956,16 @@
       "portfolio_enabled": true,
       "portfolio_priority": 4,
       "portfolio_featured": false,
-      "title": "My Guitar Tabs",
+      "title": "AI Portfolio",
       "tagline": "TODO: Add a compelling one-line description",
-      "slug": "my-guitar-tabs",
-      "category": "Tools",
-      "tech_stack": [
-        "HTML",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/my-guitar-tabs/main/images/hero-sylvester.webp",
-      "status": "Production",
-      "problem": "Get the exclusive Sylvester guitar sample pack by Brian Camacho. Includes WAVs, chords, TONE & DRY stems for ultimate flexibility.",
-      "solution": "\"Sylvester\" Guitar Samples",
-      "key_features": [
-        "\"Sylvester\" Guitar Samples",
-        "Buy with confidence",
-        "More Guitar Tabs"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://guitar-sample-store.vercel.app",
-      "hero_images": [
-        "https://raw.githubusercontent.com/RCushmaniii/my-guitar-tabs/main/images/hero-sylvester.webp",
-        "https://raw.githubusercontent.com/RCushmaniii/my-guitar-tabs/main/images/homepage-img1.jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/my-guitar-tabs/main/images/homepage-img2.jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/my-guitar-tabs/main/images/homepage-img3.jpg",
-        "https://raw.githubusercontent.com/RCushmaniii/my-guitar-tabs/main/images/homepage-img4.jpg"
-      ],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-03",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "my-guitar-tabs",
-      "repo_url": "https://github.com/RCushmaniii/my-guitar-tabs",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.697Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "Order Now Mvp",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "order-now-mvp",
-      "category": "Tools",
+      "slug": "ai-portfolio",
+      "category": "AI Automation",
       "tech_stack": [
         "TypeScript",
         "TODO: Add tech"
       ],
       "thumbnail": "",
-      "status": "MVP",
+      "status": "Production",
       "problem": "TODO: Describe the pain point this project solves.",
       "solution": "TODO: Describe how this project solves the problem.",
       "key_features": [
@@ -891,14 +980,571 @@
       "tags": [
         "todo"
       ],
+      "date_completed": "2026-01",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "ai-portfolio",
+      "repo_url": "https://github.com/RCushmaniii/ai-portfolio",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:33:48Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 4,
+      "portfolio_featured": false,
+      "title": "AI Chatbot SaaS Platform",
+      "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
+      "slug": "ai-chatbot-saas",
+      "category": "AI Automation",
+      "tech_stack": [
+        "Next.js 14",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma ORM",
+        "OpenAI API",
+        "Stripe",
+        "Vercel"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "Agencies building custom chatbots for clients face repetitive development work,\ncomplex deployment logistics, and ongoing maintenance burdens. Each client needs\nsimilar core functionality with different branding, training data, and integrations.\n",
+      "solution": "",
+      "key_features": [
+        "Multi-tenant SaaS architecture for managing multiple clients",
+        "White-label deployment with custom branding per client",
+        "Centralized training data management and model updates",
+        "Usage analytics and billing per client/organization",
+        "API-first design for easy integrations",
+        "Self-service client dashboard for minor updates"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "saas",
+        "chatbot",
+        "multi-tenant",
+        "ai",
+        "white-label",
+        "platform"
+      ],
+      "body_markdown": "## Overview\n\nAI Chatbot SaaS is a multi-tenant platform that enables agencies and businesses to deploy, manage, and monetize custom AI chatbots at scale. Instead of building each chatbot from scratch, teams can spin up new instances with custom training data, branding, and configurations in minutes.\n\nThe platform handles authentication, data isolation, billing, analytics, and infrastructure—so teams can focus on client success rather than DevOps.\n\n## The Challenge\n\nAgencies offering AI chatbot services face several bottlenecks:\n\n- **Repetitive Development:** Every client needs the same core features\n- **Deployment Complexity:** Managing infrastructure for multiple clients\n- **Data Isolation:** Ensuring client data stays separate and secure\n- **Billing Headaches:** Tracking usage and generating invoices manually\n- **Maintenance Burden:** Updates and bug fixes across multiple deployments\n- **Limited Scalability:** Can't grow beyond a handful of clients\n\nBuilding each chatbot as a separate application doesn't scale. Agencies needed a platform approach.\n\n## The Solution\n\nAI Chatbot SaaS provides a complete platform for deploying AI chatbots at scale:\n\n**For Agencies:**\n- Deploy new client chatbots in under 10 minutes\n- White-label with client branding (logo, colors, domain)\n- Centralized dashboard for managing all deployments\n- Usage-based billing automatically calculated\n- One codebase to maintain, all clients benefit from updates\n\n**For End Clients:**\n- Self-service dashboard for training data management\n- Analytics on chatbot usage and performance\n- Custom integration options (Slack, email, website embed)\n- Reliable uptime with enterprise infrastructure\n\n**Platform Features:**\n- Multi-tenant architecture with complete data isolation\n- Role-based access control (agency admin, client admin, end users)\n- Custom training data per client\n- API keys for programmatic access\n- Webhook integrations for third-party systems\n\n## Technical Highlights\n\n- **Multi-Tenant Architecture:** Complete data isolation using row-level security\n- **Scalable Infrastructure:** Handles thousands of concurrent conversations\n- **Billing Integration:** Stripe for subscription and usage-based billing\n- **Modern Stack:** Next.js 14, TypeScript, PostgreSQL with Prisma\n- **API-First Design:** Everything accessible via REST API\n- **Security:** JWT authentication, encrypted data at rest, GDPR compliant\n\n## Results\n\nThis implementation demonstrates:\n- Enterprise SaaS architecture and multi-tenancy patterns\n- Complex data modeling and relationships\n- Billing and subscription management\n- Full-stack TypeScript development\n- API design and documentation\n- Scalable infrastructure thinking\n\nPerfect for portfolios showcasing SaaS platform development, complex business logic, and the ability to build products that other businesses build their services on top of.",
+      "repo_name": "ai-chatbot-saas",
+      "repo_url": "https://github.com/RCushmaniii/ai-chatbot-saas",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-01T00:33:54Z",
+      "github_description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 5,
+      "portfolio_featured": false,
+      "title": "Go Pack",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "go-pack",
+      "category": "Tools",
+      "tech_stack": [
+        "PHP",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2025-03",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "go-pack",
+      "repo_url": "https://github.com/RCushmaniii/go-pack",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "PHP",
+      "github_updated_at": "2026-01-19T20:34:08Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 5,
+      "portfolio_featured": false,
+      "title": "Cefr Question Generator",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "cefr-question-generator",
+      "category": "Tools",
+      "tech_stack": [
+        "JavaScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2025-02",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "cefr-question-generator",
+      "repo_url": "https://github.com/RCushmaniii/cefr-question-generator",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "JavaScript",
+      "github_updated_at": "2026-01-19T20:34:03Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 5,
+      "portfolio_featured": false,
+      "title": "Calendly Clone",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "calendly-clone",
+      "category": "Tools",
+      "tech_stack": [
+        "JavaScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2025-04",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "calendly-clone",
+      "repo_url": "https://github.com/RCushmaniii/calendly-clone",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "JavaScript",
+      "github_updated_at": "2026-01-19T20:34:02Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 5,
+      "portfolio_featured": false,
+      "title": "CEFR English Exam",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "cefr-english-exam",
+      "category": "Tools",
+      "tech_stack": [
+        "JavaScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-11",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "CEFR-English-Exam",
+      "repo_url": "https://github.com/RCushmaniii/CEFR-English-Exam",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "JavaScript",
+      "github_updated_at": "2026-01-19T20:34:02Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 5,
+      "portfolio_featured": false,
+      "title": "Yapanow Mvp2",
+      "tagline": "2nd version of YapaNow ",
+      "slug": "yapanow-mvp2",
+      "category": "Tools",
+      "tech_stack": [
+        "TypeScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "MVP",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "2nd version of YapaNow ",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
       "date_completed": "2025-07",
       "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "order-now-mvp",
-      "repo_url": "https://github.com/RCushmaniii/order-now-mvp",
+      "repo_name": "yapanow-mvp2",
+      "repo_url": "https://github.com/RCushmaniii/yapanow-mvp2",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-19T20:34:01Z",
+      "github_description": "2nd version of YapaNow ",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 5,
+      "portfolio_featured": false,
+      "title": "Json Updater",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "json-updater",
+      "category": "Tools",
+      "tech_stack": [
+        "Python",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-11",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "json-updater",
+      "repo_url": "https://github.com/RCushmaniii/json-updater",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "Python",
+      "github_updated_at": "2026-01-19T20:34:00Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Lua_sprite_running",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "lua-sprite-running",
+      "category": "Tools",
+      "tech_stack": [
+        "Lua",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "lua_sprite_running",
+      "repo_url": "https://github.com/RCushmaniii/lua_sprite_running",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "Lua",
+      "github_updated_at": "2026-01-19T20:34:07Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Basic Pacman",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "basic-pacman",
+      "category": "Tools",
+      "tech_stack": [
+        "Lua",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "basic-pacman",
+      "repo_url": "https://github.com/RCushmaniii/basic-pacman",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "Lua",
+      "github_updated_at": "2026-01-19T20:34:07Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Rank It Better",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "rank-it-better",
+      "category": "Tools",
+      "tech_stack": [
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2018-02",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "rank-it-better",
+      "repo_url": "https://github.com/RCushmaniii/rank-it-better",
       "github_stars": 0,
       "github_forks": 0,
       "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.697Z",
+      "github_updated_at": "2026-01-19T20:34:07Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Web Confirmation Project",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "web-confirmation-project",
+      "category": "Tools",
+      "tech_stack": [
+        "JavaScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "Web-Confirmation-Project",
+      "repo_url": "https://github.com/RCushmaniii/Web-Confirmation-Project",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "JavaScript",
+      "github_updated_at": "2026-01-19T20:34:06Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Lua Love2d Firstgame",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "lua-love2d-firstgame",
+      "category": "Tools",
+      "tech_stack": [
+        "Lua",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "lua-love2d-firstgame",
+      "repo_url": "https://github.com/RCushmaniii/lua-love2d-firstgame",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "Lua",
+      "github_updated_at": "2026-01-19T20:34:06Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Lua_save_the_ball",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "lua-save-the-ball",
+      "category": "Tools",
+      "tech_stack": [
+        "Lua",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "lua_save_the_ball",
+      "repo_url": "https://github.com/RCushmaniii/lua_save_the_ball",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "Lua",
+      "github_updated_at": "2026-01-19T20:34:04Z",
+      "github_description": "",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 6,
+      "portfolio_featured": false,
+      "title": "Fullstack Emial Submissions",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "fullstack-emial-submissions",
+      "category": "Tools",
+      "tech_stack": [
+        "JavaScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Archived",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2024-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "fullstack-emial-submissions",
+      "repo_url": "https://github.com/RCushmaniii/fullstack-emial-submissions",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "JavaScript",
+      "github_updated_at": "2026-01-19T20:34:04Z",
       "github_description": "",
       "github_topics": []
     },
@@ -944,9 +1590,9 @@
       "repo_url": "https://github.com/RCushmaniii/ai-coach-vince",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.692Z",
-      "github_description": "",
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-01T00:33:59Z",
+      "github_description": "An ai coaching chatbot, where freemium users start on high accuracy, then fall back to fast mode.",
       "github_topics": []
     },
     {
@@ -992,10 +1638,16 @@
       "repo_url": "https://github.com/RCushmaniii/nextjs-supabase-auth-starter",
       "github_stars": 0,
       "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T18:00:21.695Z",
-      "github_description": "",
-      "github_topics": []
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-01T00:34:02Z",
+      "github_description": "A production-ready Next.js + Supabase SaaS base scaffold with sane defaults and clear v1 boundaries.",
+      "github_topics": [
+        "bilingual",
+        "magiclink",
+        "nextjs",
+        "starter-kit",
+        "supabase-auth"
+      ]
     }
   ]
 }
