@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T20:35:27.516Z",
+  "generated_at": "2026-01-21T22:47:53.682Z",
   "projects": [
     {
       "portfolio_enabled": true,
@@ -54,6 +54,58 @@
         "rag-chatbot",
         "tailwindcss",
         "vercel-deployment"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "Cushlabs Writing System",
+      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "slug": "cushlabs-writing-system",
+      "category": "AI Automation",
+      "tech_stack": [
+        "HTML",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
+      "key_features": [
+        "What This System Does",
+        "Core Components",
+        "How It Works",
+        "Key Principles"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://cushlabs-writing-system.vercel.app",
+      "hero_images": [],
+      "tags": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering"
+      ],
+      "date_completed": "2025-12",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "context-writing-system",
+      "repo_url": "https://github.com/RCushmaniii/context-writing-system",
+      "github_stars": 1,
+      "github_forks": 0,
+      "github_language": "HTML",
+      "github_updated_at": "2026-01-21T16:04:36Z",
+      "github_description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
+      "github_topics": [
+        "ai-assistant",
+        "ai-content-generation",
+        "business-writing",
+        "content-management",
+        "context-engineering",
+        "llm-tools",
+        "writing-system"
       ]
     },
     {
@@ -162,58 +214,6 @@
         "shadcn-ui",
         "tailwindcss",
         "vite"
-      ]
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "Cushlabs Writing System",
-      "tagline": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "slug": "cushlabs-writing-system",
-      "category": "AI Automation",
-      "tech_stack": [
-        "HTML",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Clone your brand's voice once—unleash AI to dominate every page, email, and pitch.",
-      "key_features": [
-        "What This System Does",
-        "Core Components",
-        "How It Works",
-        "Key Principles"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://cushlabs-writing-system.vercel.app",
-      "hero_images": [],
-      "tags": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering"
-      ],
-      "date_completed": "2025-12",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "cushlabs-writing-system",
-      "repo_url": "https://github.com/RCushmaniii/cushlabs-writing-system",
-      "github_stars": 1,
-      "github_forks": 0,
-      "github_language": "HTML",
-      "github_updated_at": "2026-01-19T20:33:56Z",
-      "github_description": "Context-engineering system to lock brand voice, enforce truth, and generate consistent AI-written content at scale.",
-      "github_topics": [
-        "ai-assistant",
-        "ai-content-generation",
-        "business-writing",
-        "content-management",
-        "context-engineering",
-        "llm-tools",
-        "writing-system"
       ]
     },
     {
@@ -599,6 +599,45 @@
       "portfolio_enabled": true,
       "portfolio_priority": 3,
       "portfolio_featured": true,
+      "title": "Stock Alert",
+      "tagline": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "slug": "stock-alert",
+      "category": "Tools",
+      "tech_stack": [
+        "Python",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2025-10",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "stock-alert",
+      "repo_url": "https://github.com/RCushmaniii/stock-alert",
+      "github_stars": 1,
+      "github_forks": 0,
+      "github_language": "Python",
+      "github_updated_at": "2026-01-21T22:29:48Z",
+      "github_description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 3,
+      "portfolio_featured": true,
       "title": "Component Portfolio",
       "tagline": "Production-ready React components for the missing middle—copy-paste solutions with performance optimization. Built for developers who need immediate, practical tools.",
       "slug": "component-portfolio",
@@ -715,45 +754,6 @@
       "portfolio_enabled": true,
       "portfolio_priority": 3,
       "portfolio_featured": true,
-      "title": "Stock Alert",
-      "tagline": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "slug": "stock-alert",
-      "category": "Tools",
-      "tech_stack": [
-        "Python",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "stock-alert",
-      "repo_url": "https://github.com/RCushmaniii/stock-alert",
-      "github_stars": 1,
-      "github_forks": 0,
-      "github_language": "Python",
-      "github_updated_at": "2026-01-19T20:33:49Z",
-      "github_description": "Professional Windows desktop application for real-time multi-stock price monitoring with intelligent alerting and visual configuration management.",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 3,
-      "portfolio_featured": true,
       "title": "AI-Powered Web Scraper",
       "tagline": "Full-stack data extraction platform with intelligent parsing and cloud storage",
       "slug": "ai-webscraper",
@@ -794,6 +794,45 @@
       "github_language": "Python",
       "github_updated_at": "2026-01-19T20:30:02Z",
       "github_description": "A full-stack web application for scraping websites with a React frontend, Python FastAPI backend, and Supabase for data storage.",
+      "github_topics": []
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 4,
+      "portfolio_featured": false,
+      "title": "AI Portfolio",
+      "tagline": "TODO: Add a compelling one-line description",
+      "slug": "ai-portfolio",
+      "category": "AI Automation",
+      "tech_stack": [
+        "TypeScript",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "TODO: Describe how this project solves the problem.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "",
+      "hero_images": [],
+      "tags": [
+        "todo"
+      ],
+      "date_completed": "2026-01",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "ai-portfolio",
+      "repo_url": "https://github.com/RCushmaniii/ai-portfolio",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-20T16:13:21Z",
+      "github_description": "",
       "github_topics": []
     },
     {
@@ -949,45 +988,6 @@
       "github_forks": 0,
       "github_language": "Astro",
       "github_updated_at": "2026-01-19T20:33:54Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "AI Portfolio",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "ai-portfolio",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TypeScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "ai-portfolio",
-      "repo_url": "https://github.com/RCushmaniii/ai-portfolio",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:33:48Z",
       "github_description": "",
       "github_topics": []
     },
@@ -1505,45 +1505,6 @@
       "github_stars": 0,
       "github_forks": 0,
       "github_language": "Lua",
-      "github_updated_at": "2026-01-19T20:34:04Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Fullstack Emial Submissions",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "fullstack-emial-submissions",
-      "category": "Tools",
-      "tech_stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "fullstack-emial-submissions",
-      "repo_url": "https://github.com/RCushmaniii/fullstack-emial-submissions",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "JavaScript",
       "github_updated_at": "2026-01-19T20:34:04Z",
       "github_description": "",
       "github_topics": []

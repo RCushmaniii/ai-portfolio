@@ -137,7 +137,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
       <section className="mt-12 p-6 bg-muted rounded-lg text-center">
         <h2 className="text-xl font-semibold mb-2">Ready to discuss a similar solution?</h2>
         <p className="text-muted-foreground mb-4">
-          Let's explore how AI automation can help your business.
+          Let&apos;s explore how AI automation can help your business.
         </p>
         <Button size="lg" asChild>
           <a href="https://cushlabs.ai/contact">Schedule a Consultation</a>

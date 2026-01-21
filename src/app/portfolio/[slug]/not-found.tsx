@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="container py-16 text-center">
       <h2 className="text-2xl font-bold mb-4">Project Not Found</h2>
       <p className="text-muted-foreground mb-8">
-        The project you're looking for doesn't exist.
+        The project you&apos;re looking for doesn&apos;t exist.
       </p>
       <Button asChild>
         <Link href="/portfolio">Back to Portfolio</Link>
