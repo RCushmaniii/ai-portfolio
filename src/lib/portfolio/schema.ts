@@ -12,7 +12,7 @@ const RawFrontmatterSchema = z.object({
   title: z.string().min(1).max(100),
   tagline: z.string().min(1).max(200),
   slug: z.string().regex(/^[a-z0-9-]+$/),
-  category: z.enum(['AI Automation', 'Templates', 'Tools', 'Client Work']),
+  category: z.enum(['AI Automation', 'Templates', 'Tools', 'Client Work', 'Games', 'Marketing', 'Creative']),
   tech_stack: z.array(z.string()).min(1).max(20),
   thumbnail: z.string().url().or(z.literal('')).default(''),
   thumbnail_url: z.string().url().or(z.literal('')).optional(), // Legacy alias

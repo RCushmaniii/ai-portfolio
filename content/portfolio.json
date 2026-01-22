@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T22:47:53.682Z",
+  "generated_at": "2026-01-22T18:10:27.083Z",
   "projects": [
     {
       "portfolio_enabled": true,
@@ -54,6 +54,226 @@
         "rag-chatbot",
         "tailwindcss",
         "vercel-deployment"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "Nextjs React Agency Starter",
+      "tagline": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "slug": "nextjs-react-agency-starter",
+      "category": "Templates",
+      "tech_stack": [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
+      "solution": "Simple, Transparent Pricing",
+      "key_features": [
+        "Meet AI FileSense",
+        "Everything You Need",
+        "Simple, Transparent Pricing",
+        "Ready for a Cleaner Desktop?"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://nextjs-react-agency-starter.vercel.app/",
+      "hero_images": [],
+      "tags": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ],
+      "date_completed": "2025-12",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "nextjs-react-agency-starter",
+      "repo_url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-22T18:09:03Z",
+      "github_description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
+      "github_topics": [
+        "nextjs",
+        "react",
+        "starter-kit",
+        "tailwindcss"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "AI Scrabble Practice",
+      "tagline": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "slug": "ai-scrabble-practice",
+      "category": "Games",
+      "tech_stack": [
+        "TypeScript",
+        "React",
+        "Tailwind CSS"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "TODO: Describe the pain point this project solves.",
+      "solution": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://scrabble-mini.netlify.app/",
+      "hero_images": [],
+      "tags": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble"
+      ],
+      "date_completed": "2025-09",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "ai-scrabble-practice",
+      "repo_url": "https://github.com/RCushmaniii/ai-scrabble-practice",
+      "github_stars": 1,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-22T18:08:43Z",
+      "github_description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
+      "github_topics": [
+        "anagram-solver",
+        "free-game",
+        "openai-api",
+        "react",
+        "scrabble",
+        "scrabble-game",
+        "scrabble-word-finder",
+        "tailwindcss",
+        "typescipt",
+        "vite"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "AI Filesense Website",
+      "tagline": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "slug": "ai-filesense-website",
+      "category": "Marketing",
+      "tech_stack": [
+        "TypeScript",
+        "Next.js",
+        "TODO: Add tech"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
+      "solution": "Your documents, finally organized.",
+      "key_features": [
+        "How It Works",
+        "Built for Privacy, Designed for You",
+        "11 Smart Folders",
+        "Ready to Get Organized?"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://ai-filesense-website.vercel.app",
+      "hero_images": [],
+      "tags": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n"
+      ],
+      "date_completed": "2026-01",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "ai-filesense-website",
+      "repo_url": "https://github.com/RCushmaniii/ai-filesense-website",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-22T18:08:41Z",
+      "github_description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
+      "github_topics": [
+        "ai",
+        "claude-ai",
+        "file-organization",
+        "file-organizer",
+        "i18n",
+        "marketing-site",
+        "nextjs",
+        "resend-email",
+        "tailwind-css",
+        "typescript",
+        "windows-app"
+      ]
+    },
+    {
+      "portfolio_enabled": true,
+      "portfolio_priority": 2,
+      "portfolio_featured": true,
+      "title": "Marble Does Not Yield",
+      "tagline": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "slug": "marble-does-not-yield",
+      "category": "Creative",
+      "tech_stack": [
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "thumbnail": "",
+      "status": "Production",
+      "problem": "Una historia de dolor, vulnerabilidad y la negativa a ceder.",
+      "solution": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "key_features": [
+        "TODO: Feature 1 with measurable impact",
+        "TODO: Feature 2 explaining capability",
+        "TODO: Feature 3 showing value"
+      ],
+      "metrics": [],
+      "demo_url": "",
+      "live_url": "https://marble-does-not-yield.vercel.app",
+      "hero_images": [],
+      "tags": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown"
+      ],
+      "date_completed": "2026-01",
+      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
+      "repo_name": "marble-does-not-yield",
+      "repo_url": "https://github.com/RCushmaniii/marble-does-not-yield",
+      "github_stars": 0,
+      "github_forks": 0,
+      "github_language": "TypeScript",
+      "github_updated_at": "2026-01-22T18:08:38Z",
+      "github_description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
+      "github_topics": [
+        "cdn",
+        "cdn-distribution",
+        "html5-audio",
+        "longform",
+        "markdown",
+        "narrative-design",
+        "nextjs",
+        "reactjs",
+        "static-site",
+        "storytelling",
+        "tailwindcss",
+        "typescript",
+        "vercel"
       ]
     },
     {
@@ -213,276 +433,6 @@
         "shadcn",
         "shadcn-ui",
         "tailwindcss",
-        "vite"
-      ]
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "Marble Does Not Yield",
-      "tagline": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "slug": "marble-does-not-yield",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TypeScript",
-        "Next.js",
-        "Tailwind CSS"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "Una historia de dolor, vulnerabilidad y la negativa a ceder.",
-      "solution": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://marble-does-not-yield.vercel.app",
-      "hero_images": [],
-      "tags": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "marble-does-not-yield",
-      "repo_url": "https://github.com/RCushmaniii/marble-does-not-yield",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:33:54Z",
-      "github_description": "A cinematic, single-page storytelling experience built with Next.js 14—combining markdown-driven prose, bilingual content, scroll-triggered imagery, and accessibility-first design.",
-      "github_topics": [
-        "cdn",
-        "cdn-distribution",
-        "html5-audio",
-        "longform",
-        "markdown",
-        "narrative-design",
-        "nextjs",
-        "reactjs",
-        "static-site",
-        "storytelling",
-        "tailwindcss",
-        "typescript",
-        "vercel"
-      ]
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "RCushmaniii",
-      "tagline": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
-      "slug": "rcushmaniii",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "AI consulting and modern software development for SMBs. Production-ready chatbots, automation, and custom applications. Launching soon.",
-      "solution": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://cushlabs.ai/",
-      "hero_images": [],
-      "tags": [
-        "ai-consulting",
-        "ai-transformation",
-        "digital-transformation",
-        "fullstack-development",
-        "it-leader"
-      ],
-      "date_completed": "2025-11",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "RCushmaniii",
-      "repo_url": "https://github.com/RCushmaniii/RCushmaniii",
-      "github_stars": 2,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T20:33:53Z",
-      "github_description": "Founder @ CushLabs.ai · Designing and shipping AI-assisted products with LLMs · Helping teams apply AI thoughtfully",
-      "github_topics": [
-        "ai-consulting",
-        "ai-transformation",
-        "digital-transformation",
-        "fullstack-development",
-        "it-leader",
-        "solution-architect",
-        "technology-strategy"
-      ]
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "Nextjs React Agency Starter",
-      "tagline": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "slug": "nextjs-react-agency-starter",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Tailwind CSS"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Simple, Transparent Pricing",
-      "key_features": [
-        "Meet AI FileSense",
-        "Everything You Need",
-        "Simple, Transparent Pricing",
-        "Ready for a Cleaner Desktop?"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://nextjs-react-agency-starter.vercel.app/",
-      "hero_images": [],
-      "tags": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ],
-      "date_completed": "2025-12",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "nextjs-react-agency-starter",
-      "repo_url": "https://github.com/RCushmaniii/nextjs-react-agency-starter",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:33:52Z",
-      "github_description": "The Next.js React Agency Starter provides a clean, scalable, and production-ready foundation for building modern agency and portfolio websites using Next.js, React, and TypeScript.",
-      "github_topics": [
-        "nextjs",
-        "react",
-        "starter-kit",
-        "tailwindcss"
-      ]
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "AI Filesense Website",
-      "tagline": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "slug": "ai-filesense-website",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TypeScript",
-        "Next.js",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Your documents, finally organized.",
-      "key_features": [
-        "How It Works",
-        "Built for Privacy, Designed for You",
-        "11 Smart Folders",
-        "Ready to Get Organized?"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://ai-filesense-website.vercel.app",
-      "hero_images": [],
-      "tags": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "ai-filesense-website",
-      "repo_url": "https://github.com/RCushmaniii/ai-filesense-website",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:33:50Z",
-      "github_description": "Marketing website for AI FileSense - An ai-powered local file organization system for Windows. Landing page, downloads, privacy policy, terms of service, and changelog.",
-      "github_topics": [
-        "ai",
-        "claude-ai",
-        "file-organization",
-        "file-organizer",
-        "i18n",
-        "marketing-site",
-        "nextjs",
-        "resend-email",
-        "tailwind-css",
-        "typescript",
-        "windows-app"
-      ]
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 2,
-      "portfolio_featured": true,
-      "title": "AI Scrabble Practice",
-      "tagline": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "slug": "ai-scrabble-practice",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TypeScript",
-        "React",
-        "Tailwind CSS"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://scrabble-mini.netlify.app/",
-      "hero_images": [],
-      "tags": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
-        "react",
-        "scrabble"
-      ],
-      "date_completed": "2025-09",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "ai-scrabble-practice",
-      "repo_url": "https://github.com/RCushmaniii/ai-scrabble-practice",
-      "github_stars": 1,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:33:49Z",
-      "github_description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
-      "github_topics": [
-        "anagram-solver",
-        "free-game",
-        "openai-api",
-        "react",
-        "scrabble",
-        "scrabble-game",
-        "scrabble-word-finder",
-        "tailwindcss",
-        "typescipt",
         "vite"
       ]
     },
@@ -677,44 +627,6 @@
       "portfolio_enabled": true,
       "portfolio_priority": 3,
       "portfolio_featured": true,
-      "title": "Operating System",
-      "tagline": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
-      "slug": "operating-system",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-12",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "operating-system",
-      "repo_url": "https://github.com/RCushmaniii/operating-system",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T20:33:56Z",
-      "github_description": "The CushLabs Operating System is the documented, source-of-truth framework for how CushLabs thinks, decides, delivers work, and governs claims.",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 3,
-      "portfolio_featured": true,
       "title": "AI Filesense",
       "tagline": "AI-powered local file understanding + search + safe organization",
       "slug": "ai-filesense",
@@ -800,201 +712,6 @@
       "portfolio_enabled": true,
       "portfolio_priority": 4,
       "portfolio_featured": false,
-      "title": "AI Portfolio",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "ai-portfolio",
-      "category": "AI Automation",
-      "tech_stack": [
-        "TypeScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "ai-portfolio",
-      "repo_url": "https://github.com/RCushmaniii/ai-portfolio",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-20T16:13:21Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "Guitar Sample Store",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "guitar-sample-store",
-      "category": "Tools",
-      "tech_stack": [
-        "CSS",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "Get the exclusive Sylvester guitar sample pack by Brian Camacho. Includes WAVs, chords, TONE & DRY stems for ultimate flexibility.",
-      "solution": "\"Sylvester\" Guitar Samples",
-      "key_features": [
-        "\"Sylvester\" Guitar Samples",
-        "Buy with confidence",
-        "More Guitar Tabs"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://guitar-sample-store.vercel.app",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-11",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "guitar-sample-store",
-      "repo_url": "https://github.com/RCushmaniii/guitar-sample-store",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "CSS",
-      "github_updated_at": "2026-01-19T20:33:59Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "Order Now Mvp",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "order-now-mvp",
-      "category": "Tools",
-      "tech_stack": [
-        "TypeScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "MVP",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-07",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "order-now-mvp",
-      "repo_url": "https://github.com/RCushmaniii/order-now-mvp",
-      "github_stars": 1,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:33:59Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "My Guitar Tabs",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "my-guitar-tabs",
-      "category": "Tools",
-      "tech_stack": [
-        "HTML",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "Get the exclusive Sylvester guitar sample pack by Brian Camacho. Includes WAVs, chords, TONE & DRY stems for ultimate flexibility.",
-      "solution": "\"Sylvester\" Guitar Samples",
-      "key_features": [
-        "\"Sylvester\" Guitar Samples",
-        "Buy with confidence",
-        "More Guitar Tabs"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "https://guitar-sample-store.vercel.app",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-03",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "my-guitar-tabs",
-      "repo_url": "https://github.com/RCushmaniii/my-guitar-tabs",
-      "github_stars": 1,
-      "github_forks": 0,
-      "github_language": "HTML",
-      "github_updated_at": "2026-01-19T20:33:57Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
-      "title": "Cushlabs",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "cushlabs",
-      "category": "Tools",
-      "tech_stack": [
-        "Astro",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Production",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2026-01",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "cushlabs",
-      "repo_url": "https://github.com/RCushmaniii/cushlabs",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "Astro",
-      "github_updated_at": "2026-01-19T20:33:54Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 4,
-      "portfolio_featured": false,
       "title": "AI Chatbot SaaS Platform",
       "tagline": "White-label chatbot platform for agencies to deploy custom AI assistants",
       "slug": "ai-chatbot-saas",
@@ -1040,520 +757,6 @@
       "github_language": "TypeScript",
       "github_updated_at": "2026-01-01T00:33:54Z",
       "github_description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 5,
-      "portfolio_featured": false,
-      "title": "Go Pack",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "go-pack",
-      "category": "Tools",
-      "tech_stack": [
-        "PHP",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-03",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "go-pack",
-      "repo_url": "https://github.com/RCushmaniii/go-pack",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "PHP",
-      "github_updated_at": "2026-01-19T20:34:08Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 5,
-      "portfolio_featured": false,
-      "title": "Cefr Question Generator",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "cefr-question-generator",
-      "category": "Tools",
-      "tech_stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-02",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "cefr-question-generator",
-      "repo_url": "https://github.com/RCushmaniii/cefr-question-generator",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "JavaScript",
-      "github_updated_at": "2026-01-19T20:34:03Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 5,
-      "portfolio_featured": false,
-      "title": "Calendly Clone",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "calendly-clone",
-      "category": "Tools",
-      "tech_stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-04",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "calendly-clone",
-      "repo_url": "https://github.com/RCushmaniii/calendly-clone",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "JavaScript",
-      "github_updated_at": "2026-01-19T20:34:02Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 5,
-      "portfolio_featured": false,
-      "title": "CEFR English Exam",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "cefr-english-exam",
-      "category": "Tools",
-      "tech_stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-11",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "CEFR-English-Exam",
-      "repo_url": "https://github.com/RCushmaniii/CEFR-English-Exam",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "JavaScript",
-      "github_updated_at": "2026-01-19T20:34:02Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 5,
-      "portfolio_featured": false,
-      "title": "Yapanow Mvp2",
-      "tagline": "2nd version of YapaNow ",
-      "slug": "yapanow-mvp2",
-      "category": "Tools",
-      "tech_stack": [
-        "TypeScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "MVP",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "2nd version of YapaNow ",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2025-07",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "yapanow-mvp2",
-      "repo_url": "https://github.com/RCushmaniii/yapanow-mvp2",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-19T20:34:01Z",
-      "github_description": "2nd version of YapaNow ",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 5,
-      "portfolio_featured": false,
-      "title": "Json Updater",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "json-updater",
-      "category": "Tools",
-      "tech_stack": [
-        "Python",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-11",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "json-updater",
-      "repo_url": "https://github.com/RCushmaniii/json-updater",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "Python",
-      "github_updated_at": "2026-01-19T20:34:00Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Lua_sprite_running",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "lua-sprite-running",
-      "category": "Tools",
-      "tech_stack": [
-        "Lua",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "lua_sprite_running",
-      "repo_url": "https://github.com/RCushmaniii/lua_sprite_running",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "Lua",
-      "github_updated_at": "2026-01-19T20:34:07Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Basic Pacman",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "basic-pacman",
-      "category": "Tools",
-      "tech_stack": [
-        "Lua",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "basic-pacman",
-      "repo_url": "https://github.com/RCushmaniii/basic-pacman",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "Lua",
-      "github_updated_at": "2026-01-19T20:34:07Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Rank It Better",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "rank-it-better",
-      "category": "Tools",
-      "tech_stack": [
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2018-02",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "rank-it-better",
-      "repo_url": "https://github.com/RCushmaniii/rank-it-better",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": null,
-      "github_updated_at": "2026-01-19T20:34:07Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Web Confirmation Project",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "web-confirmation-project",
-      "category": "Tools",
-      "tech_stack": [
-        "JavaScript",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "Web-Confirmation-Project",
-      "repo_url": "https://github.com/RCushmaniii/Web-Confirmation-Project",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "JavaScript",
-      "github_updated_at": "2026-01-19T20:34:06Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Lua Love2d Firstgame",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "lua-love2d-firstgame",
-      "category": "Tools",
-      "tech_stack": [
-        "Lua",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "lua-love2d-firstgame",
-      "repo_url": "https://github.com/RCushmaniii/lua-love2d-firstgame",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "Lua",
-      "github_updated_at": "2026-01-19T20:34:06Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "Lua_save_the_ball",
-      "tagline": "TODO: Add a compelling one-line description",
-      "slug": "lua-save-the-ball",
-      "category": "Tools",
-      "tech_stack": [
-        "Lua",
-        "TODO: Add tech"
-      ],
-      "thumbnail": "",
-      "status": "Archived",
-      "problem": "TODO: Describe the pain point this project solves.",
-      "solution": "TODO: Describe how this project solves the problem.",
-      "key_features": [
-        "TODO: Feature 1 with measurable impact",
-        "TODO: Feature 2 explaining capability",
-        "TODO: Feature 3 showing value"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "todo"
-      ],
-      "date_completed": "2024-10",
-      "body_markdown": "<!-- TODO: Add 2-3 paragraphs describing this project -->\n<!-- Focus on the business value and what makes this project notable -->",
-      "repo_name": "lua_save_the_ball",
-      "repo_url": "https://github.com/RCushmaniii/lua_save_the_ball",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "Lua",
-      "github_updated_at": "2026-01-19T20:34:04Z",
-      "github_description": "",
-      "github_topics": []
-    },
-    {
-      "portfolio_enabled": true,
-      "portfolio_priority": 6,
-      "portfolio_featured": false,
-      "title": "AI Coach Vince",
-      "tagline": "Personal AI coaching assistant for fitness, accountability, and goal achievement",
-      "slug": "ai-coach-vince",
-      "category": "AI Automation",
-      "tech_stack": [
-        "Python",
-        "OpenAI API",
-        "Conversational AI",
-        "Database (User Data)",
-        "Notification System"
-      ],
-      "thumbnail": "",
-      "status": "MVP",
-      "problem": "Personal coaching is expensive ($100-300/hour) and not accessible to most people.\nFitness apps lack personalization and accountability. People struggle to maintain\nconsistency without external accountability and motivation.\n",
-      "solution": "",
-      "key_features": [
-        "24/7 access to coaching guidance at fraction of human coach cost",
-        "Personalized workout and nutrition recommendations",
-        "Daily check-ins and accountability tracking",
-        "Motivational messaging adapted to user's personality",
-        "Progress tracking and goal adjustment over time"
-      ],
-      "metrics": [],
-      "demo_url": "",
-      "live_url": "",
-      "hero_images": [],
-      "tags": [
-        "ai",
-        "coaching",
-        "fitness",
-        "chatbot",
-        "accountability"
-      ],
-      "body_markdown": "## Overview\n\nAI Coach Vince is a personal coaching assistant that provides fitness guidance, accountability, and motivation through conversational AI. Unlike generic fitness apps, Coach Vince learns your goals, preferences, and personality to deliver personalized coaching that feels human.\n\nThe system combines workout and nutrition knowledge with motivational psychology to help users achieve their fitness goals through consistent daily engagement.\n\n## The Challenge\n\nMost people struggle with fitness goals due to:\n\n- **Lack of accountability** - no one checking in daily\n- **Generic advice** - one-size-fits-all programs that don't fit\n- **Cost barrier** - personal trainers cost $200-400/month\n- **Motivation gaps** - hard to stay consistent without support\n- **Knowledge gaps** - unsure about proper form, nutrition, programming\n\nTraditional solutions either lack personalization (apps) or are prohibitively expensive (human coaches). People needed something in between.\n\n## The Solution\n\nAI Coach Vince provides personal coaching at scale:\n\n**Daily Engagement:**\n- Morning check-ins to set daily intentions\n- Evening reflections on workout completion and nutrition\n- Real-time responses to questions throughout the day\n- Progress celebration and course correction\n\n**Personalized Programming:**\n- Custom workout plans based on goals, equipment, and experience\n- Nutrition guidance adapted to dietary preferences and restrictions\n- Progressive overload and program adjustments\n- Recovery and injury management advice\n\n**Accountability System:**\n- Tracks workout completion and consistency\n- Sends reminder notifications at optimal times\n- Provides motivational messaging adapted to your personality\n- Weekly progress reviews and goal adjustments\n\n**Knowledge Base:**\n- Exercise form instructions and video references\n- Nutrition education and meal ideas\n- Answers to fitness questions using evidence-based information\n- Common pitfall prevention\n\n## Technical Highlights\n\n- **Conversational AI:** Natural language interactions that feel like texting a real coach\n- **Memory System:** Maintains conversation history and user preferences over time\n- **Personality Adaptation:** Adjusts tone and motivation style based on user response\n- **Knowledge Integration:** Combines fitness knowledge base with AI generation\n- **Notification System:** Smart timing for check-ins based on user patterns\n\n## Results\n\nThis MVP demonstrates:\n- Applying AI to replace expensive human services at scale\n- Designing conversational interfaces that maintain engagement\n- Building systems that drive behavior change\n- Domain-specific AI applications (fitness coaching)\n- Understanding user psychology and motivation\n\nPerfect for portfolios showcasing creative AI applications, user-centric design, and building products that solve real problems in underserved markets.",
-      "repo_name": "ai-coach-vince",
-      "repo_url": "https://github.com/RCushmaniii/ai-coach-vince",
-      "github_stars": 0,
-      "github_forks": 0,
-      "github_language": "TypeScript",
-      "github_updated_at": "2026-01-01T00:33:59Z",
-      "github_description": "An ai coaching chatbot, where freemium users start on high accuracy, then fall back to fast mode.",
       "github_topics": []
     },
     {

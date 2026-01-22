@@ -1,4 +1,4 @@
-export type PortfolioCategory = 'AI Automation' | 'Templates' | 'Tools' | 'Client Work';
+export type PortfolioCategory = 'AI Automation' | 'Templates' | 'Tools' | 'Client Work' | 'Games' | 'Marketing' | 'Creative';
 export type ProjectStatus = 'Production' | 'MVP' | 'Demo' | 'Archived';
 export type SortOption = 'priority' | 'recent' | 'popular';
 
