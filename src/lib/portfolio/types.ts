@@ -46,17 +46,6 @@ export interface PortfolioProject {
   github_topics: string[];
 }
 
-// Backward compatibility - these fields may exist in old portfolio.json files
-export interface LegacyPortfolioProject extends Omit<PortfolioProject, 'status' | 'problem' | 'solution' | 'key_features' | 'metrics' | 'demo_url'> {
-  complexity?: 'MVP' | 'Production' | 'Enterprise';
-  problem_solved?: string;
-  key_outcomes?: string[];
-  target_audience?: string;
-  case_study_url?: string;
-  demo_video_url?: string;
-  portfolio_last_reviewed?: string;
-}
-
 export interface PortfolioData {
   generated_at: string;
   projects: PortfolioProject[];

@@ -1,22 +1,11 @@
 import { Suspense } from 'react';
 import { getPortfolioProjects } from '@/lib/portfolio/loader';
 import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
-import { Skeleton } from '@/components/ui/skeleton';
 
 export const metadata = {
   title: 'Portfolio',
   description: 'AI automation projects and solutions by CushLabs',
 };
-
-function LoadingGrid() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <Skeleton key={i} className="h-80 rounded-lg" />
-      ))}
-    </div>
-  );
-}
 
 export default async function PortfolioPage() {
   const projects = await getPortfolioProjects();
@@ -30,7 +19,7 @@ export default async function PortfolioPage() {
         </p>
       </div>
 
-      <Suspense fallback={<LoadingGrid />}>
+      <Suspense>
         <PortfolioGrid projects={projects} />
       </Suspense>
     </div>

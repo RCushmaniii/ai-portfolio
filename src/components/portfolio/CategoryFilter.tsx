@@ -9,6 +9,9 @@ const CATEGORIES: Array<{ value: PortfolioCategory | 'all'; label: string }> = [
   { value: 'Templates', label: 'Templates' },
   { value: 'Tools', label: 'Tools' },
   { value: 'Client Work', label: 'Client Work' },
+  { value: 'Games', label: 'Games' },
+  { value: 'Marketing', label: 'Marketing' },
+  { value: 'Creative', label: 'Creative' },
 ];
 
 interface CategoryFilterProps {

@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { PortfolioCard } from './PortfolioCard';
 import { CategoryFilter } from './CategoryFilter';
 import { SortSelect } from './SortSelect';
-import { filterProjects, sortProjects } from '@/lib/portfolio/loader';
+import { filterProjects, sortProjects } from '@/lib/portfolio/filters';
 import type { PortfolioProject, PortfolioCategory, SortOption } from '@/lib/portfolio/types';
 
 interface PortfolioGridProps {
