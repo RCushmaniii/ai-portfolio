@@ -1,4 +1,4 @@
-export type PortfolioCategory = 'AI Automation' | 'Templates' | 'Tools' | 'Client Work' | 'Games' | 'Marketing' | 'Creative';
+export type PortfolioCategory = 'AI Automation' | 'Templates' | 'Tools' | 'Developer Tools' | 'Client Work' | 'Games' | 'Marketing' | 'Creative';
 export type ProjectStatus = 'Production' | 'MVP' | 'Demo' | 'Archived';
 export type SortOption = 'priority' | 'recent' | 'popular';
 
@@ -26,6 +26,7 @@ export interface PortfolioProject {
   // Links
   demo_url: string;
   live_url: string;
+  demo_video_url: string;
 
   // Optional extras
   hero_images: string[];

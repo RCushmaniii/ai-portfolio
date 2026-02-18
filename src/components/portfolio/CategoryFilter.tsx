@@ -6,6 +6,7 @@ import type { PortfolioCategory } from '@/lib/portfolio/types';
 const CATEGORIES: Array<{ value: PortfolioCategory | 'all'; label: string }> = [
   { value: 'all', label: 'All' },
   { value: 'AI Automation', label: 'AI Automation' },
+  { value: 'Developer Tools', label: 'Dev Tools' },
   { value: 'Templates', label: 'Templates' },
   { value: 'Tools', label: 'Tools' },
   { value: 'Client Work', label: 'Client Work' },

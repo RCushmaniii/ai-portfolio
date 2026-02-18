@@ -1,46 +1,63 @@
 import { z } from 'zod';
 
+// Accepts full URLs, local paths (/images/...), or empty string
+const imagePathOrUrl = z.string().refine(
+  (val) => val === '' || val.startsWith('/') || /^https?:\/\//.test(val),
+  'Must be a URL, a local path starting with /, or empty'
+);
+
+const CATEGORIES = [
+  'AI Automation',
+  'Templates',
+  'Tools',
+  'Developer Tools',
+  'Client Work',
+  'Games',
+  'Marketing',
+  'Creative',
+] as const;
+
 // Schema that accepts both old and new field names for backward compatibility
 const RawFrontmatterSchema = z.object({
   // Control flags
   portfolio_enabled: z.boolean(),
   portfolio_priority: z.number().min(1).max(10),
   portfolio_featured: z.boolean().optional().default(false),
-  portfolio_last_reviewed: z.string().optional(), // Legacy, ignored
+  portfolio_last_reviewed: z.string().optional(),
 
   // Card display
   title: z.string().min(1).max(100),
-  tagline: z.string().min(1).max(200),
+  tagline: z.string().min(1).max(300),
   slug: z.string().regex(/^[a-z0-9-]+$/),
-  category: z.enum(['AI Automation', 'Templates', 'Tools', 'Client Work', 'Games', 'Marketing', 'Creative']),
+  category: z.enum(CATEGORIES),
   tech_stack: z.array(z.string()).min(1).max(20),
-  thumbnail: z.string().url().or(z.literal('')).default(''),
-  thumbnail_url: z.string().url().or(z.literal('')).optional(), // Legacy alias
+  thumbnail: imagePathOrUrl.default(''),
+  thumbnail_url: imagePathOrUrl.optional(), // Legacy alias
 
   // Status (new) or complexity (legacy)
   status: z.enum(['Production', 'MVP', 'Demo', 'Archived']).optional(),
   complexity: z.enum(['MVP', 'Production', 'Enterprise']).optional(), // Legacy
 
   // Detail page - new fields
-  problem: z.string().max(500).optional(),
-  solution: z.string().max(500).optional(),
+  problem: z.string().max(2000).optional(),
+  solution: z.string().max(2000).optional(),
   key_features: z.array(z.string()).max(10).optional(),
   metrics: z.array(z.string()).max(6).optional(),
 
   // Detail page - legacy fields
-  problem_solved: z.string().max(500).optional(),
+  problem_solved: z.string().max(2000).optional(),
   key_outcomes: z.array(z.string()).max(10).optional(),
-  target_audience: z.string().optional(), // Legacy, ignored
+  target_audience: z.string().optional(),
 
   // Links
   demo_url: z.string().url().or(z.literal('')).optional(),
   live_url: z.string().url().or(z.literal('')).optional(),
-  case_study_url: z.string().optional(), // Legacy, ignored
-  demo_video_url: z.string().optional(), // Legacy, ignored
+  case_study_url: z.string().optional(),
+  demo_video_url: imagePathOrUrl.optional(),
 
   // Optional extras
-  hero_images: z.array(z.string().url()).max(10).default([]),
-  hero_image_urls: z.array(z.string().url()).optional(), // Legacy alias
+  hero_images: z.array(imagePathOrUrl).max(10).default([]),
+  hero_image_urls: z.array(imagePathOrUrl).optional(), // Legacy alias
   tags: z.array(z.string()).max(10).default([]),
   date_completed: z.string().optional(),
 });
@@ -63,6 +80,7 @@ export const PortfolioFrontmatterSchema = RawFrontmatterSchema.transform((data) 
   metrics: data.metrics || [],
   demo_url: data.demo_url || '',
   live_url: data.live_url || '',
+  demo_video_url: data.demo_video_url || '',
   hero_images: data.hero_images.length > 0 ? data.hero_images : (data.hero_image_urls || []),
   tags: data.tags,
   date_completed: data.date_completed,
