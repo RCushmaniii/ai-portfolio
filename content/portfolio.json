@@ -72,13 +72,13 @@
       ],
       "thumbnail": "",
       "status": "Production",
-      "problem": "Finally organize your Desktop, Documents, and Downloads without uploading anything to the cloud. Smart AI classification that respects your privacy.",
-      "solution": "Simple, Transparent Pricing",
+      "problem": "Building a modern agency or portfolio website from scratch means weeks of boilerplate — routing, responsive layouts, component architecture, and deployment config before any real content work begins.",
+      "solution": "A production-ready Next.js starter with pre-built agency sections, responsive design, and TypeScript throughout — ready to customize in minutes instead of weeks.",
       "key_features": [
-        "Meet AI FileSense",
-        "Everything You Need",
-        "Simple, Transparent Pricing",
-        "Ready for a Cleaner Desktop?"
+        "Pre-built agency landing page sections (hero, services, portfolio, contact)",
+        "Fully responsive design with Tailwind CSS utility-first styling",
+        "TypeScript throughout for type safety and better DX",
+        "One-click Vercel deployment with zero configuration"
       ],
       "metrics": [],
       "demo_url": "",

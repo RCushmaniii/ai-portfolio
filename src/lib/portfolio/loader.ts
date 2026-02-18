@@ -26,8 +26,10 @@ try {
   const rawData = JSON.parse(fs.readFileSync(portfolioPath, 'utf-8'));
   const projects = (rawData.projects as PortfolioProject[]).map((p) => ({
     ...p,
-    // Override featured flag if in order config
-    portfolio_featured: orderConfig.featured.includes(p.slug) || p.portfolio_featured,
+    // Order config is the source of truth for featured status
+    portfolio_featured: orderConfig.featured.length > 0
+      ? orderConfig.featured.includes(p.slug)
+      : p.portfolio_featured,
   }));
   portfolioData = {
     generated_at: rawData.generated_at,
