@@ -129,7 +129,19 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
       {/* Markdown Body */}
       {project.body_markdown && (
         <section className="mb-8 prose prose-neutral dark:prose-invert max-w-none">
-          <ReactMarkdown>{project.body_markdown}</ReactMarkdown>
+          <ReactMarkdown
+            allowedElements={[
+              'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+              'p', 'br', 'hr',
+              'ul', 'ol', 'li',
+              'strong', 'em', 'del',
+              'a', 'code', 'pre',
+              'blockquote',
+              'table', 'thead', 'tbody', 'tr', 'th', 'td',
+            ]}
+          >
+            {project.body_markdown}
+          </ReactMarkdown>
         </section>
       )}
 
@@ -140,7 +152,9 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
           Let&apos;s explore how AI automation can help your business.
         </p>
         <Button size="lg" asChild>
-          <a href="https://cushlabs.ai/contact">Schedule a Consultation</a>
+          <a href="https://cushlabs.ai/contact" rel="noopener noreferrer">
+            Schedule a Consultation
+          </a>
         </Button>
       </section>
     </div>

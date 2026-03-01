@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
@@ -10,7 +11,7 @@ interface PortfolioCardProps {
   project: PortfolioProject;
 }
 
-export function PortfolioCard({ project }: PortfolioCardProps) {
+export const PortfolioCard = memo(function PortfolioCard({ project }: PortfolioCardProps) {
   return (
     <Card className="h-full flex flex-col overflow-hidden group hover:shadow-lg transition-shadow">
       {/* Thumbnail */}
@@ -75,4 +76,4 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
       </CardFooter>
     </Card>
   );
-}
+});

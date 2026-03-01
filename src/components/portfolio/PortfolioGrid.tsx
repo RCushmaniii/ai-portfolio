@@ -8,6 +8,12 @@ import { SortSelect } from './SortSelect';
 import { filterProjects, sortProjects } from '@/lib/portfolio/filters';
 import type { PortfolioProject, PortfolioCategory, SortOption } from '@/lib/portfolio/types';
 
+const VALID_CATEGORIES: ReadonlySet<string> = new Set([
+  'all', 'AI Automation', 'Templates', 'Tools', 'Developer Tools',
+  'Client Work', 'Games', 'Marketing', 'Creative',
+]);
+const VALID_SORTS: ReadonlySet<string> = new Set(['priority', 'recent', 'popular']);
+
 interface PortfolioGridProps {
   projects: PortfolioProject[];
 }
@@ -17,8 +23,14 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const category = (searchParams.get('category') as PortfolioCategory | 'all') || 'all';
-  const sort = (searchParams.get('sort') as SortOption) || 'priority';
+  const rawCategory = searchParams.get('category') || 'all';
+  const rawSort = searchParams.get('sort') || 'priority';
+  const category: PortfolioCategory | 'all' = VALID_CATEGORIES.has(rawCategory)
+    ? (rawCategory as PortfolioCategory | 'all')
+    : 'all';
+  const sort: SortOption = VALID_SORTS.has(rawSort)
+    ? (rawSort as SortOption)
+    : 'priority';
 
   const updateParams = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -51,8 +63,16 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
 
       {/* Grid */}
       {filteredAndSorted.length === 0 ? (
-        <div className="text-center py-12 text-muted-foreground">
-          No projects found for this category.
+        <div className="text-center py-16">
+          <p className="text-muted-foreground mb-4">
+            No projects found in this category.
+          </p>
+          <button
+            onClick={() => updateParams('category', 'all')}
+            className="text-sm text-primary hover:underline"
+          >
+            View all projects
+          </button>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

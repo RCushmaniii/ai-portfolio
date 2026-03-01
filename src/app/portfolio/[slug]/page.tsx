@@ -26,6 +26,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: project.title,
       description: project.tagline,
+      type: 'article',
+      siteName: 'CushLabs',
+      url: `/portfolio/${project.slug}`,
+      images: project.thumbnail ? [project.thumbnail] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.tagline,
       images: project.thumbnail ? [project.thumbnail] : [],
     },
   };

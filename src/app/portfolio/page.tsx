@@ -1,11 +1,41 @@
 import { Suspense } from 'react';
 import { getPortfolioProjects } from '@/lib/portfolio/loader';
 import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export const metadata = {
   title: 'Portfolio',
   description: 'AI automation projects and solutions by CushLabs',
 };
+
+function PortfolioGridSkeleton() {
+  return (
+    <div>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <Skeleton className="h-10 w-full sm:w-96" />
+        <Skeleton className="h-10 w-32" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="rounded-lg border overflow-hidden">
+            <Skeleton className="aspect-video w-full" />
+            <div className="p-4 space-y-3">
+              <Skeleton className="h-5 w-24" />
+              <Skeleton className="h-6 w-3/4" />
+              <Skeleton className="h-4 w-full" />
+              <div className="flex gap-1">
+                <Skeleton className="h-5 w-16" />
+                <Skeleton className="h-5 w-16" />
+                <Skeleton className="h-5 w-16" />
+              </div>
+              <Skeleton className="h-10 w-full" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default async function PortfolioPage() {
   const projects = await getPortfolioProjects();
@@ -19,7 +49,7 @@ export default async function PortfolioPage() {
         </p>
       </div>
 
-      <Suspense>
+      <Suspense fallback={<PortfolioGridSkeleton />}>
         <PortfolioGrid projects={projects} />
       </Suspense>
     </div>

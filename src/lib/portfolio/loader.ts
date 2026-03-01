@@ -40,9 +40,9 @@ try {
 }
 
 export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
-  return portfolioData.projects;
+  return portfolioData.projects.filter((p) => p.portfolio_enabled);
 }
 
 export async function getProjectBySlug(slug: string): Promise<PortfolioProject | undefined> {
-  return portfolioData.projects.find((p) => p.slug === slug);
+  return portfolioData.projects.find((p) => p.slug === slug && p.portfolio_enabled);
 }
