@@ -71,9 +71,9 @@ async function fetchPortfolioMd(repoName: string, token: string): Promise<string
 }
 
 async function main() {
-  const token = process.env.GITHUB_TOKEN;
+  const token = process.env.GITHUB_TOKEN || process.env.PROJECT_SYNC_TOKEN;
   if (!token) {
-    console.error('❌ GITHUB_TOKEN environment variable is required');
+    console.error('❌ GITHUB_TOKEN or PROJECT_SYNC_TOKEN environment variable is required');
     process.exit(1);
   }
 
