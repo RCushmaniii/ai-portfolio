@@ -1,27 +1,33 @@
 {
-  "_comment": "Override display order for portfolio projects. Projects listed here appear first in this order. Unlisted projects fall back to their portfolio_priority value.",
+  "_comment": "Override display order for portfolio projects. Top 6 are featured showcase projects. Remaining projects appear after in this order. Unlisted projects fall back to their portfolio_priority value.",
   "order": [
-    "ai-support-chatbot",
-    "ai-resume-tailor",
-    "ai-filesense",
-    "ai-filesense-website",
-    "freelance-income-planner",
-    "cushlabs-writing-system",
+    "converso-ai-chatbot-saas",
+    "ny-ai-chatbot",
     "ny-english-teacher",
-    "ai-webscraper",
-    "ai-chatbot-saas",
-    "react-vite-tailwind-base",
-    "nextjs-react-agency-starter",
-    "nextjs-supabase-auth-starter",
+    "ai-resume-tailor",
+    "context-writing-system",
+    "ai-build-vs-outsource",
+    "comp-plan-simulator",
+    "ai-idea-validator",
+    "freelance-income-planner",
+    "ai-filesense-website",
+    "ai-stock-alert",
+    "ai-filesense",
+    "ai-stock-alert-website",
+    "ai-portfolio",
+    "nextjs-agency-starter",
+    "cushlabs",
     "ai-scrabble-practice",
-    "stock-alert",
-    "component-portfolio",
-    "marble-does-not-yield"
+    "marble-does-not-yield",
+    "mazebreak-trello",
+    "mazebreak-gdd-wiki"
   ],
   "featured": [
-    "ai-support-chatbot",
+    "converso-ai-chatbot-saas",
+    "ny-ai-chatbot",
+    "ny-english-teacher",
     "ai-resume-tailor",
-    "ai-filesense"
-  ],
-  "_disabled_comment": "Projects to disable via PORTFOLIO.md updates: ai-portfolio, rcushmaniii, lua_sprite_running, basic-pacman, lua-love2d-firstgame, lua_save_the_ball, rank-it-better, web-confirmation-project, go-pack, json-updater, calendly-clone, cefr-question-generator, cefr-english-exam, guitar-sample-store, my-guitar-tabs, cushlabs, operating-system, order-now-mvp, yapanow-mvp2, ai-coach-vince"
+    "context-writing-system",
+    "ai-build-vs-outsource"
+  ]
 }

@@ -8,11 +8,16 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cushlabs.ai'),
   title: {
     template: '%s | CushLabs',
     default: 'CushLabs - AI Consulting & Automation',
   },
   description: 'AI automation solutions for SMBs in Mexico and LATAM',
+  openGraph: {
+    siteName: 'CushLabs',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
