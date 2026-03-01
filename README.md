@@ -154,7 +154,7 @@ Guadalajara, Mexico
 
 ## License
 
-MIT License - Free to use for personal or commercial projects.
+© 2026 Robert Cushman. All rights reserved.
 
 ---
 
