@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const dict = t(locale);
 
   return {
-    metadataBase: new URL('https://cushlabs.ai'),
+    metadataBase: new URL('https://ai-portfolio-cushlabs.vercel.app'),
     title: {
       template: '%s | CushLabs',
       default: dict.meta_title,
@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     alternates: {
       languages: {
-        en: 'https://cushlabs.ai',
-        es: 'https://cushlabs.ai/es',
+        en: 'https://ai-portfolio-cushlabs.vercel.app',
+        es: 'https://ai-portfolio-cushlabs.vercel.app/es',
       },
     },
   };

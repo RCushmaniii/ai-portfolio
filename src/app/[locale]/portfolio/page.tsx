@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props) {
     description: dict.meta_portfolio_description,
     alternates: {
       languages: {
-        en: 'https://cushlabs.ai/portfolio',
-        es: 'https://cushlabs.ai/es/portfolio',
+        en: 'https://ai-portfolio-cushlabs.vercel.app/portfolio',
+        es: 'https://ai-portfolio-cushlabs.vercel.app/es/portfolio',
       },
     },
   };

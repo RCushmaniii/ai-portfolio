@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     alternates: {
       languages: {
-        en: `https://cushlabs.ai/portfolio/${slug}`,
-        es: `https://cushlabs.ai/es/portfolio/${slug}`,
+        en: `https://ai-portfolio-cushlabs.vercel.app/portfolio/${slug}`,
+        es: `https://ai-portfolio-cushlabs.vercel.app/es/portfolio/${slug}`,
       },
     },
   };
