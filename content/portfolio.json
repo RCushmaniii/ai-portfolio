@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T06:27:39.955Z",
+  "generated_at": "2026-03-02T06:42:52.255Z",
   "projects": [
     {
       "portfolio_enabled": true,
@@ -59,7 +59,7 @@
       "github_stars": 0,
       "github_forks": 0,
       "github_language": "TypeScript",
-      "github_updated_at": "2026-03-02T06:16:25Z",
+      "github_updated_at": "2026-03-02T06:42:43Z",
       "github_description": "Multi-tenant AI chatbot SaaS platform - Ragbot by CushLabs.AI",
       "github_topics": []
     },
@@ -729,10 +729,10 @@
         "Dark mode with system preference detection"
       ],
       "metrics": [],
-      "demo_url": "https://cushlabs.ai/portfolio",
-      "live_url": "https://cushlabs.ai",
+      "demo_url": "https://ai-portfolio-cushlabs.vercel.app/",
+      "live_url": "https://ai-portfolio-cushlabs.vercel.app",
       "demo_video_url": "/video/portfolio-brief.mp4",
-      "video_poster": "",
+      "video_poster": "/images/portfolio-brief-poster.jpg",
       "hero_images": [
         "/images/portfolio-01.png",
         "/images/portfolio-02.png",
@@ -761,7 +761,7 @@
       "github_stars": 0,
       "github_forks": 0,
       "github_language": "TypeScript",
-      "github_updated_at": "2026-03-02T06:25:09Z",
+      "github_updated_at": "2026-03-02T06:42:42Z",
       "github_description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
       "github_topics": [
         "github-api",
