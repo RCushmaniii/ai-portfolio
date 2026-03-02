@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T17:30:28.527Z",
+  "generated_at": "2026-03-02T19:43:55.224Z",
   "projects": [
     {
       "portfolio_enabled": true,
@@ -947,7 +947,7 @@
       "github_stars": 0,
       "github_forks": 0,
       "github_language": "TypeScript",
-      "github_updated_at": "2026-03-02T17:26:59Z",
+      "github_updated_at": "2026-03-02T17:31:05Z",
       "github_description": "Static portfolio system that syncs project data from GitHub repos into a filterable showcase — Next.js 15, React 19, TypeScript, Tailwind CSS",
       "github_topics": [
         "github-api",
@@ -1429,7 +1429,7 @@
       "github_stars": 0,
       "github_forks": 0,
       "github_language": "Astro",
-      "github_updated_at": "2026-03-02T16:46:56Z",
+      "github_updated_at": "2026-03-02T18:49:26Z",
       "github_description": "AI consulting and software development for SMBs — bilingual (EN/ES) site built with Astro + Tailwind CSS",
       "github_topics": [
         "ai-consulting",
@@ -1505,7 +1505,7 @@
       "github_stars": 1,
       "github_forks": 0,
       "github_language": "TypeScript",
-      "github_updated_at": "2026-02-23T00:24:15Z",
+      "github_updated_at": "2026-03-02T17:38:10Z",
       "github_description": "A practice tool for Scrabble players built with React, Vite, Tailwind, and pnpm. Features include word scoring, word validation via free dictionary APIs, and a rack solver to generate playable words.",
       "github_topics": [
         "anagram-solver",
