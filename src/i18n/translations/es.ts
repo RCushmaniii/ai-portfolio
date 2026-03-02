@@ -2,6 +2,7 @@ export const es = {
   // Nav
   nav_home: 'Inicio',
   nav_portfolio: 'Portafolio',
+  nav_featured: 'Destacados',
 
   // Homepage
   home_title: 'CUSHLABS.AI',
@@ -15,6 +16,21 @@ export const es = {
   featured_subtitle: 'Automatizaciones con IA corriendo en producción ahora mismo',
   featured_view_project: 'Ver Proyecto',
   featured_view_all: 'Ver todos los proyectos',
+
+  // Featured Page
+  featured_page_title: 'Proyectos Destacados',
+  featured_page_subtitle: 'Nuestro mejor trabajo — automatizaciones con IA en producción con resultados reales',
+  featured_card_problem: 'Problema',
+  featured_card_solution: 'Solución',
+  featured_card_outcomes: 'Resultados Clave',
+  featured_card_learn_more: 'Más Información',
+
+  // Mobile Menu
+  mobile_menu_title: 'Menú',
+  mobile_menu_navigation: 'Navegación',
+  mobile_menu_settings: 'Configuración',
+  mobile_menu_theme: 'Tema',
+  mobile_menu_language: 'Idioma',
 
   // Portfolio Grid
   portfolio_title: 'Portafolio',

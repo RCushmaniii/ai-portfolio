@@ -17,7 +17,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             href="https://cushlabs.ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="hover:text-cush-orange transition-colors"
           >
             CUSHLABS.AI
           </a>
@@ -25,7 +25,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             href="https://github.com/RCushmaniii"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors"
+            className="hover:text-cush-orange transition-colors"
             aria-label="GitHub"
           >
             <Github className="h-5 w-5" />

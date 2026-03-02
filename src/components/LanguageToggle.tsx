@@ -27,7 +27,7 @@ export function LanguageToggle({ locale }: LanguageToggleProps) {
         onClick={() => switchTo('en')}
         className={`px-2 py-1 rounded-l-md transition-colors ${
           locale === 'en'
-            ? 'bg-[#FF6A3D] text-white'
+            ? 'bg-cush-orange text-white'
             : 'text-muted-foreground hover:text-foreground'
         }`}
         aria-label="Switch to English"
@@ -38,7 +38,7 @@ export function LanguageToggle({ locale }: LanguageToggleProps) {
         onClick={() => switchTo('es')}
         className={`px-2 py-1 rounded-r-md transition-colors ${
           locale === 'es'
-            ? 'bg-[#FF6A3D] text-white'
+            ? 'bg-cush-orange text-white'
             : 'text-muted-foreground hover:text-foreground'
         }`}
         aria-label="Cambiar a español"
