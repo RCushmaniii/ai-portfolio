@@ -1,24 +1,8 @@
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { SiteHeader } from '@/components/SiteHeader';
-import { SiteFooter } from '@/components/SiteFooter';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  metadataBase: new URL('https://cushlabs.ai'),
-  title: {
-    template: '%s | CushLabs',
-    default: 'CushLabs - AI Consulting & Automation',
-  },
-  description: 'AI automation solutions for SMBs in Mexico and LATAM',
-  openGraph: {
-    siteName: 'CushLabs',
-    type: 'website',
-  },
-};
 
 export default function RootLayout({
   children,
@@ -27,12 +11,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
+            {children}
           </div>
         </ThemeProvider>
       </body>

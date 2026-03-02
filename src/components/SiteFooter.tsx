@@ -1,10 +1,17 @@
 import { Github } from 'lucide-react';
+import { t, interpolate, type Locale } from '@/i18n';
 
-export function SiteFooter() {
+interface SiteFooterProps {
+  locale: Locale;
+}
+
+export function SiteFooter({ locale }: SiteFooterProps) {
+  const dict = t(locale);
+
   return (
     <footer className="border-t py-8 mt-16">
       <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} CushLabs AI Services. All rights reserved.</p>
+        <p>{interpolate(dict.footer_copyright, { year: new Date().getFullYear() })}</p>
         <div className="flex items-center gap-4">
           <a
             href="https://cushlabs.ai"
@@ -12,7 +19,7 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            cushlabs.ai
+            CushLabs.ai
           </a>
           <a
             href="https://github.com/RCushmaniii"

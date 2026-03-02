@@ -3,15 +3,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { t, type Locale } from '@/i18n';
 
 interface SearchInputProps {
   value: string;
   onChange: (value: string) => void;
   resultCount: number;
   totalCount: number;
+  locale: Locale;
 }
 
-export function SearchInput({ value, onChange, resultCount, totalCount }: SearchInputProps) {
+export function SearchInput({ value, onChange, resultCount, totalCount, locale }: SearchInputProps) {
+  const dict = t(locale);
   const [localValue, setLocalValue] = useState(value);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -49,7 +52,7 @@ export function SearchInput({ value, onChange, resultCount, totalCount }: Search
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           type="text"
-          placeholder="Search projects..."
+          placeholder={dict.portfolio_search_placeholder}
           value={localValue}
           onChange={(e) => handleChange(e.target.value)}
           className="pl-9 pr-9"
@@ -66,7 +69,7 @@ export function SearchInput({ value, onChange, resultCount, totalCount }: Search
       </div>
       {showCount && (
         <span className="text-sm text-muted-foreground whitespace-nowrap">
-          {resultCount} of {totalCount} projects
+          {resultCount} {dict.portfolio_of} {totalCount} {dict.portfolio_projects}
         </span>
       )}
     </div>

@@ -7,13 +7,16 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star, ArrowRight } from 'lucide-react';
+import { t, getLocalizedPath, type Locale } from '@/i18n';
 import type { PortfolioProject } from '@/lib/portfolio/types';
 
 interface PortfolioCardProps {
   project: PortfolioProject;
+  locale: Locale;
 }
 
-export const PortfolioCard = memo(function PortfolioCard({ project }: PortfolioCardProps) {
+export const PortfolioCard = memo(function PortfolioCard({ project, locale }: PortfolioCardProps) {
+  const dict = t(locale);
   const [imgError, setImgError] = useState(false);
   const imageSrc = project.thumbnail || project.thumbnail_fallback;
   const showImage = imageSrc && !imgError;
@@ -40,7 +43,7 @@ export const PortfolioCard = memo(function PortfolioCard({ project }: PortfolioC
         )}
         {project.portfolio_featured && (
           <Badge className="absolute top-2 left-2 bg-yellow-500 hover:bg-yellow-600">
-            Featured
+            {dict.card_featured}
           </Badge>
         )}
       </div>
@@ -78,8 +81,8 @@ export const PortfolioCard = memo(function PortfolioCard({ project }: PortfolioC
 
       <CardFooter>
         <Button asChild className="w-full">
-          <Link href={`/portfolio/${project.slug}`}>
-            View Project <ArrowRight className="ml-2 h-4 w-4" />
+          <Link href={getLocalizedPath(`/portfolio/${project.slug}`, locale)}>
+            {dict.card_view_project} <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </CardFooter>

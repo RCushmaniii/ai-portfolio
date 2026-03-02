@@ -2,11 +2,28 @@ import { Suspense } from 'react';
 import { getPortfolioProjects } from '@/lib/portfolio/loader';
 import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
 import { Skeleton } from '@/components/ui/skeleton';
+import { isValidLocale, t, interpolate, type Locale } from '@/i18n';
 
-export const metadata = {
-  title: 'Portfolio',
-  description: 'AI automation projects and solutions by CushLabs',
-};
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const dict = t(locale);
+
+  return {
+    title: dict.portfolio_title,
+    description: dict.meta_portfolio_description,
+    alternates: {
+      languages: {
+        en: 'https://cushlabs.ai/portfolio',
+        es: 'https://cushlabs.ai/es/portfolio',
+      },
+    },
+  };
+}
 
 function PortfolioGridSkeleton() {
   return (
@@ -37,20 +54,23 @@ function PortfolioGridSkeleton() {
   );
 }
 
-export default async function PortfolioPage() {
+export default async function PortfolioPage({ params }: Props) {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const dict = t(locale);
   const projects = await getPortfolioProjects();
 
   return (
     <div className="container py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Portfolio</h1>
+        <h1 className="text-3xl font-bold mb-2">{dict.portfolio_title}</h1>
         <p className="text-muted-foreground">
-          AI-powered solutions and automation projects — {projects.length} projects and counting
+          {interpolate(dict.portfolio_subtitle, { count: projects.length })}
         </p>
       </div>
 
       <Suspense fallback={<PortfolioGridSkeleton />}>
-        <PortfolioGrid projects={projects} />
+        <PortfolioGrid projects={projects} locale={locale} />
       </Suspense>
     </div>
   );

@@ -1,13 +1,17 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Star, GitFork, Calendar, Code2, Activity } from 'lucide-react';
+import { t, type Locale } from '@/i18n';
 import type { PortfolioProject } from '@/lib/portfolio/types';
 
 interface ProjectSidebarProps {
   project: PortfolioProject;
+  locale: Locale;
 }
 
-export function ProjectSidebar({ project }: ProjectSidebarProps) {
+export function ProjectSidebar({ project, locale }: ProjectSidebarProps) {
+  const dict = t(locale);
+
   return (
     <aside className="space-y-6">
       {/* Action Buttons */}
@@ -15,14 +19,14 @@ export function ProjectSidebar({ project }: ProjectSidebarProps) {
         {project.demo_url && (
           <Button asChild className="w-full">
             <a href={project.demo_url} target="_blank" rel="noopener noreferrer">
-              Try Demo <ExternalLink className="ml-2 h-4 w-4" />
+              {dict.sidebar_try_demo} <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
         )}
         {project.live_url && project.live_url !== project.demo_url && (
           <Button variant="secondary" asChild className="w-full">
             <a href={project.live_url} target="_blank" rel="noopener noreferrer">
-              View Live <ExternalLink className="ml-2 h-4 w-4" />
+              {dict.sidebar_view_live} <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
         )}
@@ -35,36 +39,36 @@ export function ProjectSidebar({ project }: ProjectSidebarProps) {
 
       {/* Metadata */}
       <div className="space-y-3 text-sm">
-        <MetadataRow icon={<Activity className="h-4 w-4" />} label="Category">
+        <MetadataRow icon={<Activity className="h-4 w-4" />} label={dict.sidebar_category}>
           <Badge variant="outline">{project.category}</Badge>
         </MetadataRow>
 
-        <MetadataRow icon={<Code2 className="h-4 w-4" />} label="Status">
+        <MetadataRow icon={<Code2 className="h-4 w-4" />} label={dict.sidebar_status}>
           <Badge variant={project.status === 'Production' ? 'default' : 'secondary'}>
             {project.status}
           </Badge>
         </MetadataRow>
 
         {project.github_stars > 0 && (
-          <MetadataRow icon={<Star className="h-4 w-4" />} label="Stars">
+          <MetadataRow icon={<Star className="h-4 w-4" />} label={dict.sidebar_stars}>
             <span>{project.github_stars}</span>
           </MetadataRow>
         )}
 
         {project.github_forks > 0 && (
-          <MetadataRow icon={<GitFork className="h-4 w-4" />} label="Forks">
+          <MetadataRow icon={<GitFork className="h-4 w-4" />} label={dict.sidebar_forks}>
             <span>{project.github_forks}</span>
           </MetadataRow>
         )}
 
         {project.github_language && (
-          <MetadataRow icon={<Code2 className="h-4 w-4" />} label="Language">
+          <MetadataRow icon={<Code2 className="h-4 w-4" />} label={dict.sidebar_language}>
             <span>{project.github_language}</span>
           </MetadataRow>
         )}
 
         {project.date_completed && (
-          <MetadataRow icon={<Calendar className="h-4 w-4" />} label="Completed">
+          <MetadataRow icon={<Calendar className="h-4 w-4" />} label={dict.sidebar_completed}>
             <span>{project.date_completed}</span>
           </MetadataRow>
         )}

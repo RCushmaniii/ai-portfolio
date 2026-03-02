@@ -7,6 +7,7 @@ import { CategoryFilter } from './CategoryFilter';
 import { SortSelect } from './SortSelect';
 import { SearchInput } from './SearchInput';
 import { filterProjects, sortProjects, searchProjects } from '@/lib/portfolio/filters';
+import { t, interpolate, type Locale } from '@/i18n';
 import type { PortfolioProject, PortfolioCategory, SortOption } from '@/lib/portfolio/types';
 
 const VALID_CATEGORIES: ReadonlySet<string> = new Set([
@@ -17,12 +18,14 @@ const VALID_SORTS: ReadonlySet<string> = new Set(['priority', 'recent', 'popular
 
 interface PortfolioGridProps {
   projects: PortfolioProject[];
+  locale: Locale;
 }
 
-export function PortfolioGrid({ projects }: PortfolioGridProps) {
+export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const dict = t(locale);
 
   const rawCategory = searchParams.get('category') || 'all';
   const rawSort = searchParams.get('sort') || 'priority';
@@ -51,8 +54,6 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
     return sortProjects(filtered, sort);
   }, [projects, search, category, sort]);
 
-  const isFiltered = search.length > 0 || category !== 'all';
-
   return (
     <div>
       {/* Search */}
@@ -62,6 +63,7 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
           onChange={(value) => updateParams('search', value)}
           resultCount={filteredAndSorted.length}
           totalCount={projects.length}
+          locale={locale}
         />
       </div>
 
@@ -70,16 +72,21 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
         <CategoryFilter
           value={category}
           onChange={(value) => updateParams('category', value)}
+          locale={locale}
         />
         <SortSelect
           value={sort}
           onChange={(value) => updateParams('sort', value)}
+          locale={locale}
         />
       </div>
 
       {/* Project count */}
       <div className="text-sm text-muted-foreground mb-6">
-        Showing {filteredAndSorted.length} of {projects.length} projects
+        {interpolate(dict.portfolio_showing, {
+          filtered: filteredAndSorted.length,
+          total: projects.length,
+        })}
       </div>
 
       {/* Grid */}
@@ -87,8 +94,8 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
         <div className="text-center py-16">
           <p className="text-muted-foreground mb-4">
             {search
-              ? `No projects found matching "${search}".`
-              : 'No projects found in this category.'}
+              ? interpolate(dict.portfolio_no_results_search, { query: search })
+              : dict.portfolio_no_results_category}
           </p>
           <button
             onClick={() => {
@@ -97,13 +104,13 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
             }}
             className="text-sm text-primary hover:underline"
           >
-            Clear filters
+            {dict.portfolio_clear_filters}
           </button>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAndSorted.map((project) => (
-            <PortfolioCard key={project.slug} project={project} />
+            <PortfolioCard key={project.slug} project={project} locale={locale} />
           ))}
         </div>
       )}

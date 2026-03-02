@@ -3,26 +3,33 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { t, getLocalizedPath, type Locale } from '@/i18n';
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Portfolio' },
-];
+interface SiteHeaderProps {
+  locale: Locale;
+}
 
-export function SiteHeader() {
+export function SiteHeader({ locale }: SiteHeaderProps) {
   const pathname = usePathname();
+  const dict = t(locale);
+
+  const navLinks = [
+    { href: getLocalizedPath('/', locale), label: dict.nav_home },
+    { href: getLocalizedPath('/portfolio', locale), label: dict.nav_portfolio },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          CushLabs
+        <Link href={getLocalizedPath('/', locale)} className="flex items-center gap-2 font-bold text-lg">
+          Cush<span className="text-[#FF6A3D]">LABS</span>
         </Link>
 
         <nav className="flex items-center gap-1">
           {navLinks.map((link) => {
-            const isActive = link.href === '/'
-              ? pathname === '/'
+            const isActive = link.href === getLocalizedPath('/', locale)
+              ? pathname === link.href
               : pathname.startsWith(link.href);
 
             return (
@@ -39,6 +46,7 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <LanguageToggle locale={locale} />
           <ThemeToggle />
         </nav>
       </div>

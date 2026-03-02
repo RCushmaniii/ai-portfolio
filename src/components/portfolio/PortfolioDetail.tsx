@@ -7,26 +7,29 @@ import { HighlightBoxes } from './HighlightBoxes';
 import { ProjectSidebar } from './ProjectSidebar';
 import { ProjectAside } from './ProjectAside';
 import { Check } from 'lucide-react';
+import { t, type Locale } from '@/i18n';
 import type { PortfolioProject } from '@/lib/portfolio/types';
 
 interface PortfolioDetailProps {
   project: PortfolioProject;
+  locale: Locale;
 }
 
-export function PortfolioDetail({ project }: PortfolioDetailProps) {
+export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
+  const dict = t(locale);
   const displayTitle = project.headline || project.title;
   const displaySubtitle = project.subheadline || project.tagline;
 
   return (
     <div>
-      <Breadcrumb projectTitle={project.title} />
+      <Breadcrumb projectTitle={project.title} locale={locale} />
 
       {/* 3-column layout: sidebar | main | aside */}
       <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] gap-8">
         {/* Left sidebar — sticky on desktop, inline on mobile */}
         <div className="order-2 lg:order-1">
           <div className="lg:sticky lg:top-20">
-            <ProjectSidebar project={project} />
+            <ProjectSidebar project={project} locale={locale} />
           </div>
         </div>
 
@@ -41,7 +44,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
               <Badge>{project.category}</Badge>
               <Badge variant="outline">{project.status}</Badge>
               {project.portfolio_featured && (
-                <Badge className="bg-yellow-500 hover:bg-yellow-600">Featured</Badge>
+                <Badge className="bg-yellow-500 hover:bg-yellow-600">{dict.card_featured}</Badge>
               )}
             </div>
 
@@ -52,7 +55,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
           {/* Video */}
           {project.video_url && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3">Demo Video</h2>
+              <h2 className="text-xl font-semibold mb-3">{dict.detail_demo_video}</h2>
               <video
                 controls
                 preload="metadata"
@@ -67,12 +70,12 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
 
           {/* Highlight Boxes */}
           <div className="mb-8">
-            <HighlightBoxes project={project} />
+            <HighlightBoxes project={project} locale={locale} />
           </div>
 
           {/* Mobile-only: Tech stack (shown inline before content on small screens) */}
           <div className="lg:hidden mb-8">
-            <ProjectAside project={project} />
+            <ProjectAside project={project} locale={locale} />
           </div>
 
           {/* Problem & Solution */}
@@ -80,13 +83,13 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
             <section className="mb-8 grid md:grid-cols-2 gap-6">
               {project.problem && (
                 <div>
-                  <h2 className="text-xl font-semibold mb-3">The Problem</h2>
+                  <h2 className="text-xl font-semibold mb-3">{dict.detail_problem}</h2>
                   <p className="text-muted-foreground">{project.problem}</p>
                 </div>
               )}
               {project.solution && (
                 <div>
-                  <h2 className="text-xl font-semibold mb-3">The Solution</h2>
+                  <h2 className="text-xl font-semibold mb-3">{dict.detail_solution}</h2>
                   <p className="text-muted-foreground">{project.solution}</p>
                 </div>
               )}
@@ -96,7 +99,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
           {/* Key Features */}
           {project.key_features.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3">Key Features</h2>
+              <h2 className="text-xl font-semibold mb-3">{dict.detail_key_features}</h2>
               <ul className="space-y-2">
                 {project.key_features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -111,7 +114,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
           {/* Metrics */}
           {project.metrics.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3">Results</h2>
+              <h2 className="text-xl font-semibold mb-3">{dict.detail_results}</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {project.metrics.map((metric, i) => (
                   <div key={i} className="p-4 bg-muted rounded-lg text-center">
@@ -143,13 +146,13 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
 
           {/* CTA */}
           <section className="mt-12 p-6 bg-muted rounded-lg text-center">
-            <h2 className="text-xl font-semibold mb-2">Ready to discuss a similar solution?</h2>
+            <h2 className="text-xl font-semibold mb-2">{dict.detail_cta_title}</h2>
             <p className="text-muted-foreground mb-4">
-              Let&apos;s explore how AI automation can help your business.
+              {dict.detail_cta_subtitle}
             </p>
             <Button size="lg" asChild>
               <a href="https://cushlabs.ai/contact" rel="noopener noreferrer">
-                Schedule a Consultation
+                {dict.detail_cta_button}
               </a>
             </Button>
           </section>
@@ -158,7 +161,7 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
         {/* Right aside — sticky on desktop, hidden on mobile (shown inline above) */}
         <div className="hidden lg:block order-3">
           <div className="lg:sticky lg:top-20">
-            <ProjectAside project={project} />
+            <ProjectAside project={project} locale={locale} />
           </div>
         </div>
       </div>

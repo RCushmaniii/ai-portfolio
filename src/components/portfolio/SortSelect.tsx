@@ -7,24 +7,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { t, type Locale } from '@/i18n';
 import type { SortOption } from '@/lib/portfolio/types';
-
-const SORT_OPTIONS: Array<{ value: SortOption; label: string }> = [
-  { value: 'priority', label: 'Priority' },
-  { value: 'recent', label: 'Most Recent' },
-  { value: 'popular', label: 'Most Popular' },
-];
 
 interface SortSelectProps {
   value: SortOption;
   onChange: (value: string) => void;
+  locale: Locale;
 }
 
-export function SortSelect({ value, onChange }: SortSelectProps) {
+export function SortSelect({ value, onChange, locale }: SortSelectProps) {
+  const dict = t(locale);
+
+  const SORT_OPTIONS: Array<{ value: SortOption; label: string }> = [
+    { value: 'priority', label: dict.sort_priority },
+    { value: 'recent', label: dict.sort_recent },
+    { value: 'popular', label: dict.sort_popular },
+  ];
+
   return (
     <Select value={value} onValueChange={onChange}>
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Sort by" />
+        <SelectValue placeholder={dict.sort_by} />
       </SelectTrigger>
       <SelectContent>
         {SORT_OPTIONS.map((option) => (
