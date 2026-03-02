@@ -22,7 +22,7 @@ tags:
   - "tailwind"
   - "shadcn-ui"
 
-thumbnail: "/images/portfolio-01.png"
+thumbnail: "/images/portfolio-card.jpg"
 hero_images:
   - "/images/portfolio-01.png"
   - "/images/portfolio-02.png"
