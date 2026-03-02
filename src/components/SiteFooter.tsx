@@ -19,7 +19,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            CushLabs.ai
+            CUSHLABS.AI
           </a>
           <a
             href="https://github.com/RCushmaniii"

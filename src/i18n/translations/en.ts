@@ -4,15 +4,15 @@ export const en = {
   nav_portfolio: 'Portfolio',
 
   // Homepage
-  home_title: 'CushLabs.ai',
-  home_subtitle: 'AI Consulting & Automation for SMBs',
+  home_title: 'CUSHLABS.AI',
+  home_subtitle: 'AI That Works While You Sleep',
   home_description:
-    'Custom AI solutions that reduce manual work, cut response times, and scale operations — built by Robert Cushman for businesses in Mexico and LATAM. Browse the portfolio to see real projects in production.',
-  home_cta: 'View Portfolio',
+    'We build AI automations that eliminate busywork, speed up response times, and scale your operations — so you can focus on growing your business. Real solutions, already in production.',
+  home_cta: 'See What We Build',
 
   // Featured Work
   featured_title: 'Featured Work',
-  featured_subtitle: 'Recent AI automation projects in production',
+  featured_subtitle: 'AI automations running in production right now',
   featured_view_project: 'View Project',
   featured_view_all: 'View all projects',
 
@@ -75,11 +75,11 @@ export const en = {
   breadcrumb_portfolio: 'Portfolio',
 
   // Footer
-  footer_copyright: '© {year} CushLabs AI Services. All rights reserved.',
+  footer_copyright: '© {year} CUSHLABS AI Services. All rights reserved.',
 
   // Metadata
-  meta_title: 'CushLabs - AI Consulting & Automation',
+  meta_title: 'CUSHLABS - AI Consulting & Automation',
   meta_description: 'AI automation solutions for SMBs in Mexico and LATAM',
-  meta_portfolio_description: 'AI automation projects and solutions by CushLabs',
+  meta_portfolio_description: 'AI automation projects and solutions by CUSHLABS',
   meta_not_found: 'Project Not Found',
 } as const;

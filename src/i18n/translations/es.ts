@@ -4,15 +4,15 @@ export const es = {
   nav_portfolio: 'Portafolio',
 
   // Homepage
-  home_title: 'CushLabs.ai',
-  home_subtitle: 'Consultoría en IA y Automatización para PyMEs',
+  home_title: 'CUSHLABS.AI',
+  home_subtitle: 'IA Que Trabaja Mientras Duermes',
   home_description:
-    'Soluciones de IA personalizadas que reducen trabajo manual, acortan tiempos de respuesta y escalan operaciones — desarrolladas por Robert Cushman para negocios en México y LATAM. Explora el portafolio para ver proyectos reales en producción.',
-  home_cta: 'Ver Portafolio',
+    'Creamos automatizaciones con IA que eliminan trabajo repetitivo, aceleran tiempos de respuesta y escalan tus operaciones — para que te enfoques en hacer crecer tu negocio. Soluciones reales, ya en producción.',
+  home_cta: 'Mira Lo Que Construimos',
 
   // Featured Work
   featured_title: 'Trabajo Destacado',
-  featured_subtitle: 'Proyectos recientes de automatización con IA en producción',
+  featured_subtitle: 'Automatizaciones con IA corriendo en producción ahora mismo',
   featured_view_project: 'Ver Proyecto',
   featured_view_all: 'Ver todos los proyectos',
 
@@ -76,11 +76,11 @@ export const es = {
   breadcrumb_portfolio: 'Portafolio',
 
   // Footer
-  footer_copyright: '© {year} CushLabs AI Services. Todos los derechos reservados.',
+  footer_copyright: '© {year} CUSHLABS AI Services. Todos los derechos reservados.',
 
   // Metadata
-  meta_title: 'CushLabs - Consultoría en IA y Automatización',
+  meta_title: 'CUSHLABS - Consultoría en IA y Automatización',
   meta_description: 'Soluciones de automatización con IA para PyMEs en México y LATAM',
-  meta_portfolio_description: 'Proyectos de automatización con IA por CushLabs',
+  meta_portfolio_description: 'Proyectos de automatización con IA por CUSHLABS',
   meta_not_found: 'Proyecto No Encontrado',
 } as const;

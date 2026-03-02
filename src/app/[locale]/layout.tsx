@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     metadataBase: new URL('https://ai-portfolio-cushlabs.vercel.app'),
     title: {
-      template: '%s | CushLabs',
+      template: '%s | CUSHLABS',
       default: dict.meta_title,
     },
     description: dict.meta_description,
     openGraph: {
-      siteName: 'CushLabs',
+      siteName: 'CUSHLABS',
       type: 'website',
     },
     alternates: {

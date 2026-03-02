@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: project.title,
       description: project.tagline,
       type: 'article',
-      siteName: 'CushLabs',
+      siteName: 'CUSHLABS',
       url: locale === 'es' ? `/es/portfolio/${project.slug}` : `/portfolio/${project.slug}`,
       images: project.thumbnail ? [project.thumbnail] : [],
     },
