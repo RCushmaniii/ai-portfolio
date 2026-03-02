@@ -4,6 +4,8 @@ import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
 import { Skeleton } from '@/components/ui/skeleton';
 import { isValidLocale, t, interpolate, type Locale } from '@/i18n';
 
+const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -17,9 +19,10 @@ export async function generateMetadata({ params }: Props) {
     title: dict.portfolio_title,
     description: dict.meta_portfolio_description,
     alternates: {
+      canonical: locale === 'es' ? `${BASE_URL}/es/portfolio` : `${BASE_URL}/portfolio`,
       languages: {
-        en: 'https://ai-portfolio-cushlabs.vercel.app/portfolio',
-        es: 'https://ai-portfolio-cushlabs.vercel.app/es/portfolio',
+        en: `${BASE_URL}/portfolio`,
+        es: `${BASE_URL}/es/portfolio`,
       },
     },
   };

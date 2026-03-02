@@ -717,7 +717,7 @@
         "GitHub API",
         "Vercel"
       ],
-      "thumbnail": "/images/portfolio-card.jpg",
+      "thumbnail": "/images/portfolio-card.webp",
       "status": "Production",
       "problem": "Maintaining a portfolio across dozens of GitHub repositories creates a content\nmanagement problem. Project descriptions, tech stacks, and status information\nscatter across READMEs and repo settings with no unified display layer. A\nseparate portfolio site inevitably falls out of sync with the actual work.\n",
       "solution": "",
@@ -732,18 +732,18 @@
       "demo_url": "https://ai-portfolio-cushlabs.vercel.app/",
       "live_url": "https://ai-portfolio-cushlabs.vercel.app",
       "demo_video_url": "/video/portfolio-brief.mp4",
-      "video_poster": "/images/portfolio-brief-poster.jpg",
+      "video_poster": "/images/portfolio-brief-poster.webp",
       "hero_images": [
-        "/images/portfolio-01.png",
-        "/images/portfolio-02.png",
-        "/images/portfolio-03.png",
-        "/images/portfolio-04.png",
-        "/images/portfolio-05.png",
-        "/images/portfolio-06.png",
-        "/images/portfolio-07.png",
-        "/images/portfolio-08.png",
-        "/images/portfolio-09.png",
-        "/images/portfolio-10.png"
+        "/images/portfolio-01.webp",
+        "/images/portfolio-02.webp",
+        "/images/portfolio-03.webp",
+        "/images/portfolio-04.webp",
+        "/images/portfolio-05.webp",
+        "/images/portfolio-06.webp",
+        "/images/portfolio-07.webp",
+        "/images/portfolio-08.webp",
+        "/images/portfolio-09.webp",
+        "/images/portfolio-10.webp"
       ],
       "tags": [
         "portfolio",

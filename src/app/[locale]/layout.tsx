@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
+import { JsonLd } from '@/components/JsonLd';
 import { isValidLocale, LOCALES, t, type Locale } from '@/i18n';
+
+const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const dict = t(locale);
 
   return {
-    metadataBase: new URL('https://ai-portfolio-cushlabs.vercel.app'),
+    metadataBase: new URL(BASE_URL),
     title: {
       template: '%s | CUSHLABS',
       default: dict.meta_title,
@@ -31,9 +34,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       type: 'website',
     },
     alternates: {
+      canonical: locale === 'es' ? `${BASE_URL}/es` : BASE_URL,
       languages: {
-        en: 'https://ai-portfolio-cushlabs.vercel.app',
-        es: 'https://ai-portfolio-cushlabs.vercel.app/es',
+        en: BASE_URL,
+        es: `${BASE_URL}/es`,
       },
     },
   };
@@ -50,6 +54,24 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'CushLabs AI Services',
+          url: 'https://ai-portfolio-cushlabs.vercel.app',
+          logo: 'https://ai-portfolio-cushlabs.vercel.app/favicon.svg',
+          founder: {
+            '@type': 'Person',
+            name: 'Robert Cushman',
+            jobTitle: 'Business Solution Architect & Full-Stack Developer',
+          },
+          sameAs: [
+            'https://github.com/RCushmaniii',
+            'https://linkedin.com/in/robertcushman',
+          ],
+        }}
+      />
       <SiteHeader locale={locale} />
       <main className="flex-1">{children}</main>
       <SiteFooter locale={locale} />

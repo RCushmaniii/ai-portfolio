@@ -2,7 +2,36 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPortfolioProjects, getProjectBySlug } from '@/lib/portfolio/loader';
 import { PortfolioDetail } from '@/components/portfolio/PortfolioDetail';
+import { JsonLd } from '@/components/JsonLd';
 import { isValidLocale, LOCALES, t, type Locale } from '@/i18n';
+
+const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
+
+const SOFTWARE_CATEGORIES = new Set([
+  'AI Automation',
+  'Tools',
+  'Developer Tools',
+  'Templates',
+]);
+
+function getProjectJsonLd(project: Awaited<ReturnType<typeof getProjectBySlug>>) {
+  if (!project) return null;
+  const isSoftware = SOFTWARE_CATEGORIES.has(project.category);
+  return {
+    '@context': 'https://schema.org',
+    '@type': isSoftware ? 'SoftwareApplication' : 'CreativeWork',
+    name: project.title,
+    description: project.tagline,
+    url: `${BASE_URL}/portfolio/${project.slug}`,
+    ...(project.thumbnail ? { image: project.thumbnail } : {}),
+    applicationCategory: project.category,
+    author: {
+      '@type': 'Person',
+      name: 'Robert Cushman',
+    },
+    ...(isSoftware && project.live_url ? { installUrl: project.live_url } : {}),
+  };
+}
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -33,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.tagline,
       type: 'article',
       siteName: 'CUSHLABS',
-      url: locale === 'es' ? `/es/portfolio/${project.slug}` : `/portfolio/${project.slug}`,
+      url: locale === 'es' ? `${BASE_URL}/es/portfolio/${project.slug}` : `${BASE_URL}/portfolio/${project.slug}`,
       images: project.thumbnail ? [project.thumbnail] : [],
     },
     twitter: {
@@ -43,9 +72,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: project.thumbnail ? [project.thumbnail] : [],
     },
     alternates: {
+      canonical: locale === 'es'
+        ? `${BASE_URL}/es/portfolio/${slug}`
+        : `${BASE_URL}/portfolio/${slug}`,
       languages: {
-        en: `https://ai-portfolio-cushlabs.vercel.app/portfolio/${slug}`,
-        es: `https://ai-portfolio-cushlabs.vercel.app/es/portfolio/${slug}`,
+        en: `${BASE_URL}/portfolio/${slug}`,
+        es: `${BASE_URL}/es/portfolio/${slug}`,
       },
     },
   };
@@ -60,8 +92,39 @@ export default async function ProjectPage({ params }: Props) {
     notFound();
   }
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: locale === 'es' ? 'Inicio' : 'Home',
+        item: locale === 'es' ? `${BASE_URL}/es` : BASE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Portfolio',
+        item: locale === 'es' ? `${BASE_URL}/es/portfolio` : `${BASE_URL}/portfolio`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: project.title,
+        item: locale === 'es'
+          ? `${BASE_URL}/es/portfolio/${project.slug}`
+          : `${BASE_URL}/portfolio/${project.slug}`,
+      },
+    ],
+  };
+
+  const projectLd = getProjectJsonLd(project);
+
   return (
     <div className="container py-8">
+      <JsonLd data={breadcrumbLd} />
+      {projectLd && <JsonLd data={projectLd} />}
       <PortfolioDetail project={project} locale={locale} />
     </div>
   );

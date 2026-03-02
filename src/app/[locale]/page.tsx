@@ -1,11 +1,45 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FeaturedWork } from '@/components/portfolio/FeaturedWork';
 import { getPortfolioProjects } from '@/lib/portfolio/loader';
 import { isValidLocale, t, getLocalizedPath, type Locale } from '@/i18n';
 
+const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
+
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const dict = t(locale);
+  const canonical = locale === 'es' ? `${BASE_URL}/es` : BASE_URL;
+
+  return {
+    title: dict.meta_title,
+    description: dict.meta_description,
+    alternates: {
+      canonical,
+      languages: {
+        en: BASE_URL,
+        es: `${BASE_URL}/es`,
+      },
+    },
+    openGraph: {
+      title: dict.meta_title,
+      description: dict.meta_description,
+      url: canonical,
+      siteName: 'CUSHLABS',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: dict.meta_title,
+      description: dict.meta_description,
+    },
+  };
 }
 
 export default async function HomePage({ params }: Props) {

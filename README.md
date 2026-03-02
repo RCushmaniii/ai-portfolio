@@ -2,22 +2,22 @@
 
 ![Next.js](https://img.shields.io/badge/Next.js_15-black?style=flat-square&logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![React 19](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vercel](https://img.shields.io/badge/Vercel-000?style=flat-square&logo=vercel)
 
-> A static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase.
+> A bilingual (EN/ES) static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase with SEO optimization and WebP images.
 
 **Live Demo:** [ai-portfolio-cushlabs.vercel.app](https://ai-portfolio-cushlabs.vercel.app/)
 
 ## Screenshots
 
-![Screenshot 1](public/images/portfolio-01.png)
-![Screenshot 2](public/images/portfolio-02.png)
-![Screenshot 3](public/images/portfolio-03.png)
-![Screenshot 4](public/images/portfolio-04.png)
-![Screenshot 5](public/images/portfolio-05.png)
-![Screenshot 6](public/images/portfolio-06.png)
-![Screenshot 7](public/images/portfolio-07.png)
-![Screenshot 8](public/images/portfolio-08.png)
-![Screenshot 9](public/images/portfolio-09.png)
-![Screenshot 10](public/images/portfolio-10.png)
+![Screenshot 1](public/images/portfolio-01.webp)
+![Screenshot 2](public/images/portfolio-02.webp)
+![Screenshot 3](public/images/portfolio-03.webp)
+![Screenshot 4](public/images/portfolio-04.webp)
+![Screenshot 5](public/images/portfolio-05.webp)
+![Screenshot 6](public/images/portfolio-06.webp)
+![Screenshot 7](public/images/portfolio-07.webp)
+![Screenshot 8](public/images/portfolio-08.webp)
+![Screenshot 9](public/images/portfolio-09.webp)
+![Screenshot 10](public/images/portfolio-10.webp)
 
 ## Overview
 
@@ -48,6 +48,9 @@ On the display side, Next.js App Router serves statically-generated pages. A ser
 - **Server/client component split**: Pages load data server-side via `fs`; filtering runs client-side via pure functions in `filters.ts`
 - **URL-driven state**: Category and sort selections stored in search params for shareable, bookmarkable filtered views
 - **Order override system**: A `portfolio-order.json` config controls display priority and featured badges without code changes
+- **Bilingual (EN/ES)**: Full internationalization with middleware-based locale routing
+- **WebP images**: All local images converted to WebP (93% size reduction)
+- **SEO optimized**: Dynamic sitemap, robots.txt, JSON-LD structured data, canonical URLs, theme-color
 - **Dark mode**: System-preference-aware theme switching via `next-themes`
 - **Image security**: `next.config.ts` restricts remote images to GitHub-hosted domains only
 - **shadcn/ui components**: Accessible, Tailwind-native UI components with consistent design tokens
@@ -114,20 +117,28 @@ ai-portfolio/
 │   └── generate-portfolio.ts    # PORTFOLIO.md generator
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx             # Home page
-│   │   └── portfolio/
-│   │       ├── page.tsx         # Portfolio grid
-│   │       └── [slug]/page.tsx  # Project detail
+│   │   ├── layout.tsx           # Root layout (viewport/theme-color)
+│   │   ├── sitemap.ts           # Dynamic sitemap with i18n alternates
+│   │   ├── robots.ts            # Robots.txt (allow all)
+│   │   └── [locale]/
+│   │       ├── layout.tsx       # Locale layout (metadata, JSON-LD)
+│   │       ├── page.tsx         # Home page
+│   │       ├── featured/        # Featured projects page
+│   │       └── portfolio/
+│   │           ├── page.tsx     # Portfolio grid
+│   │           └── [slug]/      # Project detail (JSON-LD)
 │   ├── components/
+│   │   ├── JsonLd.tsx           # Reusable JSON-LD structured data
 │   │   ├── portfolio/           # Portfolio-specific components
 │   │   └── ui/                  # shadcn/ui (generated)
+│   ├── i18n/                    # Internationalization (EN/ES)
 │   └── lib/
 │       └── portfolio/
 │           ├── loader.ts        # Server-side data loading
 │           ├── schema.ts        # Zod validation & transforms
 │           ├── types.ts         # TypeScript interfaces
 │           └── filters.ts       # Client-safe filter functions
-└── docs/                        # Architecture & reference docs
+└── docs/                        # Architecture & lessons learned
 ```
 
 ## Deployment
@@ -147,7 +158,7 @@ The sync script runs locally (or in CI) before deployment. The build itself requ
 ## Results
 
 **Portfolio System:**
-- 15+ active projects displayed across 7 categories
+- 18 active projects displayed across 7 categories
 - Content managed entirely through PORTFOLIO.md files in source repositories
 - Zero runtime API calls — fully static, sub-second page loads
 - Featured project highlighting and priority-based ordering without code changes
@@ -173,4 +184,4 @@ Guadalajara, Mexico
 
 ---
 
-*Last Updated: 2026-03-01*
+*Last Updated: 2026-03-02*

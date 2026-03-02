@@ -2,6 +2,8 @@ import { getPortfolioProjects } from '@/lib/portfolio/loader';
 import { FeaturedShowcase } from '@/components/portfolio/FeaturedShowcase';
 import { isValidLocale, t, type Locale } from '@/i18n';
 
+const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -15,9 +17,10 @@ export async function generateMetadata({ params }: Props) {
     title: dict.featured_page_title,
     description: dict.featured_page_subtitle,
     alternates: {
+      canonical: locale === 'es' ? `${BASE_URL}/es/featured` : `${BASE_URL}/featured`,
       languages: {
-        en: 'https://ai-portfolio-cushlabs.vercel.app/featured',
-        es: 'https://ai-portfolio-cushlabs.vercel.app/es/featured',
+        en: `${BASE_URL}/featured`,
+        es: `${BASE_URL}/es/featured`,
       },
     },
   };

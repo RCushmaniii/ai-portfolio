@@ -1,8 +1,8 @@
 {
   "ai-portfolio": {
-    "thumbnail": "/images/portfolio-card.jpg",
+    "thumbnail": "/images/portfolio-card.webp",
     "video_url": "/video/portfolio-brief.mp4",
-    "video_poster": "/images/portfolio-brief-poster.jpg"
+    "video_poster": "/images/portfolio-brief-poster.webp"
   },
   "context-writing-system": {
     "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/context-writing-system/main/public/images/context-writing-system-thumb.jpg"
