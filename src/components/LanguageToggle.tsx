@@ -13,6 +13,8 @@ export function LanguageToggle({ locale }: LanguageToggleProps) {
 
   const switchTo = (target: Locale) => {
     if (target === locale) return;
+    // Persist choice in cookie so middleware remembers it
+    document.cookie = `locale=${target}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
     // Strip /es prefix from current path to get the base path
     const basePath = pathname.replace(/^\/es(\/|$)/, '/');
     const newPath = getLocalizedPath(basePath, target);
