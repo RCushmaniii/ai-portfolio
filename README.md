@@ -4,6 +4,19 @@
 
 > A static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase.
 
+## Screenshots
+
+![Screenshot 1](public/images/portfolio-01.png)
+![Screenshot 2](public/images/portfolio-02.png)
+![Screenshot 3](public/images/portfolio-03.png)
+![Screenshot 4](public/images/portfolio-04.png)
+![Screenshot 5](public/images/portfolio-05.png)
+![Screenshot 6](public/images/portfolio-06.png)
+![Screenshot 7](public/images/portfolio-07.png)
+![Screenshot 8](public/images/portfolio-08.png)
+![Screenshot 9](public/images/portfolio-09.png)
+![Screenshot 10](public/images/portfolio-10.png)
+
 ## Overview
 
 AI Portfolio is a Next.js application that powers the project showcase at [cushlabs.ai](https://cushlabs.ai). Rather than maintaining portfolio content in a CMS or database, each GitHub repository contains a `PORTFOLIO.md` file with structured YAML frontmatter. A sync script fetches these files, validates them with Zod, enriches the data with GitHub API metadata (stars, forks, language, topics), and generates a static JSON file consumed at build time.

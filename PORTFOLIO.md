@@ -22,9 +22,19 @@ tags:
   - "tailwind"
   - "shadcn-ui"
 
-thumbnail: ""
-hero_images: []
-demo_video_url: ""
+thumbnail: "/images/portfolio-01.png"
+hero_images:
+  - "/images/portfolio-01.png"
+  - "/images/portfolio-02.png"
+  - "/images/portfolio-03.png"
+  - "/images/portfolio-04.png"
+  - "/images/portfolio-05.png"
+  - "/images/portfolio-06.png"
+  - "/images/portfolio-07.png"
+  - "/images/portfolio-08.png"
+  - "/images/portfolio-09.png"
+  - "/images/portfolio-10.png"
+demo_video_url: "/video/portfolio-brief.mp4"
 
 live_url: "https://cushlabs.ai"
 demo_url: "https://cushlabs.ai/portfolio"

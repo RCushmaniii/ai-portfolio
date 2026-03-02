@@ -4,6 +4,7 @@ import type { PortfolioProject, PortfolioData } from './types';
 export { filterProjects, sortProjects, searchProjects } from './filters';
 
 const GITHUB_OWNER = 'RCushmaniii';
+const SELF_REPO = 'ai-portfolio'; // This app's own repo — local paths stay relative
 
 // Order configuration type
 interface PortfolioOrderConfig {
@@ -42,6 +43,8 @@ function resolveAssetUrl(
   const cleanPath = assetPath.startsWith('/public/')
     ? assetPath.replace('/public', '')
     : assetPath;
+  // Self-repo: assets live in this app's own public/ dir, keep paths relative
+  if (repoName === SELF_REPO) return cleanPath;
   // Resolve against deploy URL if available
   if (deployUrl) {
     const base = deployUrl.replace(/\/+$/, '');
@@ -92,7 +95,8 @@ try {
       .filter((url): url is string => url !== null);
 
     // Resolve video URL and poster from overrides
-    const videoUrl = overrides.video_url || p.demo_video_url || '';
+    const rawVideoUrl = overrides.video_url || p.demo_video_url || '';
+    const videoUrl = resolveAssetUrl(rawVideoUrl, p.repo_name, deployUrl) || '';
     const videoPoster = overrides.video_poster
       ? resolveAssetUrl(overrides.video_poster, p.repo_name, deployUrl) || ''
       : '';
