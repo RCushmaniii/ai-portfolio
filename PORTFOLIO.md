@@ -5,7 +5,7 @@
 portfolio_enabled: true
 portfolio_priority: 4
 portfolio_featured: false
-portfolio_last_reviewed: "2026-03-01"
+portfolio_last_reviewed: "2026-03-02"
 
 title: "AI Portfolio"
 tagline: "A static portfolio system that syncs project data from GitHub repos into a filterable showcase"
@@ -68,10 +68,11 @@ problem_solved: |
   separate portfolio site inevitably falls out of sync with the actual work.
 
 key_outcomes:
-  - "15+ projects aggregated from GitHub repos into a single filterable interface"
+  - "21 projects aggregated from GitHub repos into a single filterable interface"
+  - "Client-side search, category filtering, and sort — all via shareable URL params"
   - "Zero runtime API calls — fully static, sub-second page loads"
   - "Content managed through PORTFOLIO.md files co-located with source code"
-  - "Featured project highlighting and priority ordering without code changes"
+  - "Featured project showcase with curated top-6 selection"
   - "Dark mode with system preference detection"
 
 tech_stack:
@@ -105,13 +106,18 @@ The result is a portfolio site with zero runtime dependencies on external APIs. 
 
 **Automated data pipeline:** A TypeScript sync script queries GitHub for all repositories, fetches and parses each PORTFOLIO.md, validates data through a Zod schema with backward-compatible transforms, and outputs a single JSON file.
 
-**Static rendering:** Next.js App Router serves statically-generated pages. Server components load the JSON at build time while client components handle interactive filtering and sorting through URL search parameters.
+**Client-side search, filter & sort:** The portfolio page uses URL search params for all filter state — debounced text search, tab-based category filtering, and sort dropdown — making filtered views shareable and bookmarkable with zero server round-trips.
+
+**Featured showcase:** A dedicated featured page highlights the top 6 projects server-side at build time, with larger cards showing problem/solution/outcomes sections. Display order and featured badges are controlled via a `portfolio-order.json` config file.
+
+**Static rendering:** Next.js App Router serves statically-generated pages. Server components load the JSON at build time while client components handle interactive filtering and sorting.
 
 ## Technical Highlights
 
 - **Zod schema with backward-compatible transforms:** Normalizes old and new PORTFOLIO.md formats automatically during sync
 - **Server/client component split:** `loader.ts` reads data server-side via `fs`; `filters.ts` provides pure functions safe for client components
-- **URL-driven filter state:** Category and sort selections stored in search params for shareable, bookmarkable views
+- **URL-driven filter state:** Category and sort selections stored in search params for shareable, bookmarkable views via debounced search, tab-based category filter, and sort dropdown (all shadcn/ui components)
+- **Featured page:** Server-side filtered showcase with larger cards showing problem/solution/outcomes — no client JS needed
 - **Order override config:** `portfolio-order.json` controls display priority and featured badges without touching code
 - **Image domain security:** `next.config.ts` restricts remote images to GitHub-hosted domains only
 - **Suspense boundary for useSearchParams:** Required by Next.js 15 for static generation with client-side URL state
@@ -119,9 +125,10 @@ The result is a portfolio site with zero runtime dependencies on external APIs. 
 ## Results
 
 **For the End User:**
-- Professional portfolio browsable by category with instant client-side filtering
+- 21 projects browsable by category with instant client-side search, filtering, and sorting
+- Featured showcase highlighting the 6 strongest projects with detailed breakdowns
 - Responsive detail pages with image carousels, tech stack display, and markdown rendering
-- Fast page loads with no spinner or loading state for initial content
+- Filtered views shareable via URL — bookmarkable category/sort combinations
 
 **Technical Demonstration:**
 - End-to-end TypeScript with strict mode and Zod validation at the data boundary
