@@ -18,6 +18,7 @@ interface ProjectOverride {
   good_for?: string[];
   not_for?: string[];
   what_you_get?: string[];
+  thumbnail?: string;
   video_url?: string;
   video_poster?: string;
 }
@@ -81,8 +82,9 @@ try {
     // Use live_url or demo_url as the deploy URL for asset resolution
     const deployUrl = p.live_url || p.demo_url || null;
 
-    // Resolve thumbnail path to absolute URL
-    const resolvedThumbnail = resolveAssetUrl(p.thumbnail, p.repo_name, deployUrl);
+    // Resolve thumbnail: override takes priority, then PORTFOLIO.md value
+    const thumbnailSource = overrides.thumbnail || p.thumbnail;
+    const resolvedThumbnail = resolveAssetUrl(thumbnailSource, p.repo_name, deployUrl);
 
     // Resolve hero images
     const resolvedHeroImages = p.hero_images

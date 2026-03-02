@@ -1,4 +1,7 @@
 {
+  "context-writing-system": {
+    "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/context-writing-system/main/public/images/context-writing-system-thumb.jpg"
+  },
   "cushlabs": {
     "video_url": "https://cushlabs.ai/images/portfolio/cushlabs-brief.mp4",
     "video_poster": "/images/portfolio/cushlabs-video-poster.jpg"
