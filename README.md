@@ -158,7 +158,7 @@ The sync script runs locally (or in CI) before deployment. The build itself requ
 ## Results
 
 **Portfolio System:**
-- 18 active projects displayed across 7 categories
+- 21 active projects displayed across 8 categories
 - Content managed entirely through PORTFOLIO.md files in source repositories
 - Zero runtime API calls — fully static, sub-second page loads
 - Featured project highlighting and priority-based ordering without code changes
