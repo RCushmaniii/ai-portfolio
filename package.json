@@ -11,7 +11,8 @@
     "sync:local": "npx tsx scripts/sync-local.ts",
     "sync:images": "npx tsx scripts/sync-images.ts",
     "generate": "npx tsx scripts/generate-portfolio.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "audit:predeploy": "npx tsx scripts/audit-predeploy.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

@@ -99,4 +99,17 @@ export const es = {
   meta_description: 'Soluciones de automatización con IA para PyMEs en México y LATAM',
   meta_portfolio_description: 'Proyectos de automatización con IA por CUSHLABS',
   meta_not_found: 'Proyecto No Encontrado',
+
+  // Error Pages
+  error_title: 'Algo Salió Mal',
+  error_description: 'Ocurrió un error inesperado. Probablemente es un problema temporal.',
+  error_try_again: 'Intentar de Nuevo',
+  error_go_home: 'Ir al Inicio',
+  error_back_portfolio: 'Volver al Portafolio',
+
+  // Not Found
+  not_found_title: 'Página No Encontrada',
+  not_found_description: 'La página que buscas no existe o ha sido movida.',
+  not_found_project_title: 'Proyecto No Encontrado',
+  not_found_project_description: 'El proyecto que buscas no existe.',
 } as const;

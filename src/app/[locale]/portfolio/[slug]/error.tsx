@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { t, getLocaleFromPathname, getLocalizedPath } from '@/i18n';
 
 export default function ProjectError({
   reset,
@@ -9,16 +11,20 @@ export default function ProjectError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const dict = t(locale);
+
   return (
     <div className="container py-16 text-center">
-      <h2 className="text-2xl font-bold mb-4">Something went wrong</h2>
-      <p className="text-muted-foreground mb-8">
-        Failed to load this project. This is likely a temporary issue.
-      </p>
+      <h2 className="text-2xl font-bold mb-4">{dict.error_title}</h2>
+      <p className="text-muted-foreground mb-8">{dict.error_description}</p>
       <div className="flex gap-4 justify-center">
-        <Button onClick={reset}>Try again</Button>
+        <Button onClick={reset}>{dict.error_try_again}</Button>
         <Button variant="outline" asChild>
-          <Link href="/portfolio">Back to Portfolio</Link>
+          <Link href={getLocalizedPath('/portfolio', locale)}>
+            {dict.error_back_portfolio}
+          </Link>
         </Button>
       </div>
     </div>

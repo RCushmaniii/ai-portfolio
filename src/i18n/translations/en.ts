@@ -98,4 +98,17 @@ export const en = {
   meta_description: 'AI automation solutions for SMBs in Mexico and LATAM',
   meta_portfolio_description: 'AI automation projects and solutions by CUSHLABS',
   meta_not_found: 'Project Not Found',
+
+  // Error Pages
+  error_title: 'Something Went Wrong',
+  error_description: 'An unexpected error occurred. This is likely a temporary issue.',
+  error_try_again: 'Try Again',
+  error_go_home: 'Go Home',
+  error_back_portfolio: 'Back to Portfolio',
+
+  // Not Found
+  not_found_title: 'Page Not Found',
+  not_found_description: "The page you're looking for doesn't exist or has been moved.",
+  not_found_project_title: 'Project Not Found',
+  not_found_project_description: "The project you're looking for doesn't exist.",
 } as const;

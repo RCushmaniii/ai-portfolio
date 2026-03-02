@@ -59,8 +59,8 @@ const orderConfigPath = path.join(process.cwd(), 'content', 'portfolio-order.jso
 let orderConfig: PortfolioOrderConfig = { order: [], featured: [] };
 try {
   orderConfig = JSON.parse(fs.readFileSync(orderConfigPath, 'utf-8'));
-} catch {
-  // No order config, use defaults
+} catch (err) {
+  console.warn('[portfolio] Failed to load portfolio-order.json:', err instanceof Error ? err.message : err);
 }
 
 // Load project overrides
@@ -68,8 +68,8 @@ const overridesPath = path.join(process.cwd(), 'content', 'project-overrides.jso
 let projectOverrides: Record<string, ProjectOverride> = {};
 try {
   projectOverrides = JSON.parse(fs.readFileSync(overridesPath, 'utf-8'));
-} catch {
-  // No overrides, use defaults
+} catch (err) {
+  console.warn('[portfolio] Failed to load project-overrides.json:', err instanceof Error ? err.message : err);
 }
 
 // Load portfolio data at build time
@@ -127,7 +127,8 @@ try {
     generated_at: rawData.generated_at,
     projects,
   };
-} catch {
+} catch (err) {
+  console.warn('[portfolio] Failed to load portfolio.json — site will render with 0 projects:', err instanceof Error ? err.message : err);
   portfolioData = { generated_at: '', projects: [] };
 }
 
