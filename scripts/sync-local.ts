@@ -77,6 +77,7 @@ async function main() {
         body_markdown: body.trim(),
         repo_name: repoName,
         repo_url: `https://github.com/RCushmaniii/${repoName}`,
+        thumbnail_fallback: `https://opengraph.githubassets.com/1/RCushmaniii/${repoName}`,
         github_stars: 0,
         github_forks: 0,
         github_language: null,

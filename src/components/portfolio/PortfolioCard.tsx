@@ -1,4 +1,6 @@
-import { memo } from 'react';
+'use client';
+
+import { memo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
@@ -12,21 +14,28 @@ interface PortfolioCardProps {
 }
 
 export const PortfolioCard = memo(function PortfolioCard({ project }: PortfolioCardProps) {
+  const [imgError, setImgError] = useState(false);
+  const imageSrc = project.thumbnail || project.thumbnail_fallback;
+  const showImage = imageSrc && !imgError;
+
   return (
     <Card className="h-full flex flex-col overflow-hidden group hover:shadow-lg transition-shadow">
       {/* Thumbnail */}
       <div className="relative aspect-video overflow-hidden bg-muted">
-        {project.thumbnail ? (
+        {showImage ? (
           <Image
-            src={project.thumbnail}
+            src={imageSrc}
             alt={project.title}
             fill
             className="object-cover transition-transform group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-            No Image
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5">
+            <span className="text-4xl font-bold text-primary/40">
+              {project.title.charAt(0)}
+            </span>
           </div>
         )}
         {project.portfolio_featured && (

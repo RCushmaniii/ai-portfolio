@@ -1,0 +1,122 @@
+{
+  "cushlabs-voice-agent": {
+    "headline": "Never Miss Another Lead Call",
+    "subheadline": "AI voice agents that answer every call, qualify leads, and book appointments — 24/7 with sub-500ms response times.",
+    "good_for": [
+      "Service businesses losing leads to voicemail and hold times",
+      "Teams paying for receptionists but still missing after-hours calls",
+      "Operations that need bilingual phone coverage without hiring"
+    ],
+    "not_for": [
+      "Businesses with under 20 inbound calls per week",
+      "Industries requiring licensed human agents by regulation",
+      "Teams that haven't defined their qualification criteria yet"
+    ],
+    "what_you_get": [
+      "Custom AI voice agent trained on your business, live in 2 weeks",
+      "Real-time Google Calendar integration — books confirmed appointments mid-call",
+      "Full call analytics dashboard with lead scoring and conversation logs",
+      "24/7 coverage with zero hold times and natural conversation flow"
+    ]
+  },
+  "converso-ai-chatbot-saas": {
+    "headline": "Your Website Loses Leads While You Sleep",
+    "subheadline": "White-label AI chatbot that knows your business, speaks your customers' language, and converts visitors into booked calls.",
+    "good_for": [
+      "Service businesses in bilingual markets losing after-hours inquiries",
+      "Agencies wanting to offer AI chat as a managed service to clients",
+      "Teams tired of chatbots that hallucinate answers about their business"
+    ],
+    "not_for": [
+      "Businesses with no existing website or web presence",
+      "Teams that need a simple FAQ page instead of conversational AI",
+      "Companies with fewer than 100 monthly website visitors"
+    ],
+    "what_you_get": [
+      "Multi-tenant SaaS with full data isolation per business",
+      "RAG-powered answers grounded in your verified business content",
+      "Visual playbook builder for conversation flows — no code required",
+      "One-tag embed that drops onto any website in minutes"
+    ]
+  },
+  "ny-ai-chatbot": {
+    "headline": "Turn Your Chatbot Into a Revenue Engine",
+    "subheadline": "RAG chatbot engineered to convert website visitors into booked strategy sessions — not just answer FAQs.",
+    "good_for": [
+      "Professional service firms where every booked call is worth $500+",
+      "Businesses with strong website content that visitors never find",
+      "Teams that want leads qualified 24/7 without hiring SDRs"
+    ],
+    "not_for": [
+      "E-commerce businesses needing product recommendation engines",
+      "Companies without clear service offerings or pricing",
+      "Teams looking for a generic FAQ deflection tool"
+    ],
+    "what_you_get": [
+      "Revenue-first chatbot with sales CTAs woven into every conversation path",
+      "Dual-source RAG pulling from your website content and curated knowledge base",
+      "Embeddable widget deployable on any domain with one script tag",
+      "Admin dashboard with conversation analytics and knowledge management"
+    ]
+  },
+  "ny-english-teacher": {
+    "headline": "Stop Trading Hours for Leads",
+    "subheadline": "Automated lead generation platform that replaces 4 roles — SDR, marketer, assistant, and brand manager — on $0/month infrastructure.",
+    "good_for": [
+      "Solo professionals burning 10+ hours/week on admin and follow-ups",
+      "Service providers who can't justify premium pricing with a template website",
+      "Businesses in bilingual markets wanting to double their reach from one site"
+    ],
+    "not_for": [
+      "Businesses that already have a marketing team and CRM pipeline",
+      "Companies needing e-commerce or product catalog features",
+      "Teams that haven't validated product-market fit yet"
+    ],
+    "what_you_get": [
+      "4 diagnostic quizzes that pre-qualify leads without discovery calls",
+      "3-step booking flow — interest to confirmed Google Meet in under 60 seconds",
+      "Full EN/ES bilingual site with localized routing and SEO",
+      "$0/month infrastructure — Astro static + Cloudflare Workers free tier"
+    ]
+  },
+  "ai-resume-tailor": {
+    "headline": "75% of Resumes Never Reach a Human",
+    "subheadline": "AI-powered ATS analysis that shows exactly why resumes get filtered and how to fix them — in under 10 seconds.",
+    "good_for": [
+      "Job seekers getting ghosted after applying to dozens of positions",
+      "Career coaches who need a scalable tool for client resume reviews",
+      "Bilingual professionals applying to jobs in both English and Spanish"
+    ],
+    "not_for": [
+      "Recruiters looking for candidate sourcing or ATS software",
+      "People who need full resume writing or career coaching services",
+      "Job seekers applying to companies that don't use ATS systems"
+    ],
+    "what_you_get": [
+      "Structured ATS analysis with 0-100 match score per job posting",
+      "Keyword gap analysis with severity coding and actionable fix suggestions",
+      "5 free analyses with zero signup — value delivered before any paywall",
+      "Full bilingual support for EN/ES resumes and job descriptions"
+    ]
+  },
+  "ai-build-vs-outsource": {
+    "headline": "Stop Guessing on Build vs. Buy Decisions",
+    "subheadline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output that replaces gut-feel arguments.",
+    "good_for": [
+      "Operations leaders facing high-stakes build-or-outsource decisions",
+      "Teams presenting technology strategy to boards and stakeholders",
+      "Growing companies hitting scale inflection points in their operations"
+    ],
+    "not_for": [
+      "Early-stage startups with no operational complexity yet",
+      "Teams that have already committed to a vendor or build path",
+      "Organizations looking for a procurement or vendor management tool"
+    ],
+    "what_you_get": [
+      "20-criterion weighted scoring across 5 categories with real-time verdict",
+      "Operational cost simulator revealing hidden step-function costs",
+      "6 decision presets and 5 growth scenarios for rapid what-if analysis",
+      "Shareable URL encoding — full tool state in a link for board presentations"
+    ]
+  }
+}

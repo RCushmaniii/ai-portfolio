@@ -1,10 +1,28 @@
 import type { PortfolioProject, PortfolioCategory, SortOption } from './types';
 
+export function searchProjects(
+  projects: PortfolioProject[],
+  query: string
+): PortfolioProject[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return projects;
+
+  return projects.filter((p) => {
+    return (
+      p.title.toLowerCase().includes(q) ||
+      p.tagline.toLowerCase().includes(q) ||
+      p.tags.some((t) => t.toLowerCase().includes(q)) ||
+      p.tech_stack.some((t) => t.toLowerCase().includes(q))
+    );
+  });
+}
+
 export function filterProjects(
   projects: PortfolioProject[],
-  category: PortfolioCategory | 'all'
+  category: PortfolioCategory | 'all' | 'featured'
 ): PortfolioProject[] {
   if (category === 'all') return projects;
+  if (category === 'featured') return projects.filter((p) => p.portfolio_featured);
   return projects.filter((p) => p.category === category);
 }
 

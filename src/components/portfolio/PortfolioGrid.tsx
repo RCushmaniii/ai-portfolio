@@ -5,11 +5,12 @@ import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { PortfolioCard } from './PortfolioCard';
 import { CategoryFilter } from './CategoryFilter';
 import { SortSelect } from './SortSelect';
-import { filterProjects, sortProjects } from '@/lib/portfolio/filters';
+import { SearchInput } from './SearchInput';
+import { filterProjects, sortProjects, searchProjects } from '@/lib/portfolio/filters';
 import type { PortfolioProject, PortfolioCategory, SortOption } from '@/lib/portfolio/types';
 
 const VALID_CATEGORIES: ReadonlySet<string> = new Set([
-  'all', 'AI Automation', 'Templates', 'Tools', 'Developer Tools',
+  'all', 'featured', 'AI Automation', 'Templates', 'Tools', 'Developer Tools',
   'Client Work', 'Games', 'Marketing', 'Creative',
 ]);
 const VALID_SORTS: ReadonlySet<string> = new Set(['priority', 'recent', 'popular']);
@@ -25,8 +26,9 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
 
   const rawCategory = searchParams.get('category') || 'all';
   const rawSort = searchParams.get('sort') || 'priority';
-  const category: PortfolioCategory | 'all' = VALID_CATEGORIES.has(rawCategory)
-    ? (rawCategory as PortfolioCategory | 'all')
+  const search = searchParams.get('search') || '';
+  const category: PortfolioCategory | 'all' | 'featured' = VALID_CATEGORIES.has(rawCategory)
+    ? (rawCategory as PortfolioCategory | 'all' | 'featured')
     : 'all';
   const sort: SortOption = VALID_SORTS.has(rawSort)
     ? (rawSort as SortOption)
@@ -34,7 +36,8 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
 
   const updateParams = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    if (value === 'all' || value === 'priority') {
+    const defaults: Record<string, string> = { category: 'all', sort: 'priority', search: '' };
+    if (value === defaults[key] || value === '') {
       params.delete(key);
     } else {
       params.set(key, value);
@@ -43,14 +46,27 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
   };
 
   const filteredAndSorted = useMemo(() => {
-    const filtered = filterProjects(projects, category);
+    const searched = searchProjects(projects, search);
+    const filtered = filterProjects(searched, category);
     return sortProjects(filtered, sort);
-  }, [projects, category, sort]);
+  }, [projects, search, category, sort]);
+
+  const isFiltered = search.length > 0 || category !== 'all';
 
   return (
     <div>
+      {/* Search */}
+      <div className="mb-4">
+        <SearchInput
+          value={search}
+          onChange={(value) => updateParams('search', value)}
+          resultCount={filteredAndSorted.length}
+          totalCount={projects.length}
+        />
+      </div>
+
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
         <CategoryFilter
           value={category}
           onChange={(value) => updateParams('category', value)}
@@ -61,17 +77,27 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
         />
       </div>
 
+      {/* Project count */}
+      <div className="text-sm text-muted-foreground mb-6">
+        Showing {filteredAndSorted.length} of {projects.length} projects
+      </div>
+
       {/* Grid */}
       {filteredAndSorted.length === 0 ? (
         <div className="text-center py-16">
           <p className="text-muted-foreground mb-4">
-            No projects found in this category.
+            {search
+              ? `No projects found matching "${search}".`
+              : 'No projects found in this category.'}
           </p>
           <button
-            onClick={() => updateParams('category', 'all')}
+            onClick={() => {
+              const params = new URLSearchParams();
+              router.push(`${pathname}?${params.toString()}`, { scroll: false });
+            }}
             className="text-sm text-primary hover:underline"
           >
-            View all projects
+            Clear filters
           </button>
         </div>
       ) : (

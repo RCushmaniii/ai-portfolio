@@ -45,7 +45,7 @@ export default async function PortfolioPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Portfolio</h1>
         <p className="text-muted-foreground">
-          AI-powered solutions and automation projects
+          AI-powered solutions and automation projects — {projects.length} projects and counting
         </p>
       </div>
 

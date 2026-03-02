@@ -3,8 +3,9 @@
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { PortfolioCategory } from '@/lib/portfolio/types';
 
-const CATEGORIES: Array<{ value: PortfolioCategory | 'all'; label: string }> = [
+const CATEGORIES: Array<{ value: PortfolioCategory | 'all' | 'featured'; label: string }> = [
   { value: 'all', label: 'All' },
+  { value: 'featured', label: 'Featured' },
   { value: 'AI Automation', label: 'AI Automation' },
   { value: 'Developer Tools', label: 'Dev Tools' },
   { value: 'Templates', label: 'Templates' },
@@ -16,7 +17,7 @@ const CATEGORIES: Array<{ value: PortfolioCategory | 'all'; label: string }> = [
 ];
 
 interface CategoryFilterProps {
-  value: PortfolioCategory | 'all';
+  value: PortfolioCategory | 'all' | 'featured';
   onChange: (value: string) => void;
 }
 

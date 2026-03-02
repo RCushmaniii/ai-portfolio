@@ -15,6 +15,7 @@ export interface PortfolioProject {
   category: PortfolioCategory;
   tech_stack: string[];
   thumbnail: string;
+  thumbnail_fallback: string; // Computed by loader, not stored in JSON
   status: ProjectStatus;
 
   // Detail page
@@ -22,6 +23,13 @@ export interface PortfolioProject {
   solution: string;
   key_features: string[];
   metrics: string[];
+
+  // Marketing overrides (from project-overrides.json)
+  headline?: string;
+  subheadline?: string;
+  good_for?: string[];
+  not_for?: string[];
+  what_you_get?: string[];
 
   // Links
   demo_url: string;
@@ -53,6 +61,7 @@ export interface PortfolioData {
 }
 
 export interface PortfolioFilters {
-  category: PortfolioCategory | 'all';
+  category: PortfolioCategory | 'all' | 'featured';
   sort: SortOption;
+  search: string;
 }
