@@ -4,6 +4,8 @@
 
 > A static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase.
 
+**Live Demo:** [ai-portfolio-cushlabs.vercel.app](https://ai-portfolio-cushlabs.vercel.app/)
+
 ## Screenshots
 
 ![Screenshot 1](public/images/portfolio-01.png)

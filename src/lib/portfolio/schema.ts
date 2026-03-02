@@ -6,6 +6,13 @@ const imagePathOrUrl = z.string().refine(
   'Must be a URL, a local path starting with /, or empty'
 );
 
+// Slide object: { src, alt_en?, alt_es? }
+const slideSchema = z.object({
+  src: imagePathOrUrl,
+  alt_en: z.string().optional(),
+  alt_es: z.string().optional(),
+});
+
 const CATEGORIES = [
   'AI Automation',
   'Templates',
@@ -55,9 +62,14 @@ const RawFrontmatterSchema = z.object({
   case_study_url: z.string().optional(),
   demo_video_url: imagePathOrUrl.optional(),
 
+  // Video (from PORTFOLIO.md frontmatter)
+  video_url: imagePathOrUrl.optional(),
+  video_poster: imagePathOrUrl.optional(),
+
   // Optional extras
   hero_images: z.array(imagePathOrUrl).max(10).default([]),
   hero_image_urls: z.array(imagePathOrUrl).optional(), // Legacy alias
+  slides: z.array(slideSchema).max(20).optional(), // Rich slide format → hero_images
   tags: z.array(z.string()).max(10).default([]),
   date_completed: z.string().optional(),
 });
@@ -80,8 +92,13 @@ export const PortfolioFrontmatterSchema = RawFrontmatterSchema.transform((data) 
   metrics: data.metrics || [],
   demo_url: data.demo_url || '',
   live_url: data.live_url || '',
-  demo_video_url: data.demo_video_url || '',
-  hero_images: data.hero_images.length > 0 ? data.hero_images : (data.hero_image_urls || []),
+  demo_video_url: data.demo_video_url || data.video_url || '',
+  video_poster: data.video_poster || '',
+  hero_images: data.slides && data.slides.length > 0
+    ? data.slides.map((s) => s.src)
+    : data.hero_images.length > 0
+      ? data.hero_images
+      : (data.hero_image_urls || []),
   tags: data.tags,
   date_completed: data.date_completed,
 }));

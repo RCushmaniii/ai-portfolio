@@ -97,9 +97,8 @@ try {
     // Resolve video URL and poster from overrides
     const rawVideoUrl = overrides.video_url || p.demo_video_url || '';
     const videoUrl = resolveAssetUrl(rawVideoUrl, p.repo_name, deployUrl) || '';
-    const videoPoster = overrides.video_poster
-      ? resolveAssetUrl(overrides.video_poster, p.repo_name, deployUrl) || ''
-      : '';
+    const rawPoster = overrides.video_poster || p.video_poster || '';
+    const videoPoster = resolveAssetUrl(rawPoster, p.repo_name, deployUrl) || '';
 
     return {
       ...p,
