@@ -14,13 +14,15 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Determine locale from path
-  const isSpanish = pathname.startsWith('/es') && (pathname === '/es' || pathname.startsWith('/es/'));
-  const locale = isSpanish ? 'es' : 'en';
+  // Spanish paths already have the locale prefix — pass through
+  if (pathname === '/es' || pathname.startsWith('/es/')) {
+    return NextResponse.next();
+  }
 
-  const response = NextResponse.next();
-  response.headers.set('x-locale', locale);
-  return response;
+  // English paths have no prefix — rewrite to /en/... so the [locale] route resolves
+  const url = request.nextUrl.clone();
+  url.pathname = `/en${pathname}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
