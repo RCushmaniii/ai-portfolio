@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * One-shot script: convert all .png and .jpg images in public/images/ to .webp
  * Run: npx tsx scripts/convert-to-webp.ts
