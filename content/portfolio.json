@@ -37,9 +37,19 @@
       "metrics": [],
       "demo_url": "",
       "live_url": "",
-      "demo_video_url": "",
-      "video_poster": "",
-      "hero_images": [],
+      "demo_video_url": "/video/converso-brief.mp4",
+      "video_poster": "/video/converso-brief-poster.jpg",
+      "hero_images": [
+        "/images/portfolio/converso-01.webp",
+        "/images/portfolio/converso-02.webp",
+        "/images/portfolio/converso-03.webp",
+        "/images/portfolio/converso-04.webp",
+        "/images/portfolio/converso-05.webp",
+        "/images/portfolio/converso-06.webp",
+        "/images/portfolio/converso-07.webp",
+        "/images/portfolio/converso-08.webp",
+        "/images/portfolio/converso-09.webp"
+      ],
       "tags": [
         "ai-chatbot",
         "saas",
