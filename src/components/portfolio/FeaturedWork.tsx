@@ -68,7 +68,7 @@ export function FeaturedWork({ projects, locale }: FeaturedWorkProps) {
 
       <div className="text-center mt-8">
         <Link
-          href={getLocalizedPath('/featured', locale)}
+          href={getLocalizedPath('/portfolio', locale)}
           className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
         >
           {dict.featured_view_all} <ArrowRight className="h-4 w-4" />
