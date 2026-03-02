@@ -95,6 +95,15 @@ pnpm generate
 - `portfolio-order.json` overrides display priority and featured flags
 - Never edit `portfolio.json` manually — it gets overwritten by sync
 
+### Sync Issue Notifications
+- Sync script tracks errors (403s, validation failures) and warnings (missing fields) in a `syncIssues[]` array
+- After writing `portfolio.json`, reports issues as a GitHub Issue labeled `portfolio-sync`
+- Deduplication: searches by label first, falls back to title prefix `"Portfolio Sync:"`
+- If open issue exists → adds comment + updates title; if not → creates new issue
+- Auto-closes the issue when a clean sync run has zero issues
+- Uses `gh` CLI for all issue write operations (fine-grained tokens lack issue write scope)
+- All reporting is non-fatal — wrapped in try/catch so sync completes even if issue creation fails
+
 ### shadcn/ui
 - Components live in `src/components/ui/` — regenerate via `pnpm dlx shadcn@latest add [name]`
 - Create wrapper components instead of editing generated files
@@ -129,9 +138,11 @@ git push    # Triggers Vercel auto-deploy
 
 ## Known Issues
 
-- Sync script requires `GITHUB_TOKEN` — fails silently if missing
+- Sync script requires `GITHUB_TOKEN` — fails explicitly with error message if missing
 - Some older repos use legacy PORTFOLIO.md format (handled by schema transforms)
 - No automated CI sync — manual step before deploy
+- `gh` CLI must be authenticated (`gh auth login`) for sync issue notifications to work
+- Fine-grained GitHub tokens need **Issues: Read and write** permission for issue operations via API (the sync script uses `gh` CLI as a workaround)
 
 ## Current Focus
 

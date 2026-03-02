@@ -72,6 +72,7 @@ key_outcomes:
   - "Client-side search, category filtering, and sort — all via shareable URL params"
   - "Zero runtime API calls — fully static, sub-second page loads"
   - "Content managed through PORTFOLIO.md files co-located with source code"
+  - "Sync issue notifications — errors and warnings auto-reported as GitHub Issues with deduplication and auto-close"
   - "Featured project showcase with curated top-6 selection"
   - "Dark mode with system preference detection"
 
@@ -104,7 +105,7 @@ The result is a portfolio site with zero runtime dependencies on external APIs. 
 
 **Content co-location:** Each repository owns its portfolio entry through a PORTFOLIO.md file at its root. The content lives alongside the code it describes and stays version-controlled.
 
-**Automated data pipeline:** A TypeScript sync script queries GitHub for all repositories, fetches and parses each PORTFOLIO.md, validates data through a Zod schema with backward-compatible transforms, and outputs a single JSON file.
+**Automated data pipeline:** A TypeScript sync script queries GitHub for all repositories, fetches and parses each PORTFOLIO.md, validates data through a Zod schema with backward-compatible transforms, and outputs a single JSON file. Errors and quality warnings are tracked during sync and reported as GitHub Issues — with deduplication, auto-close on clean runs, and non-fatal fallback — so problems stay visible even when nobody reads the terminal.
 
 **Client-side search, filter & sort:** The portfolio page uses URL search params for all filter state — debounced text search, tab-based category filtering, and sort dropdown — making filtered views shareable and bookmarkable with zero server round-trips.
 
@@ -114,6 +115,7 @@ The result is a portfolio site with zero runtime dependencies on external APIs. 
 
 ## Technical Highlights
 
+- **Sync issue notifications:** The sync script tracks 403 errors, validation failures, and missing-field warnings, then reports them as GitHub Issues — with label-based deduplication, auto-close on clean runs, and non-fatal fallback so the sync always completes
 - **Zod schema with backward-compatible transforms:** Normalizes old and new PORTFOLIO.md formats automatically during sync
 - **Server/client component split:** `loader.ts` reads data server-side via `fs`; `filters.ts` provides pure functions safe for client components
 - **URL-driven filter state:** Category and sort selections stored in search params for shareable, bookmarkable views via debounced search, tab-based category filter, and sort dropdown (all shadcn/ui components)

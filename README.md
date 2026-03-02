@@ -44,6 +44,7 @@ On the display side, Next.js App Router serves statically-generated pages. A ser
 ## Technical Highlights
 
 - **Static JSON pipeline**: Sync scripts fetch from GitHub API at development time, avoiding runtime API calls, rate limits, and latency
+- **Sync issue notifications**: The sync script tracks errors (403s, validation failures) and quality warnings (missing fields), then reports them as GitHub Issues with deduplication, auto-close on clean runs, and non-fatal fallback — so problems never go unnoticed
 - **Zod schema with transforms**: Backward-compatible validation normalizes old and new PORTFOLIO.md field formats automatically
 - **Server/client component split**: Pages load data server-side via `fs`; filtering runs client-side via pure functions in `filters.ts`
 - **URL-driven state**: Category and sort selections stored in search params for shareable, bookmarkable filtered views
@@ -154,6 +155,44 @@ git push                                # Triggers Vercel auto-deploy
 ```
 
 The sync script runs locally (or in CI) before deployment. The build itself requires no API access — it reads the pre-synced JSON.
+
+## Sync Issue Notifications
+
+The sync script doesn't just log to stdout — it tracks problems and reports them as GitHub Issues so nothing gets lost when running unattended or in CI.
+
+**What gets tracked:**
+
+| Level | Examples |
+|-------|---------|
+| Error | 403 Forbidden (token access), invalid PORTFOLIO.md frontmatter |
+| Warning | Missing tagline, thumbnail, tech stack, problem description, or screenshots |
+
+**How it works:**
+
+1. During sync, errors and warnings are collected into a `syncIssues[]` array
+2. After writing `portfolio.json`, the script checks the array
+3. If issues exist → creates or updates a GitHub Issue labeled `portfolio-sync`, grouped by repo with error/warning sections and actionable fix instructions
+4. If no issues → auto-closes any open `portfolio-sync` issue with a resolution comment
+5. Deduplication ensures only one issue exists at a time (searches by label, falls back to title prefix)
+6. All reporting is non-fatal — if GitHub Issue creation fails, the sync still completes normally
+
+**Example issue output:**
+
+```markdown
+## Errors (1)
+### `some-repo`
+- 403 Forbidden — token lacks access to this repo
+
+## Warnings (2)
+### `mazebreak-trello`
+- Missing problem/challenge description
+### `mazebreak-wiki`
+- Missing problem/challenge description
+
+## How to Fix
+- **403 Forbidden**: Check that your GITHUB_TOKEN has public_repo scope...
+- **Missing fields**: Add the missing content to the repo's PORTFOLIO.md...
+```
 
 ## Results
 
