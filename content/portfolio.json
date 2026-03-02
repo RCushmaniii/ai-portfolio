@@ -24,8 +24,8 @@
       ],
       "thumbnail": "/images/portfolio/ai-chatbot-saas-thumb.webp",
       "status": "Production",
-      "problem": "Service businesses in bilingual markets lose leads outside business hours\nand can't afford round-the-clock bilingual staff. Generic chatbots hallucinate\nanswers because they don't know the business. This platform gives each tenant\na knowledge-grounded AI assistant that answers accurately in English or Spanish,\nqualifies leads, and hands off to humans when needed.\n",
-      "solution": "",
+      "problem": "Service businesses in bilingual markets lose leads outside business hours and can't afford round-the-clock bilingual staff. Generic chatbots hallucinate answers because they don't know the business.",
+      "solution": "A multi-tenant SaaS platform where each business gets a RAG-powered AI chatbot grounded in their own verified content, with native bilingual support, visual conversation design, and one-tag website embedding — no developer needed.",
       "key_features": [
         "Multi-tenant SaaS with full data isolation per business",
         "RAG-powered answers grounded in verified business content",
