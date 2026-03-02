@@ -1,12 +1,13 @@
 {
   "_comment": "Override display order for portfolio projects. Top 6 are featured showcase projects. Remaining projects appear after in this order. Unlisted projects fall back to their portfolio_priority value.",
   "order": [
+    "cushlabs-voice-agent",
     "converso-ai-chatbot-saas",
     "ny-ai-chatbot",
     "ny-english-teacher",
     "ai-resume-tailor",
-    "context-writing-system",
     "ai-build-vs-outsource",
+    "context-writing-system",
     "comp-plan-simulator",
     "ai-idea-validator",
     "freelance-income-planner",
@@ -23,11 +24,11 @@
     "mazebreak-gdd-wiki"
   ],
   "featured": [
+    "cushlabs-voice-agent",
     "converso-ai-chatbot-saas",
     "ny-ai-chatbot",
     "ny-english-teacher",
     "ai-resume-tailor",
-    "context-writing-system",
     "ai-build-vs-outsource"
   ]
 }
