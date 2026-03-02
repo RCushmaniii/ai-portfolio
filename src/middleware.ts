@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const LOCALE_COOKIE = 'locale';
 const SKIP_PREFIXES = ['/_next', '/api', '/images', '/video', '/favicon'];
-const SKIP_EXTENSIONS = /\.(ico|png|jpg|jpeg|gif|svg|webp|mp4|webm|css|js|map|woff2?)$/;
+const SKIP_EXTENSIONS = /\.(ico|png|jpg|jpeg|gif|svg|webp|mp4|webm|css|js|map|woff2?|xml|txt)$/;
 
 function getPreferredLocale(request: NextRequest): 'en' | 'es' {
   // 1. Cookie — user has explicitly chosen or was previously detected
