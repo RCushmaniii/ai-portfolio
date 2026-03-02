@@ -31,6 +31,10 @@ export interface PortfolioProject {
   not_for?: string[];
   what_you_get?: string[];
 
+  // Video (from overrides or PORTFOLIO.md)
+  video_url?: string;
+  video_poster?: string;
+
   // Links
   demo_url: string;
   live_url: string;

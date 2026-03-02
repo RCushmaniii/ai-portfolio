@@ -19,6 +19,31 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'opengraph.githubassets.com',
       },
+      // Project deploy domains (thumbnails/hero images served from each project's deployment)
+      {
+        protocol: 'https',
+        hostname: '*.vercel.app',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.netlify.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cushlabs.ai',
+      },
+      {
+        protocol: 'https',
+        hostname: 'voice.cushlabs.ai',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.nyenglishteacher.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'aistockalert.app',
+      },
     ],
   },
 };

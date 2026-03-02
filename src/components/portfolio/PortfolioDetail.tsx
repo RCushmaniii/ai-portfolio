@@ -49,6 +49,22 @@ export function PortfolioDetail({ project }: PortfolioDetailProps) {
             <p className="text-xl text-muted-foreground mb-6">{displaySubtitle}</p>
           </div>
 
+          {/* Video */}
+          {project.video_url && (
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold mb-3">Demo Video</h2>
+              <video
+                controls
+                preload="metadata"
+                className="w-full rounded-lg"
+                poster={project.video_poster || undefined}
+              >
+                <source src={project.video_url} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </section>
+          )}
+
           {/* Highlight Boxes */}
           <div className="mb-8">
             <HighlightBoxes project={project} />

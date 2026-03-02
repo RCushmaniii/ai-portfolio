@@ -1,4 +1,14 @@
 {
+  "cushlabs": {
+    "video_url": "https://cushlabs.ai/images/portfolio/cushlabs-brief.mp4",
+    "video_poster": "/images/portfolio/cushlabs-video-poster.jpg"
+  },
+  "mazebreak-gdd-wiki": {
+    "video_url": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4"
+  },
+  "mazebreak-trello": {
+    "video_url": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4"
+  },
   "cushlabs-voice-agent": {
     "headline": "Never Miss Another Lead Call",
     "subheadline": "AI voice agents that answer every call, qualify leads, and book appointments — 24/7 with sub-500ms response times.",
