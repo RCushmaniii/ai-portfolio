@@ -67,7 +67,7 @@ const RawFrontmatterSchema = z.object({
   video_poster: imagePathOrUrl.optional(),
 
   // Optional extras
-  hero_images: z.array(imagePathOrUrl).max(10).default([]),
+  hero_images: z.array(imagePathOrUrl).max(11).default([]),
   hero_image_urls: z.array(imagePathOrUrl).optional(), // Legacy alias
   slides: z.array(slideSchema).max(20).optional(), // Rich slide format → hero_images
   tags: z.array(z.string()).max(10).default([]),
