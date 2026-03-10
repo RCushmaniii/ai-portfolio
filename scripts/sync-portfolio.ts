@@ -66,24 +66,29 @@ async function fetchUserRepos(token: string): Promise<GitHubRepo[]> {
 }
 
 async function fetchPortfolioMd(repoName: string, token: string): Promise<string | null> {
-  const response = await fetch(
-    `${GITHUB_API}/repos/${GITHUB_USER}/${repoName}/contents/PORTFOLIO.md`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github.v3.raw',
-        'User-Agent': 'portfolio-sync-script',
-      },
-    }
-  );
+  // Try both casings — GitHub Contents API is case-sensitive
+  for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
+    const response = await fetch(
+      `${GITHUB_API}/repos/${GITHUB_USER}/${repoName}/contents/${filename}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github.v3.raw',
+          'User-Agent': 'portfolio-sync-script',
+        },
+      }
+    );
 
-  if (response.status === 404) return null;
-  if (response.status === 403) {
-    syncIssues.push({ level: 'error', repo: repoName, message: '403 Forbidden — token lacks access to this repo' });
-    return null;
+    if (response.status === 404) continue;
+    if (response.status === 403) {
+      syncIssues.push({ level: 'error', repo: repoName, message: '403 Forbidden — token lacks access to this repo' });
+      return null;
+    }
+    if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
+    return response.text();
   }
-  if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
-  return response.text();
+
+  return null;
 }
 
 // ---------------------------------------------------------------------------
