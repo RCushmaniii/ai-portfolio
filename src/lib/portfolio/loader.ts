@@ -86,19 +86,23 @@ try {
     const deployUrl = p.live_url || p.demo_url || null;
 
     // Resolve thumbnail: override takes priority, then PORTFOLIO.md value
-    const thumbnailSource = overrides.thumbnail || p.thumbnail;
-    const resolvedThumbnail = resolveAssetUrl(thumbnailSource, p.repo_name, deployUrl);
+    // Override thumbnails are local to this app (SELF_REPO), not the project's deploy
+    const resolvedThumbnail = overrides.thumbnail
+      ? resolveAssetUrl(overrides.thumbnail, SELF_REPO, null)
+      : resolveAssetUrl(p.thumbnail, p.repo_name, deployUrl);
 
     // Resolve hero images
     const resolvedHeroImages = p.hero_images
       .map((img) => resolveAssetUrl(img, p.repo_name, deployUrl))
       .filter((url): url is string => url !== null);
 
-    // Resolve video URL and poster from overrides
-    const rawVideoUrl = overrides.video_url || p.demo_video_url || '';
-    const videoUrl = resolveAssetUrl(rawVideoUrl, p.repo_name, deployUrl) || '';
-    const rawPoster = overrides.video_poster || p.video_poster || '';
-    const videoPoster = resolveAssetUrl(rawPoster, p.repo_name, deployUrl) || '';
+    // Resolve video URL and poster — overrides are local to this app
+    const videoUrl = overrides.video_url
+      ? resolveAssetUrl(overrides.video_url, SELF_REPO, null) || ''
+      : resolveAssetUrl(p.demo_video_url || '', p.repo_name, deployUrl) || '';
+    const videoPoster = overrides.video_poster
+      ? resolveAssetUrl(overrides.video_poster, SELF_REPO, null) || ''
+      : resolveAssetUrl(p.video_poster || '', p.repo_name, deployUrl) || '';
 
     return {
       ...p,
