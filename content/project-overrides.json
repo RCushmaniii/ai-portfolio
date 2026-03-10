@@ -5,19 +5,15 @@
     "video_poster": "/images/portfolio-brief-poster.webp"
   },
   "context-writing-system": {
-    "thumbnail": "https://raw.githubusercontent.com/RCushmaniii/context-writing-system/main/public/images/context-writing-system-thumb.jpg"
+    "thumbnail": "/images/thumbs/context-writing-system-thumb.webp"
   },
   "cushlabs": {
+    "thumbnail": "/images/thumbs/cushlabs-thumb.webp",
     "video_url": "https://cushlabs.ai/images/portfolio/cushlabs-brief.mp4",
     "video_poster": "/images/portfolio/cushlabs-video-poster.jpg"
   },
-  "mazebreak-gdd-wiki": {
-    "video_url": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4"
-  },
-  "mazebreak-trello": {
-    "video_url": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4"
-  },
   "cushlabs-voice-agent": {
+    "thumbnail": "/images/thumbs/cushlabs-voice-agent-thumb.webp",
     "headline": "Never Miss Another Lead Call",
     "subheadline": "AI voice agents that answer every call, qualify leads, and book appointments — 24/7 with sub-500ms response times.",
     "good_for": [
@@ -38,6 +34,7 @@
     ]
   },
   "converso-ai-chatbot-saas": {
+    "thumbnail": "/images/thumbs/converso-ai-chatbot-saas-thumb.webp",
     "headline": "Your Website Loses Leads While You Sleep",
     "subheadline": "White-label AI chatbot that knows your business, speaks your customers' language, and converts visitors into booked calls.",
     "good_for": [
@@ -58,6 +55,7 @@
     ]
   },
   "ny-ai-chatbot": {
+    "thumbnail": "/images/thumbs/ny-ai-chatbot-thumb.webp",
     "headline": "Turn Your Chatbot Into a Revenue Engine",
     "subheadline": "RAG chatbot engineered to convert website visitors into booked strategy sessions — not just answer FAQs.",
     "good_for": [
@@ -78,6 +76,7 @@
     ]
   },
   "ny-english-teacher": {
+    "thumbnail": "/images/thumbs/ny-english-teacher-thumb.webp",
     "headline": "Stop Trading Hours for Leads",
     "subheadline": "Automated lead generation platform that replaces 4 roles — SDR, marketer, assistant, and brand manager — on $0/month infrastructure.",
     "good_for": [
@@ -98,6 +97,7 @@
     ]
   },
   "ai-resume-tailor": {
+    "thumbnail": "/images/thumbs/ai-resume-tailor-thumb.webp",
     "headline": "75% of Resumes Never Reach a Human",
     "subheadline": "AI-powered ATS analysis that shows exactly why resumes get filtered and how to fix them — in under 10 seconds.",
     "good_for": [
@@ -118,6 +118,7 @@
     ]
   },
   "ai-build-vs-outsource": {
+    "thumbnail": "/images/thumbs/ai-build-vs-outsource-thumb.webp",
     "headline": "Stop Guessing on Build vs. Buy Decisions",
     "subheadline": "Interactive decision tools with weighted scoring, cost modeling, and board-ready output that replaces gut-feel arguments.",
     "good_for": [
@@ -136,5 +137,65 @@
       "6 decision presets and 5 growth scenarios for rapid what-if analysis",
       "Shareable URL encoding — full tool state in a link for board presentations"
     ]
+  },
+  "ai-idea-validator": {
+    "thumbnail": "/images/thumbs/ai-idea-validator-thumb.webp"
+  },
+  "freelance-income-planner": {
+    "thumbnail": "/images/thumbs/freelance-income-planner-thumb.webp"
+  },
+  "biojalisco-species-id": {
+    "thumbnail": "/images/thumbs/biojalisco-species-id-thumb.webp"
+  },
+  "ai-marketing-suite": {
+    "thumbnail": "/images/thumbs/ai-marketing-suite-thumb.webp"
+  },
+  "cushlabs-scrollytelling": {
+    "thumbnail": "/images/thumbs/cushlabs-scrollytelling-thumb.webp"
+  },
+  "ai-eraser": {},
+  "ai-filesense-website": {
+    "thumbnail": "/images/thumbs/ai-filesense-website-thumb.webp"
+  },
+  "ai-stock-alert": {
+    "thumbnail": "/images/thumbs/ai-stock-alert-thumb.webp"
+  },
+  "ai-filesense": {
+    "thumbnail": "/images/thumbs/ai-filesense-thumb.webp"
+  },
+  "biojalisco-pitch": {
+    "thumbnail": "/images/thumbs/biojalisco-pitch-thumb.webp"
+  },
+  "expatdrive": {
+    "thumbnail": "/images/thumbs/expatdrive-thumb.webp"
+  },
+  "ai-stock-alert-website": {
+    "thumbnail": "/images/thumbs/ai-stock-alert-website-thumb.webp"
+  },
+  "comp-plan-simulator": {
+    "thumbnail": "/images/thumbs/comp-plan-simulator-thumb.webp"
+  },
+  "react-vite-tailwind-base": {
+    "thumbnail": "/images/thumbs/react-vite-tailwind-base-thumb.webp"
+  },
+  "marble-does-not-yield": {
+    "thumbnail": "/images/thumbs/marble-does-not-yield-thumb.webp"
+  },
+  "nextjs-agency-starter": {
+    "thumbnail": "/images/thumbs/nextjs-agency-starter-thumb.webp"
+  },
+  "unwatermark": {
+    "thumbnail": "/images/thumbs/unwatermark-thumb.webp"
+  },
+  "ai-scrabble-practice": {
+    "thumbnail": "/images/thumbs/ai-scrabble-practice-thumb.webp"
+  },
+  "mazebreak-gdd-wiki": {
+    "thumbnail": "/images/thumbs/mazebreak-gdd-wiki-thumb.webp",
+    "video_url": "https://mazebreak-wiki.vercel.app/video/MazeBreak__Taming_the_GDD.mp4"
+  },
+  "mazebreak-trello": {
+    "thumbnail": "/images/thumbs/mazebreak-trello-thumb.webp",
+    "video_url": "https://mazebreak-trello.vercel.app/video/MazeBreak__Sprint_as_Code.mp4"
   }
 }
