@@ -36,7 +36,7 @@ export const en = {
   portfolio_title: 'Portfolio',
   portfolio_subtitle:
     'AI-powered solutions and automation projects — {count} projects and counting',
-  portfolio_search_placeholder: 'Search projects...',
+  portfolio_search_placeholder: 'Search by name, tech stack, or tag...',
   portfolio_showing: 'Showing {filtered} of {total} projects',
   portfolio_no_results_search: 'No projects found matching "{query}".',
   portfolio_no_results_category: 'No projects found in this category.',

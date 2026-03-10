@@ -28,7 +28,7 @@ export function CategoryFilter({ value, onChange, locale }: CategoryFilterProps)
 
   return (
     <Tabs value={value} onValueChange={onChange}>
-      <TabsList className="flex-wrap h-auto">
+      <TabsList className="h-auto sm:flex-wrap max-sm:flex-nowrap max-sm:overflow-x-auto max-sm:scrollbar-none">
         {CATEGORIES.map((cat) => (
           <TabsTrigger key={cat.value} value={cat.value} className="text-sm">
             {cat.label}

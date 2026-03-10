@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import { JsonLd } from '@/components/JsonLd';
 import { isValidLocale, LOCALES, t, type Locale } from '@/i18n';
 
@@ -75,6 +76,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <SiteHeader locale={locale} />
       <main className="flex-1">{children}</main>
       <SiteFooter locale={locale} />
+      <ScrollToTop />
     </>
   );
 }

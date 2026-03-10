@@ -36,7 +36,7 @@ export const es = {
   portfolio_title: 'Portafolio',
   portfolio_subtitle:
     'Soluciones y proyectos de automatización con IA — {count} proyectos y contando',
-  portfolio_search_placeholder: 'Buscar proyectos...',
+  portfolio_search_placeholder: 'Buscar por nombre, tecnología o etiqueta...',
   portfolio_showing: 'Mostrando {filtered} de {total} proyectos',
   portfolio_no_results_search: 'No se encontraron proyectos con "{query}".',
   portfolio_no_results_category: 'No se encontraron proyectos en esta categoría.',

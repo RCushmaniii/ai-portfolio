@@ -48,14 +48,14 @@ export function SearchInput({ value, onChange, resultCount, totalCount, locale }
 
   return (
     <div className="flex items-center gap-3">
-      <div className="relative flex-1 max-w-sm">
+      <div className="relative flex-1">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           type="text"
           placeholder={dict.portfolio_search_placeholder}
           value={localValue}
           onChange={(e) => handleChange(e.target.value)}
-          className="pl-9 pr-9"
+          className="pl-9 pr-9 bg-muted/50 border-muted-foreground/20"
         />
         {localValue && (
           <button
