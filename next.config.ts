@@ -44,6 +44,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'aistockalert.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'getexpatdrive.com',
+      },
     ],
   },
 };
