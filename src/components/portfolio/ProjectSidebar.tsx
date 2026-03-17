@@ -24,7 +24,7 @@ export function ProjectSidebar({ project, locale }: ProjectSidebarProps) {
           </Button>
         )}
         {project.live_url && project.live_url !== project.demo_url && (
-          <Button variant="secondary" asChild className="w-full">
+          <Button asChild className="w-full bg-orange-500 text-white hover:bg-orange-600 transition-colors duration-200">
             <a href={project.live_url} target="_blank" rel="noopener noreferrer">
               {dict.sidebar_view_live} <ExternalLink className="ml-2 h-4 w-4" />
             </a>
