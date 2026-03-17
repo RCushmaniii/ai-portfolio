@@ -36,7 +36,11 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
         {/* Main content */}
         <div className="order-1 lg:order-2 min-w-0">
           {/* Hero Carousel */}
-          <ImageCarousel images={project.hero_images} title={project.title} />
+          <ImageCarousel
+            images={project.hero_images}
+            title={project.title}
+            fallbackImage={project.thumbnail || project.thumbnail_fallback}
+          />
 
           {/* Header */}
           <div className="mt-8">
@@ -127,7 +131,7 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
 
           {/* Markdown Body */}
           {project.body_markdown && (
-            <section className="mb-8 prose prose-neutral dark:prose-invert max-w-none">
+            <section className="mb-8 prose prose-neutral dark:prose-invert max-w-none prose-headings:mt-8 prose-headings:mb-4 prose-p:leading-relaxed prose-li:leading-relaxed prose-hr:my-8">
               <ReactMarkdown
                 allowedElements={[
                   'h1', 'h2', 'h3', 'h4', 'h5', 'h6',

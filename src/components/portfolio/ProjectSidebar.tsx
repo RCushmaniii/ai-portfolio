@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Star, GitFork, Calendar, Code2, Activity } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Code2, Activity } from 'lucide-react';
 import { t, type Locale } from '@/i18n';
 import type { PortfolioProject } from '@/lib/portfolio/types';
 
@@ -48,24 +48,6 @@ export function ProjectSidebar({ project, locale }: ProjectSidebarProps) {
             {project.status}
           </Badge>
         </MetadataRow>
-
-        {project.github_stars > 0 && (
-          <MetadataRow icon={<Star className="h-4 w-4" />} label={dict.sidebar_stars}>
-            <span>{project.github_stars}</span>
-          </MetadataRow>
-        )}
-
-        {project.github_forks > 0 && (
-          <MetadataRow icon={<GitFork className="h-4 w-4" />} label={dict.sidebar_forks}>
-            <span>{project.github_forks}</span>
-          </MetadataRow>
-        )}
-
-        {project.github_language && (
-          <MetadataRow icon={<Code2 className="h-4 w-4" />} label={dict.sidebar_language}>
-            <span>{project.github_language}</span>
-          </MetadataRow>
-        )}
 
         {project.date_completed && (
           <MetadataRow icon={<Calendar className="h-4 w-4" />} label={dict.sidebar_completed}>

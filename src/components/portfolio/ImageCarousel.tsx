@@ -9,9 +9,10 @@ import { useCallback, useEffect, useState } from 'react';
 interface ImageCarouselProps {
   images: string[];
   title: string;
+  fallbackImage?: string;
 }
 
-export function ImageCarousel({ images, title }: ImageCarouselProps) {
+export function ImageCarousel({ images, title, fallbackImage }: ImageCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
@@ -34,6 +35,19 @@ export function ImageCarousel({ images, title }: ImageCarouselProps) {
   const validImages = images.filter((_, i) => !failedImages.has(i));
 
   if (images.length === 0 || validImages.length === 0) {
+    if (fallbackImage) {
+      return (
+        <div className="relative aspect-video rounded-lg overflow-hidden">
+          <Image
+            src={fallbackImage}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 800px"
+          />
+        </div>
+      );
+    }
     return (
       <div className="aspect-video bg-muted rounded-lg flex items-center justify-center text-muted-foreground">
         No images available

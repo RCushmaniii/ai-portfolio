@@ -11,9 +11,7 @@ export function ProjectAside({ project, locale }: ProjectAsideProps) {
   const dict = t(locale);
   const hasTechStack = project.tech_stack.length > 0;
   const hasTopics = project.github_topics.length > 0;
-  const hasTags = project.tags.length > 0;
-
-  if (!hasTechStack && !hasTopics && !hasTags) return null;
+  if (!hasTechStack && !hasTopics) return null;
 
   return (
     <aside className="space-y-6">
@@ -43,18 +41,6 @@ export function ProjectAside({ project, locale }: ProjectAsideProps) {
         </div>
       )}
 
-      {hasTags && (
-        <div>
-          <h3 className="text-sm font-semibold mb-3">{dict.aside_tags}</h3>
-          <div className="flex flex-wrap gap-1.5">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="outline" className="text-xs">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      )}
     </aside>
   );
 }
