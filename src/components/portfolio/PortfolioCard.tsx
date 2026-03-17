@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Star, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { t, getLocalizedPath, type Locale } from '@/i18n';
 import type { PortfolioProject } from '@/lib/portfolio/types';
 
@@ -23,8 +23,8 @@ export const PortfolioCard = memo(function PortfolioCard({ project, locale }: Po
 
   return (
     <Card className="h-full flex flex-col overflow-hidden group hover:shadow-lg transition-shadow">
-      {/* Thumbnail */}
-      <div className="relative aspect-video overflow-hidden bg-muted">
+      {/* Thumbnail — clickable link to project */}
+      <Link href={getLocalizedPath(`/portfolio/${project.slug}`, locale)} className="relative aspect-video overflow-hidden bg-muted block">
         {showImage ? (
           <Image
             src={imageSrc}
@@ -46,17 +46,11 @@ export const PortfolioCard = memo(function PortfolioCard({ project, locale }: Po
             {dict.card_featured}
           </Badge>
         )}
-      </div>
+      </Link>
 
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between text-sm">
           <Badge variant="outline">{project.category}</Badge>
-          {project.github_stars > 0 && (
-            <span className="flex items-center gap-1 text-muted-foreground">
-              <Star className="h-4 w-4 fill-current" />
-              {project.github_stars}
-            </span>
-          )}
         </div>
         <h3 className="font-semibold text-lg line-clamp-2 mt-2">{project.title}</h3>
         <p className="text-sm text-muted-foreground line-clamp-2">
@@ -71,11 +65,6 @@ export const PortfolioCard = memo(function PortfolioCard({ project, locale }: Po
               {tech}
             </Badge>
           ))}
-          {project.tech_stack.length > 4 && (
-            <Badge variant="secondary" className="text-xs">
-              +{project.tech_stack.length - 4}
-            </Badge>
-          )}
         </div>
       </CardContent>
 
