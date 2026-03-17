@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
@@ -36,8 +37,9 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
-        <Link href={getLocalizedPath('/', locale)} className="font-bold text-lg">
-          CUSH<span className="text-cush-orange">LABS</span>
+        <Link href={getLocalizedPath('/', locale)} className="flex items-center gap-2 font-bold text-lg">
+          <Image src="/logo.png" alt="CushLabs" width={28} height={28} className="flex-shrink-0" />
+          <span>CUSH<span className="text-cush-orange">LABS</span> <span className="font-normal text-muted-foreground">Portfolio</span></span>
         </Link>
 
         {/* Desktop nav */}
@@ -72,8 +74,9 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <SheetHeader>
-                <SheetTitle className="text-left font-bold text-lg">
-                  CUSH<span className="text-cush-orange">LABS</span>
+                <SheetTitle className="text-left font-bold text-lg flex items-center gap-2">
+                  <Image src="/logo.png" alt="CushLabs" width={24} height={24} />
+                  <span>CUSH<span className="text-cush-orange">LABS</span> <span className="font-normal text-muted-foreground">Portfolio</span></span>
                 </SheetTitle>
               </SheetHeader>
 
