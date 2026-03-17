@@ -34,6 +34,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'cdn.cushlabs.ai',
+      },
+      {
+        protocol: 'https',
         hostname: 'voice.cushlabs.ai',
       },
       {
