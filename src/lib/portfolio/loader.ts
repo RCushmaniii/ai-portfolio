@@ -5,6 +5,7 @@ export { filterProjects, sortProjects, searchProjects } from './filters';
 
 const GITHUB_OWNER = 'RCushmaniii';
 const SELF_REPO = 'ai-portfolio'; // This app's own repo — local paths stay relative
+const CDN_BASE = 'https://cdn.cushlabs.ai'; // Cloudflare R2 CDN for all portfolio assets
 
 // Order configuration type
 interface PortfolioOrderConfig {
@@ -26,32 +27,26 @@ interface ProjectOverride {
 
 /**
  * Resolve a relative asset path to an absolute URL.
- * Same pattern as the CushLabs Astro site's resolveAssetUrl.
+ * Mirrors the CushLabs Astro site's resolveAssetUrl exactly:
  * - Already absolute URLs (https://) pass through as-is
- * - Relative paths: resolve against deploy URL (live_url or demo_url)
- * - Fallback: raw.githubusercontent.com
+ * - Self-repo paths stay relative (served from this app's public/)
+ * - All other repos resolve to Cloudflare R2 CDN: cdn.cushlabs.ai/{repo}/{path}
  */
 function resolveAssetUrl(
   assetPath: string | undefined | null,
   repoName: string,
-  deployUrl: string | null
 ): string | null {
   if (!assetPath) return null;
   // Already an absolute URL
-  if (assetPath.startsWith('https://') || assetPath.startsWith('http://')) return assetPath;
-  // Strip accidental /public prefix (some PORTFOLIO.md files have this wrong)
-  const cleanPath = assetPath.startsWith('/public/')
-    ? assetPath.replace('/public', '')
-    : assetPath;
+  if (/^https?:\/\//i.test(assetPath)) return assetPath;
   // Self-repo: assets live in this app's own public/ dir, keep paths relative
-  if (repoName === SELF_REPO) return cleanPath;
-  // Resolve against deploy URL if available
-  if (deployUrl) {
-    const base = deployUrl.replace(/\/+$/, '');
-    return `${base}${cleanPath}`;
-  }
-  // Fallback to raw.githubusercontent.com
-  return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${repoName}/main/public${cleanPath}`;
+  if (repoName === SELF_REPO) return assetPath;
+  // Strip accidental /public/ prefix (common PORTFOLIO.md mistake)
+  const cleaned = assetPath.replace(/^\/public\//, '/');
+  // Normalize: ensure path starts with /
+  const normalizedPath = cleaned.startsWith('/') ? cleaned : `/${cleaned}`;
+  // All external repo assets are served from Cloudflare R2 CDN
+  return `${CDN_BASE}/${repoName}${normalizedPath}`;
 }
 
 // Load order config
@@ -82,27 +77,24 @@ try {
     const overrides = projectOverrides[p.slug] || {};
     const thumbnailFallback = `https://opengraph.githubassets.com/1/${GITHUB_OWNER}/${p.repo_name}`;
 
-    // Use live_url or demo_url as the deploy URL for asset resolution
-    const deployUrl = p.live_url || p.demo_url || null;
-
     // Resolve thumbnail: override takes priority, then PORTFOLIO.md value
     // Override thumbnails are local to this app (SELF_REPO), not the project's deploy
     const resolvedThumbnail = overrides.thumbnail
-      ? resolveAssetUrl(overrides.thumbnail, SELF_REPO, null)
-      : resolveAssetUrl(p.thumbnail, p.repo_name, deployUrl);
+      ? resolveAssetUrl(overrides.thumbnail, SELF_REPO)
+      : resolveAssetUrl(p.thumbnail, p.repo_name);
 
     // Resolve hero images
     const resolvedHeroImages = p.hero_images
-      .map((img) => resolveAssetUrl(img, p.repo_name, deployUrl))
+      .map((img) => resolveAssetUrl(img, p.repo_name))
       .filter((url): url is string => url !== null);
 
     // Resolve video URL and poster — overrides are local to this app
     const videoUrl = overrides.video_url
-      ? resolveAssetUrl(overrides.video_url, SELF_REPO, null) || ''
-      : resolveAssetUrl(p.demo_video_url || '', p.repo_name, deployUrl) || '';
+      ? resolveAssetUrl(overrides.video_url, SELF_REPO) || ''
+      : resolveAssetUrl(p.demo_video_url || '', p.repo_name) || '';
     const videoPoster = overrides.video_poster
-      ? resolveAssetUrl(overrides.video_poster, SELF_REPO, null) || ''
-      : resolveAssetUrl(p.video_poster || '', p.repo_name, deployUrl) || '';
+      ? resolveAssetUrl(overrides.video_poster, SELF_REPO) || ''
+      : resolveAssetUrl(p.video_poster || '', p.repo_name) || '';
 
     return {
       ...p,
