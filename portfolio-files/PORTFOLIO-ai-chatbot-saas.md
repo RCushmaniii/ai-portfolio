@@ -1,55 +1,67 @@
 ---
 # =============================================================================
-# PORTFOLIO.md — AI Chatbot SaaS
+# PORTFOLIO.md — Converso AI (ai-chatbot-saas)
 # =============================================================================
 
 portfolio_enabled: true
-portfolio_priority: 4
-portfolio_featured: false
-portfolio_last_reviewed: "2025-12-31"
+portfolio_priority: 2
+portfolio_featured: true
+portfolio_last_reviewed: "2026-04-05"
 
-title: "AI Chatbot SaaS Platform"
-tagline: "White-label chatbot platform for agencies to deploy custom AI assistants"
-slug: "ai-chatbot-saas"
+title: "Converso AI — Bilingual AI Front Desk & Sales Assistant"
+tagline: "Multi-tenant SaaS platform for deploying bilingual AI chatbots that capture leads, answer from verified knowledge, and hand off to live agents"
+slug: "converso-ai-chatbot-saas"
 
 category: "AI Automation"
-target_audience: "Digital agencies and businesses deploying multiple chatbots"
+target_audience: "Service businesses in bilingual markets (Mexico/US) needing 24/7 AI customer engagement"
 tags:
   - "saas"
   - "chatbot"
   - "multi-tenant"
   - "ai"
-  - "white-label"
-  - "platform"
+  - "rag"
+  - "bilingual"
+  - "stripe"
+  - "nextjs"
+  - "whatsapp"
 
 thumbnail: "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/demo-thumbnail.png"
 hero_images:
   - "https://raw.githubusercontent.com/RCushmaniii/ai-chatbot-saas/main/public/images/demo-thumbnail.png"
 demo_video_url: ""
 
-live_url: ""
+live_url: "https://soyconverso.com"
 case_study_url: ""
 
 problem_solved: |
-  Agencies building custom chatbots for clients face repetitive development work,
-  complex deployment logistics, and ongoing maintenance burdens. Each client needs
-  similar core functionality with different branding, training data, and integrations.
+  Service businesses in bilingual markets lose leads outside business hours, can't afford
+  24/7 bilingual receptionists, and generic chatbots hallucinate answers because they don't
+  know the business. Existing solutions require technical expertise, lack native bilingual
+  support, or charge enterprise prices.
 
 key_outcomes:
-  - "Multi-tenant SaaS architecture for managing multiple clients"
-  - "White-label deployment with custom branding per client"
-  - "Centralized training data management and model updates"
-  - "Usage analytics and billing per client/organization"
-  - "API-first design for easy integrations"
-  - "Self-service client dashboard for minor updates"
+  - "RAG architecture ensures every answer traces to verified business content — zero hallucination"
+  - "Native bilingual (EN/ES) detection from first message, maintained throughout conversation"
+  - "Visual playbook builder for scripting conversation flows without code"
+  - "One-tag embeddable widget deployable on any website"
+  - "Multi-tenant SaaS with full data isolation, RBAC, and Stripe billing"
+  - "WhatsApp channel support via Vercel Chat SDK for Mexico market"
+  - "Production-grade observability: Sentry, Vercel Analytics, distributed rate limiting"
 
 tech_stack:
-  - "Next.js 14"
-  - "TypeScript"
-  - "PostgreSQL"
-  - "Prisma ORM"
-  - "OpenAI API"
-  - "Stripe"
+  - "Next.js 16"
+  - "TypeScript 5.8"
+  - "React 19"
+  - "PostgreSQL + pgvector"
+  - "Drizzle ORM"
+  - "Vercel AI SDK 5.0"
+  - "OpenAI GPT-4o"
+  - "Clerk Auth"
+  - "Stripe Billing"
+  - "Upstash Redis"
+  - "Sentry"
+  - "React Flow"
+  - "Playwright"
   - "Vercel"
 
 complexity: "Production"
@@ -58,64 +70,55 @@ complexity: "Production"
 
 ## Overview
 
-AI Chatbot SaaS is a multi-tenant platform that enables agencies and businesses to deploy, manage, and monetize custom AI chatbots at scale. Instead of building each chatbot from scratch, teams can spin up new instances with custom training data, branding, and configurations in minutes.
-
-The platform handles authentication, data isolation, billing, analytics, and infrastructure—so teams can focus on client success rather than DevOps.
+Converso AI is a multi-tenant SaaS platform that lets service businesses deploy bilingual AI chatbots backed by their own knowledge base. Each tenant gets a fully branded assistant that answers questions from verified content, captures leads, runs scripted conversation flows, and hands off to live agents — all manageable by a non-technical business owner through a self-service admin dashboard.
 
 ## The Challenge
 
-Agencies offering AI chatbot services face several bottlenecks:
+Service businesses in the Mexico/US corridor face a triple bind:
 
-- **Repetitive Development:** Every client needs the same core features
-- **Deployment Complexity:** Managing infrastructure for multiple clients
-- **Data Isolation:** Ensuring client data stays separate and secure
-- **Billing Headaches:** Tracking usage and generating invoices manually
-- **Maintenance Burden:** Updates and bug fixes across multiple deployments
-- **Limited Scalability:** Can't grow beyond a handful of clients
+- **Lead loss** — inquiries that arrive outside business hours go unanswered and never convert
+- **Language gap** — customers expect native-quality service in their preferred language, but bilingual staffing is expensive
+- **Trust deficit** — generic chatbots hallucinate answers about the business, eroding credibility
 
-Building each chatbot as a separate application doesn't scale. Agencies needed a platform approach.
+Existing solutions fail on at least one axis: they require developer setup, produce translation-artifact responses, or price out small businesses.
 
 ## The Solution
 
-AI Chatbot SaaS provides a complete platform for deploying AI chatbots at scale:
+**Deterministic RAG** retrieves relevant knowledge chunks before the LLM call and injects them as system context. Every answer traces back to uploaded content — website scrapes, PDFs, or manual entries. Source URLs are automatically attributed.
 
-**For Agencies:**
-- Deploy new client chatbots in under 10 minutes
-- White-label with client branding (logo, colors, domain)
-- Centralized dashboard for managing all deployments
-- Usage-based billing automatically calculated
-- One codebase to maintain, all clients benefit from updates
+**Native bilingual design** detects the user's language from their first message and maintains it through the entire conversation. System prompts, starter questions, and playbook flows all support dual-language configuration.
 
-**For End Clients:**
-- Self-service dashboard for training data management
-- Analytics on chatbot usage and performance
-- Custom integration options (Slack, email, website embed)
-- Reliable uptime with enterprise infrastructure
+**Visual playbook builder** (React Flow) lets business owners design multi-step conversation flows with conditional branching, data capture, and live agent handoff — without writing code.
 
-**Platform Features:**
-- Multi-tenant architecture with complete data isolation
-- Role-based access control (agency admin, client admin, end users)
-- Custom training data per client
-- API keys for programmatic access
-- Webhook integrations for third-party systems
+**One-tag embed widget** drops onto any website. Appearance, behavior, and starter questions are configured from the admin panel.
+
+**Admin dashboard** provides knowledge ingestion (website scraping, file uploads, manual entry), lead management with contact scoring, live chat queues with agent routing, and Stripe-powered billing with usage metering.
 
 ## Technical Highlights
 
-- **Multi-Tenant Architecture:** Complete data isolation using row-level security
-- **Scalable Infrastructure:** Handles thousands of concurrent conversations
-- **Billing Integration:** Stripe for subscription and usage-based billing
-- **Modern Stack:** Next.js 14, TypeScript, PostgreSQL with Prisma
-- **API-First Design:** Everything accessible via REST API
-- **Security:** JWT authentication, encrypted data at rest, GDPR compliant
+- **Multi-tenant isolation** — every DB query scopes to `businessId`; knowledge, conversations, settings, and billing are fully isolated
+- **pgvector HNSW indexes** for sub-linear cosine similarity search across knowledge bases
+- **Streaming AI responses** via Vercel AI SDK 5.0 with real-time token delivery
+- **RBAC** — owner/admin/member roles enforced at every API route via `requirePermission()` middleware
+- **Security headers** — CSP, HSTS, X-Frame-Options, Permissions-Policy applied at the edge via Next.js 16 proxy
+- **Sentry monitoring** — client, server, and edge runtime error tracking with source map uploads
+- **Upstash Redis rate limiting** — distributed sliding-window limiter across Vercel serverless instances
+- **Runtime env validation** — Zod schema validates all required vars at startup, fails fast in production
+- **Playwright E2E tests** — 12 test suites covering chat, onboarding, admin APIs, embed widget, and cross-tenant isolation
+- **Bundle optimization** — admin content lazy-loaded via `next/dynamic`, presentational components converted to server components
+- **WhatsApp channel** — multi-channel support via Vercel Chat SDK, strategic differentiator for Mexico market
 
 ## Results
 
-This implementation demonstrates:
-- Enterprise SaaS architecture and multi-tenancy patterns
-- Complex data modeling and relationships
-- Billing and subscription management
-- Full-stack TypeScript development
-- API design and documentation
-- Scalable infrastructure thinking
-
-Perfect for portfolios showcasing SaaS platform development, complex business logic, and the ability to build products that other businesses build their services on top of.
+| Capability | Implementation |
+|------------|---------------|
+| Knowledge ingestion | Website scraping, PDF/DOCX/CSV upload, manual entry |
+| Vector search | pgvector with HNSW indexes, cosine similarity |
+| Conversation flows | Visual playbook builder with 7 node types |
+| Lead management | Contact scoring, activity tracking, CSV import/export |
+| Live chat | Agent queue with priority routing and AI summaries |
+| Billing | Stripe subscriptions with usage-based metering |
+| Widget | One-tag embed with configurable appearance |
+| Multi-channel | WhatsApp via Vercel Chat SDK |
+| Monitoring | Sentry + Vercel Analytics + Speed Insights |
+| Rate limiting | Upstash Redis distributed limiter |
