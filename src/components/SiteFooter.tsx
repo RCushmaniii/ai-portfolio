@@ -1,4 +1,4 @@
-import { Github } from 'lucide-react';
+import { GithubIcon } from '@/components/icons/GithubIcon';
 import { t, interpolate, type Locale } from '@/i18n';
 
 interface SiteFooterProps {
@@ -28,7 +28,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             className="hover:text-cush-orange transition-colors"
             aria-label="GitHub"
           >
-            <Github className="h-5 w-5" />
+            <GithubIcon className="h-5 w-5" />
           </a>
         </div>
       </div>

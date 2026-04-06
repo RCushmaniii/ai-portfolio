@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Calendar, Code2, Activity } from 'lucide-react';
+import { ExternalLink, Calendar, Code2, Activity } from 'lucide-react';
+import { GithubIcon } from '@/components/icons/GithubIcon';
 import { t, type Locale } from '@/i18n';
 import type { PortfolioProject } from '@/lib/portfolio/types';
 
@@ -32,7 +33,7 @@ export function ProjectSidebar({ project, locale }: ProjectSidebarProps) {
         )}
         <Button variant="outline" asChild className="w-full">
           <a href={project.repo_url} target="_blank" rel="noopener noreferrer">
-            <Github className="mr-2 h-4 w-4" /> GitHub
+            <GithubIcon className="mr-2 h-4 w-4" /> GitHub
           </a>
         </Button>
       </div>
