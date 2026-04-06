@@ -74,6 +74,12 @@ pnpm sync:local
 
 # Generate PORTFOLIO.md for repos
 pnpm generate
+
+# Run Playwright smoke tests
+pnpm test
+
+# Run tests with interactive UI
+pnpm test:ui
 ```
 
 ## Key Patterns & Conventions
