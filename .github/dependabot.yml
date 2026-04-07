@@ -10,6 +10,12 @@ updates:
       - dependencies
     commit-message:
       prefix: "deps:"
+    ignore:
+      # Tailwind 3 → 4 is a breaking migration (config removal, @theme blocks,
+      # CSS var namespace collisions). Handle as a deliberate effort, not a
+      # Dependabot drive-by. See cushlabs-OS-dashboard/docs/operations/dependency-policy.md
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: "/"
