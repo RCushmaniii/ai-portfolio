@@ -67,6 +67,21 @@ problem_solved: |
   scatter across READMEs and repo settings with no unified display layer. A
   separate portfolio site inevitably falls out of sync with the actual work.
 
+solution: |
+  Each repository owns its portfolio entry through a version-controlled PORTFOLIO.md file at its
+  root, keeping content co-located with the code it describes. A TypeScript sync script fetches
+  and parses every file via the GitHub API, validates it through a Zod schema with
+  backward-compatible transforms, and outputs a single static JSON file — with sync errors and
+  warnings auto-reported as deduplicated GitHub Issues. The portfolio page drives search, category
+  filtering, and sort entirely through URL params for shareable views, and Next.js serves
+  statically generated pages with zero runtime API calls.
+
+metrics:
+  - "21 projects browsable by category with instant client-side search, filter, and sort"
+  - "Zero runtime API calls — fully static pages with sub-second loads"
+  - "Featured showcase highlighting the 6 strongest projects with detailed breakdowns"
+  - "Filtered views shareable via URL — bookmarkable category and sort combinations"
+
 key_outcomes:
   - "21 projects aggregated from GitHub repos into a single filterable interface"
   - "Client-side search, category filtering, and sort — all via shareable URL params"
@@ -144,12 +159,14 @@ The result is a portfolio site with zero runtime dependencies on external APIs. 
 ## Results
 
 **For the End User:**
+
 - 21 projects browsable by category with instant client-side search, filtering, and sorting
 - Featured showcase highlighting the 6 strongest projects with detailed breakdowns
 - Responsive detail pages with image carousels, tech stack display, and markdown rendering
 - Filtered views shareable via URL — bookmarkable category/sort combinations
 
 **Technical Demonstration:**
+
 - End-to-end TypeScript with strict mode and Zod validation at the data boundary
 - Clean separation of build-time data loading and runtime interactivity
 - Pragmatic architecture that avoids unnecessary complexity — no CMS, no database, no serverless functions
