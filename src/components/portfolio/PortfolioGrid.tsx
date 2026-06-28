@@ -1,20 +1,40 @@
-'use client';
+"use client";
 
-import { useMemo } from 'react';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { PortfolioCard } from './PortfolioCard';
-import { CategoryFilter } from './CategoryFilter';
-import { SortSelect } from './SortSelect';
-import { SearchInput } from './SearchInput';
-import { filterProjects, sortProjects, searchProjects } from '@/lib/portfolio/filters';
-import { t, interpolate, type Locale } from '@/i18n';
-import type { PortfolioProject, PortfolioCategory, SortOption } from '@/lib/portfolio/types';
+import { useMemo } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { ProjectCard } from "./ProjectCard";
+import { CategoryFilter } from "./CategoryFilter";
+import { SortSelect } from "./SortSelect";
+import { SearchInput } from "./SearchInput";
+import {
+  filterProjects,
+  sortProjects,
+  searchProjects,
+} from "@/lib/portfolio/filters";
+import { t, interpolate, type Locale } from "@/i18n";
+import type {
+  PortfolioProject,
+  PortfolioCategory,
+  SortOption,
+} from "@/lib/portfolio/types";
 
 const VALID_CATEGORIES: ReadonlySet<string> = new Set([
-  'all', 'featured', 'AI Automation', 'Templates', 'Tools', 'Developer Tools',
-  'Client Work', 'Games', 'Marketing', 'Creative',
+  "all",
+  "featured",
+  "AI Automation",
+  "Templates",
+  "Tools",
+  "Developer Tools",
+  "Client Work",
+  "Games",
+  "Marketing",
+  "Creative",
 ]);
-const VALID_SORTS: ReadonlySet<string> = new Set(['priority', 'recent', 'popular']);
+const VALID_SORTS: ReadonlySet<string> = new Set([
+  "priority",
+  "recent",
+  "popular",
+]);
 
 interface PortfolioGridProps {
   projects: PortfolioProject[];
@@ -27,20 +47,26 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
   const pathname = usePathname();
   const dict = t(locale);
 
-  const rawCategory = searchParams.get('category') || 'all';
-  const rawSort = searchParams.get('sort') || 'priority';
-  const search = searchParams.get('search') || '';
-  const category: PortfolioCategory | 'all' | 'featured' = VALID_CATEGORIES.has(rawCategory)
-    ? (rawCategory as PortfolioCategory | 'all' | 'featured')
-    : 'all';
+  const rawCategory = searchParams.get("category") || "all";
+  const rawSort = searchParams.get("sort") || "priority";
+  const search = searchParams.get("search") || "";
+  const category: PortfolioCategory | "all" | "featured" = VALID_CATEGORIES.has(
+    rawCategory,
+  )
+    ? (rawCategory as PortfolioCategory | "all" | "featured")
+    : "all";
   const sort: SortOption = VALID_SORTS.has(rawSort)
     ? (rawSort as SortOption)
-    : 'priority';
+    : "priority";
 
   const updateParams = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    const defaults: Record<string, string> = { category: 'all', sort: 'priority', search: '' };
-    if (value === defaults[key] || value === '') {
+    const defaults: Record<string, string> = {
+      category: "all",
+      sort: "priority",
+      search: "",
+    };
+    if (value === defaults[key] || value === "") {
       params.delete(key);
     } else {
       params.set(key, value);
@@ -60,7 +86,7 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
       <div className="mb-4">
         <SearchInput
           value={search}
-          onChange={(value) => updateParams('search', value)}
+          onChange={(value) => updateParams("search", value)}
           resultCount={filteredAndSorted.length}
           totalCount={projects.length}
           locale={locale}
@@ -71,12 +97,12 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
         <CategoryFilter
           value={category}
-          onChange={(value) => updateParams('category', value)}
+          onChange={(value) => updateParams("category", value)}
           locale={locale}
         />
         <SortSelect
           value={sort}
-          onChange={(value) => updateParams('sort', value)}
+          onChange={(value) => updateParams("sort", value)}
           locale={locale}
         />
       </div>
@@ -100,7 +126,9 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
           <button
             onClick={() => {
               const params = new URLSearchParams();
-              router.push(`${pathname}?${params.toString()}`, { scroll: false });
+              router.push(`${pathname}?${params.toString()}`, {
+                scroll: false,
+              });
             }}
             className="text-sm text-primary hover:underline"
           >
@@ -110,7 +138,12 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAndSorted.map((project) => (
-            <PortfolioCard key={project.slug} project={project} locale={locale} />
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              locale={locale}
+              showFeaturedBadge
+            />
           ))}
         </div>
       )}
