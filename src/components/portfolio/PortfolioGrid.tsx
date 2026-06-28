@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ProjectCard } from "./ProjectCard";
 import { CategoryFilter } from "./CategoryFilter";
@@ -74,19 +74,42 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
+  // Instant search: filter on the typed value immediately so the result count
+  // updates with no lag, while the URL (for shareable links) syncs debounced.
+  const [searchTerm, setSearchTerm] = useState(search);
+  const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastPushedSearch = useRef(search);
+
+  // Re-sync when the URL search changes externally (clear filters, back/forward).
+  useEffect(() => {
+    if (search !== lastPushedSearch.current) {
+      lastPushedSearch.current = search;
+      setSearchTerm(search);
+    }
+  }, [search]);
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+    if (searchTimer.current) clearTimeout(searchTimer.current);
+    searchTimer.current = setTimeout(() => {
+      lastPushedSearch.current = value;
+      updateParams("search", value);
+    }, 250);
+  };
+
   const filteredAndSorted = useMemo(() => {
-    const searched = searchProjects(projects, search);
+    const searched = searchProjects(projects, searchTerm);
     const filtered = filterProjects(searched, category);
     return sortProjects(filtered, sort);
-  }, [projects, search, category, sort]);
+  }, [projects, searchTerm, category, sort]);
 
   return (
     <div>
       {/* Search */}
       <div className="mb-4">
         <SearchInput
-          value={search}
-          onChange={(value) => updateParams("search", value)}
+          value={searchTerm}
+          onChange={handleSearchChange}
           resultCount={filteredAndSorted.length}
           totalCount={projects.length}
           locale={locale}
@@ -119,12 +142,17 @@ export function PortfolioGrid({ projects, locale }: PortfolioGridProps) {
       {filteredAndSorted.length === 0 ? (
         <div className="text-center py-16">
           <p className="text-muted-foreground mb-4">
-            {search
-              ? interpolate(dict.portfolio_no_results_search, { query: search })
+            {searchTerm
+              ? interpolate(dict.portfolio_no_results_search, {
+                  query: searchTerm,
+                })
               : dict.portfolio_no_results_category}
           </p>
           <button
             onClick={() => {
+              if (searchTimer.current) clearTimeout(searchTimer.current);
+              lastPushedSearch.current = "";
+              setSearchTerm("");
               const params = new URLSearchParams();
               router.push(`${pathname}?${params.toString()}`, {
                 scroll: false,
