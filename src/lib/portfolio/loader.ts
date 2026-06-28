@@ -3,7 +3,6 @@ import path from "path";
 import type { PortfolioProject, PortfolioData, HeroImage } from "./types";
 export { filterProjects, sortProjects, searchProjects } from "./filters";
 
-const GITHUB_OWNER = "RCushmaniii";
 const SELF_REPO = "ai-portfolio"; // This app's own repo — local paths stay relative
 const CDN_BASE = "https://cdn.cushlabs.ai"; // Cloudflare R2 CDN for all portfolio assets
 
@@ -49,6 +48,20 @@ function resolveAssetUrl(
   return `${CDN_BASE}/${repoName}${normalizedPath}`;
 }
 
+// Branded fallback card shown when a thumbnail is missing or off-allowlist.
+// Matches the cushlabs site's default-card.svg.
+const BRANDED_FALLBACK = "/images/portfolio/default-card.svg";
+
+// Accept a resolved thumbnail only if it is a local /images/ path or an R2 CDN
+// URL; otherwise return the branded card. Prevents emitting any URL that could
+// 404 (e.g. a private-repo GitHub OpenGraph card).
+function thumbnailOrBranded(url: string | null): string {
+  if (url && (url.startsWith("/images/") || url.startsWith(`${CDN_BASE}/`))) {
+    return url;
+  }
+  return BRANDED_FALLBACK;
+}
+
 // Load order config
 const orderConfigPath = path.join(
   process.cwd(),
@@ -89,13 +102,17 @@ try {
   const rawData = JSON.parse(fs.readFileSync(portfolioPath, "utf-8"));
   const projects = (rawData.projects as PortfolioProject[]).map((p) => {
     const overrides = projectOverrides[p.slug] || {};
-    const thumbnailFallback = `https://opengraph.githubassets.com/1/${GITHUB_OWNER}/${p.repo_name}`;
 
-    // Resolve thumbnail: override takes priority, then PORTFOLIO.md value
-    // Override thumbnails are local to this app (SELF_REPO), not the project's deploy
+    // Resolve thumbnail: optional local override first, then the PORTFOLIO.md
+    // value (which resolves to the Cloudflare R2 CDN for external repos —
+    // matching the cushlabs site, the single canonical asset store).
     const resolvedThumbnail = overrides.thumbnail
       ? resolveAssetUrl(overrides.thumbnail, SELF_REPO)
       : resolveAssetUrl(p.thumbnail, p.repo_name);
+    // Allowlist (mirrors cushlabs' getThumbnail): only emit a local /images/ path
+    // or an R2 CDN URL. Anything else — or a missing thumbnail — degrades to the
+    // branded card, so we never render a 404 or a private-repo GitHub gray card.
+    const thumbnail = thumbnailOrBranded(resolvedThumbnail);
 
     // Resolve hero images — resolve each src while preserving bilingual alt text
     const resolvedHeroImages = p.hero_images
@@ -120,10 +137,10 @@ try {
         orderConfig.featured.length > 0
           ? orderConfig.featured.includes(p.slug)
           : p.portfolio_featured,
-      // Compute thumbnail fallback from GitHub OpenGraph
-      thumbnail_fallback: thumbnailFallback,
-      // Resolved thumbnail with fallback chain
-      thumbnail: resolvedThumbnail || thumbnailFallback,
+      // Branded fallback card (used by the carousel when there are no images)
+      thumbnail_fallback: BRANDED_FALLBACK,
+      // Resolved thumbnail (R2 CDN / local), allowlisted with branded fallback
+      thumbnail,
       // Resolved hero images
       hero_images: resolvedHeroImages,
       // Video fields
