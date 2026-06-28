@@ -1,10 +1,10 @@
-import { Suspense } from 'react';
-import { getPortfolioProjects } from '@/lib/portfolio/loader';
-import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
-import { Skeleton } from '@/components/ui/skeleton';
-import { isValidLocale, t, interpolate, type Locale } from '@/i18n';
+import { Suspense } from "react";
+import { getPortfolioProjects } from "@/lib/portfolio/loader";
+import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
+import { Skeleton } from "@/components/ui/skeleton";
+import { isValidLocale, t, interpolate, type Locale } from "@/i18n";
 
-const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
+const BASE_URL = "https://ai-portfolio-cushlabs.vercel.app";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -12,18 +12,42 @@ interface Props {
 
 export async function generateMetadata({ params }: Props) {
   const { locale: rawLocale } = await params;
-  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : "en";
   const dict = t(locale);
+
+  const canonical =
+    locale === "es" ? `${BASE_URL}/es/portfolio` : `${BASE_URL}/portfolio`;
 
   return {
     title: dict.portfolio_title,
     description: dict.meta_portfolio_description,
     alternates: {
-      canonical: locale === 'es' ? `${BASE_URL}/es/portfolio` : `${BASE_URL}/portfolio`,
+      canonical,
       languages: {
         en: `${BASE_URL}/portfolio`,
         es: `${BASE_URL}/es/portfolio`,
       },
+    },
+    openGraph: {
+      title: dict.portfolio_title,
+      description: dict.meta_portfolio_description,
+      url: canonical,
+      siteName: "CUSHLABS",
+      type: "website",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "CushLabs AI Services — AI That Works While You Sleep",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.portfolio_title,
+      description: dict.meta_portfolio_description,
+      images: ["/og-image.png"],
     },
   };
 }
@@ -59,7 +83,7 @@ function PortfolioGridSkeleton() {
 
 export default async function PortfolioPage({ params }: Props) {
   const { locale: rawLocale } = await params;
-  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : "en";
   const dict = t(locale);
   const projects = await getPortfolioProjects();
 

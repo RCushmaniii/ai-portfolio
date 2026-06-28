@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { FeaturedWork } from '@/components/portfolio/FeaturedWork';
-import { getPortfolioProjects } from '@/lib/portfolio/loader';
-import { isValidLocale, t, getLocalizedPath, type Locale } from '@/i18n';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { FeaturedWork } from "@/components/portfolio/FeaturedWork";
+import { getPortfolioProjects } from "@/lib/portfolio/loader";
+import { isValidLocale, t, getLocalizedPath, type Locale } from "@/i18n";
 
-const BASE_URL = 'https://ai-portfolio-cushlabs.vercel.app';
+const BASE_URL = "https://ai-portfolio-cushlabs.vercel.app";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -13,9 +13,9 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: rawLocale } = await params;
-  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : "en";
   const dict = t(locale);
-  const canonical = locale === 'es' ? `${BASE_URL}/es` : BASE_URL;
+  const canonical = locale === "es" ? `${BASE_URL}/es` : BASE_URL;
 
   return {
     title: dict.meta_title,
@@ -31,20 +31,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: dict.meta_title,
       description: dict.meta_description,
       url: canonical,
-      siteName: 'CUSHLABS',
-      type: 'website',
+      siteName: "CUSHLABS",
+      type: "website",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "CushLabs AI Services — AI That Works While You Sleep",
+        },
+      ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: dict.meta_title,
       description: dict.meta_description,
+      images: ["/og-image.png"],
     },
   };
 }
 
 export default async function HomePage({ params }: Props) {
   const { locale: rawLocale } = await params;
-  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : 'en';
+  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : "en";
   const dict = t(locale);
   const projects = await getPortfolioProjects();
 
@@ -55,11 +64,11 @@ export default async function HomePage({ params }: Props) {
         <p className="text-xl text-muted-foreground mb-4">
           {dict.home_subtitle}
         </p>
-        <p className="text-muted-foreground mb-8">
-          {dict.home_description}
-        </p>
+        <p className="text-muted-foreground mb-8">{dict.home_description}</p>
         <Button size="lg" asChild>
-          <Link href={getLocalizedPath('/portfolio', locale)}>{dict.home_cta}</Link>
+          <Link href={getLocalizedPath("/portfolio", locale)}>
+            {dict.home_cta}
+          </Link>
         </Button>
       </div>
 
