@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { t, type Locale } from "@/i18n";
@@ -13,6 +12,10 @@ interface SearchInputProps {
   locale: Locale;
 }
 
+/**
+ * Controlled search box. The parent owns the value and debounces the URL sync,
+ * so filtering is instant as you type (no lag on the result count).
+ */
 export function SearchInput({
   value,
   onChange,
@@ -21,36 +24,6 @@ export function SearchInput({
   locale,
 }: SearchInputProps) {
   const dict = t(locale);
-  const [localValue, setLocalValue] = useState(value);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // Sync external value changes (e.g. URL param reset) into the debounced local state.
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional external→local sync
-    setLocalValue(value);
-  }, [value]);
-
-  const handleChange = (newValue: string) => {
-    setLocalValue(newValue);
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => {
-      onChange(newValue);
-    }, 300);
-  };
-
-  const handleClear = () => {
-    setLocalValue("");
-    if (timerRef.current) clearTimeout(timerRef.current);
-    onChange("");
-  };
-
-  // Cleanup timer on unmount
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, []);
-
   const showCount = value.length > 0;
 
   return (
@@ -60,13 +33,13 @@ export function SearchInput({
         <Input
           type="text"
           placeholder={dict.portfolio_search_placeholder}
-          value={localValue}
-          onChange={(e) => handleChange(e.target.value)}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
           className="pl-9 pr-9 bg-muted/50 border-muted-foreground/20"
         />
-        {localValue && (
+        {value && (
           <button
-            onClick={handleClear}
+            onClick={() => onChange("")}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
             aria-label="Clear search"
           >

@@ -50,6 +50,14 @@ export const es = {
   // Categories
   cat_all: "Todos",
   cat_featured: "Destacados",
+  cat_ai_automation: "Automatización con IA",
+  cat_developer_tools: "Herramientas Dev",
+  cat_templates: "Plantillas",
+  cat_tools: "Herramientas",
+  cat_client_work: "Proyectos de Cliente",
+  cat_games: "Juegos",
+  cat_marketing: "Marketing",
+  cat_creative: "Creativo",
 
   // Sort
   sort_priority: "Prioridad",
