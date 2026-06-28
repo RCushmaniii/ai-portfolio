@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { Search, X } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { t, type Locale } from '@/i18n';
+import { useEffect, useRef, useState } from "react";
+import { Search, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { t, type Locale } from "@/i18n";
 
 interface SearchInputProps {
   value: string;
@@ -13,13 +13,20 @@ interface SearchInputProps {
   locale: Locale;
 }
 
-export function SearchInput({ value, onChange, resultCount, totalCount, locale }: SearchInputProps) {
+export function SearchInput({
+  value,
+  onChange,
+  resultCount,
+  totalCount,
+  locale,
+}: SearchInputProps) {
   const dict = t(locale);
   const [localValue, setLocalValue] = useState(value);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Sync external value changes (e.g. URL param reset)
+  // Sync external value changes (e.g. URL param reset) into the debounced local state.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional external→local sync
     setLocalValue(value);
   }, [value]);
 
@@ -32,9 +39,9 @@ export function SearchInput({ value, onChange, resultCount, totalCount, locale }
   };
 
   const handleClear = () => {
-    setLocalValue('');
+    setLocalValue("");
     if (timerRef.current) clearTimeout(timerRef.current);
-    onChange('');
+    onChange("");
   };
 
   // Cleanup timer on unmount
@@ -69,7 +76,8 @@ export function SearchInput({ value, onChange, resultCount, totalCount, locale }
       </div>
       {showCount && (
         <span className="text-sm text-muted-foreground whitespace-nowrap">
-          {resultCount} {dict.portfolio_of} {totalCount} {dict.portfolio_projects}
+          {resultCount} {dict.portfolio_of} {totalCount}{" "}
+          {dict.portfolio_projects}
         </span>
       )}
     </div>
