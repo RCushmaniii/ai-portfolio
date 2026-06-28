@@ -3,6 +3,12 @@
     "video_url": "/video/portfolio-brief.mp4",
     "video_poster": "/images/portfolio-brief-poster.webp"
   },
+  "ny-english-messenger-bot": {
+    "thumbnail": "https://cdn.cushlabs.ai/ny-english-messenger-bot/public/images/thumb.webp"
+  },
+  "cushlabs-sticker-gen": {
+    "thumbnail": "https://cdn.cushlabs.ai/cushlabs-sticker-gen/docs/images/thumbnail.png"
+  },
   "cushlabs": {
     "video_url": "https://cushlabs.ai/images/portfolio/cushlabs-brief.mp4",
     "video_poster": "/images/portfolio/cushlabs-video-poster.jpg"
