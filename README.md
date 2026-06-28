@@ -1,6 +1,6 @@
 # AI Portfolio
 
-![Next.js](https://img.shields.io/badge/Next.js_15-black?style=flat-square&logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![React 19](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vercel](https://img.shields.io/badge/Vercel-000?style=flat-square&logo=vercel)
+![Next.js](https://img.shields.io/badge/Next.js_16-black?style=flat-square&logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![React 19](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vercel](https://img.shields.io/badge/Vercel-000?style=flat-square&logo=vercel)
 
 > A bilingual (EN/ES) static portfolio system that aggregates project data from GitHub repositories and renders a professional, filterable showcase with SEO optimization and WebP images.
 
@@ -49,11 +49,12 @@ On the display side, Next.js App Router serves statically-generated pages. A ser
 - **Server/client component split**: Pages load data server-side via `fs`; filtering runs client-side via pure functions in `filters.ts`
 - **URL-driven state**: Category and sort selections stored in search params for shareable, bookmarkable filtered views
 - **Order override system**: A `portfolio-order.json` config controls display priority and featured badges without code changes
-- **Bilingual (EN/ES)**: Full internationalization with middleware-based locale routing
-- **WebP images**: All local images converted to WebP (93% size reduction)
-- **SEO optimized**: Dynamic sitemap, robots.txt, JSON-LD structured data, canonical URLs, theme-color
+- **Bilingual (EN/ES)**: Full internationalization with middleware-based locale routing, per-locale `<html lang>`, and descriptive bilingual (`alt_en`/`alt_es`) image alt text
+- **R2 CDN assets**: Project thumbnails and hero images resolve to a Cloudflare R2 store (`cdn.cushlabs.ai`) with a branded fallback card — no broken images
+- **Instant client-side search**: Results filter as you type while the URL syncs debounced for shareable links
+- **SEO optimized**: Dynamic sitemap with `hreflang` alternates, robots.txt, JSON-LD structured data (Organization, BreadcrumbList, SoftwareApplication), canonical URLs, Open Graph + Twitter cards
 - **Dark mode**: System-preference-aware theme switching via `next-themes`
-- **Image security**: `next.config.ts` restricts remote images to GitHub-hosted domains only
+- **Resilient sync**: Tolerant YAML parsing recovers malformed frontmatter (logged, never silently dropped); disabled repos skip cleanly
 - **shadcn/ui components**: Accessible, Tailwind-native UI components with consistent design tokens
 
 ## Getting Started
@@ -80,10 +81,10 @@ Copy the example file and add your GitHub token:
 cp .env.example .env
 ```
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GITHUB_TOKEN` | Yes (sync only) | Personal access token for GitHub API |
-| `NEXT_PUBLIC_SITE_URL` | No | Base URL for OG images |
+| Variable               | Required        | Description                          |
+| ---------------------- | --------------- | ------------------------------------ |
+| `GITHUB_TOKEN`         | Yes (sync only) | Personal access token for GitHub API |
+| `NEXT_PUBLIC_SITE_URL` | No              | Base URL for OG images               |
 
 ### Running Locally
 
@@ -118,11 +119,11 @@ ai-portfolio/
 │   └── generate-portfolio.ts    # PORTFOLIO.md generator
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx           # Root layout (viewport/theme-color)
+│   │   ├── layout.tsx           # Pass-through root (html/lang lives per-locale)
 │   │   ├── sitemap.ts           # Dynamic sitemap with i18n alternates
 │   │   ├── robots.ts            # Robots.txt (allow all)
 │   │   └── [locale]/
-│   │       ├── layout.tsx       # Locale layout (metadata, JSON-LD)
+│   │       ├── layout.tsx       # Locale layout (html lang, metadata, JSON-LD)
 │   │       ├── page.tsx         # Home page
 │   │       ├── featured/        # Featured projects page
 │   │       └── portfolio/
@@ -162,9 +163,9 @@ The sync script doesn't just log to stdout — it tracks problems and reports th
 
 **What gets tracked:**
 
-| Level | Examples |
-|-------|---------|
-| Error | 403 Forbidden (token access), invalid PORTFOLIO.md frontmatter |
+| Level   | Examples                                                                    |
+| ------- | --------------------------------------------------------------------------- |
+| Error   | 403 Forbidden (token access), invalid PORTFOLIO.md frontmatter              |
 | Warning | Missing tagline, thumbnail, tech stack, problem description, or screenshots |
 
 **How it works:**
@@ -180,16 +181,23 @@ The sync script doesn't just log to stdout — it tracks problems and reports th
 
 ```markdown
 ## Errors (1)
+
 ### `some-repo`
+
 - 403 Forbidden — token lacks access to this repo
 
 ## Warnings (2)
+
 ### `mazebreak-trello`
+
 - Missing problem/challenge description
+
 ### `mazebreak-wiki`
+
 - Missing problem/challenge description
 
 ## How to Fix
+
 - **403 Forbidden**: Check that your GITHUB_TOKEN has public_repo scope...
 - **Missing fields**: Add the missing content to the repo's PORTFOLIO.md...
 ```
@@ -197,14 +205,16 @@ The sync script doesn't just log to stdout — it tracks problems and reports th
 ## Results
 
 **Portfolio System:**
-- 21 active projects displayed across 8 categories
+
+- 35 active projects displayed across 9 categories
 - Content managed entirely through PORTFOLIO.md files in source repositories
 - Zero runtime API calls — fully static, sub-second page loads
 - Featured project highlighting and priority-based ordering without code changes
 
 **Technical Demonstration:**
+
 - End-to-end TypeScript with strict mode and Zod validation at the data boundary
-- Clean server/client component architecture in Next.js 15 App Router
+- Clean server/client component architecture in Next.js 16 App Router
 - URL-driven filter state for shareable, bookmarkable views
 - Backward-compatible schema transforms for evolving data formats
 
@@ -223,4 +233,4 @@ Guadalajara, Mexico
 
 ---
 
-*Last Updated: 2026-03-02*
+_Last Updated: 2026-06-28_

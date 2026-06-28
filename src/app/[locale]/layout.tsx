@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -125,6 +126,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteFooter locale={locale} />
             <ScrollToTop />
           </div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
