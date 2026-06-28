@@ -4,6 +4,36 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-06-28
+
+### Accomplished
+
+- Major upgrades (#44): Next.js 16, react-markdown 10, tailwind-merge 3, eslint-config-next 16; migrated to ESLint flat config (`next lint` removed in 16).
+- Thumbnails: R2-canonical resolution + branded fallback (#45), then real R2 thumbnails for ny-english-messenger-bot + cushlabs-sticker-gen (#48) — they were rendering the branded card; cushlabs sources them via override. Full 35-thumbnail diff vs cushlabs; render-verified zero branded cards.
+- SEO (#46): per-locale `<html lang>` (moved html/body to `[locale]` layout, root is pass-through); branded OG/Twitter images on home + listing.
+- i18n + UX (#47): localized category labels to es-MX; instant client-side search (URL syncs debounced).
+- Release v1.2.0 (#49): added Vercel Web Analytics (closed stale PR #21), refreshed README, version bump, cut GitHub Release, updated repo description.
+
+### Decisions Made
+
+- `[locale]`-as-html-owner over headers()-based lang: preserves SSG (headers() would force dynamic). not-found/global-error already self-render html.
+- Real thumbnails via full-URL overrides (matching cushlabs' R2 objects) over branded fallback: the earlier branded card masked the real issue.
+- Implemented Vercel Analytics rather than merging the conflicting auto-generated PR.
+
+### Immediate Next Steps
+
+- [ ] None outstanding — all review items and discrepancies resolved.
+
+### Technical Debt
+
+- None blocking. (Longer-term: ai-portfolio and cushlabs still run parallel sync pipelines; a shared resolver/source-of-truth would prevent future drift — optional.)
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-06-27
 
 ### Accomplished
