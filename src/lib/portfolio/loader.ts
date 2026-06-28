@@ -1,11 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import type { PortfolioProject, PortfolioData } from './types';
-export { filterProjects, sortProjects, searchProjects } from './filters';
+import fs from "fs";
+import path from "path";
+import type { PortfolioProject, PortfolioData, HeroImage } from "./types";
+export { filterProjects, sortProjects, searchProjects } from "./filters";
 
-const GITHUB_OWNER = 'RCushmaniii';
-const SELF_REPO = 'ai-portfolio'; // This app's own repo — local paths stay relative
-const CDN_BASE = 'https://cdn.cushlabs.ai'; // Cloudflare R2 CDN for all portfolio assets
+const GITHUB_OWNER = "RCushmaniii";
+const SELF_REPO = "ai-portfolio"; // This app's own repo — local paths stay relative
+const CDN_BASE = "https://cdn.cushlabs.ai"; // Cloudflare R2 CDN for all portfolio assets
 
 // Order configuration type
 interface PortfolioOrderConfig {
@@ -42,37 +42,51 @@ function resolveAssetUrl(
   // Self-repo: assets live in this app's own public/ dir, keep paths relative
   if (repoName === SELF_REPO) return assetPath;
   // Strip accidental /public/ prefix (common PORTFOLIO.md mistake)
-  const cleaned = assetPath.replace(/^\/public\//, '/');
+  const cleaned = assetPath.replace(/^\/public\//, "/");
   // Normalize: ensure path starts with /
-  const normalizedPath = cleaned.startsWith('/') ? cleaned : `/${cleaned}`;
+  const normalizedPath = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
   // All external repo assets are served from Cloudflare R2 CDN
   return `${CDN_BASE}/${repoName}${normalizedPath}`;
 }
 
 // Load order config
-const orderConfigPath = path.join(process.cwd(), 'content', 'portfolio-order.json');
+const orderConfigPath = path.join(
+  process.cwd(),
+  "content",
+  "portfolio-order.json",
+);
 let orderConfig: PortfolioOrderConfig = { order: [], featured: [] };
 try {
-  orderConfig = JSON.parse(fs.readFileSync(orderConfigPath, 'utf-8'));
+  orderConfig = JSON.parse(fs.readFileSync(orderConfigPath, "utf-8"));
 } catch (err) {
-  console.warn('[portfolio] Failed to load portfolio-order.json:', err instanceof Error ? err.message : err);
+  console.warn(
+    "[portfolio] Failed to load portfolio-order.json:",
+    err instanceof Error ? err.message : err,
+  );
 }
 
 // Load project overrides
-const overridesPath = path.join(process.cwd(), 'content', 'project-overrides.json');
+const overridesPath = path.join(
+  process.cwd(),
+  "content",
+  "project-overrides.json",
+);
 let projectOverrides: Record<string, ProjectOverride> = {};
 try {
-  projectOverrides = JSON.parse(fs.readFileSync(overridesPath, 'utf-8'));
+  projectOverrides = JSON.parse(fs.readFileSync(overridesPath, "utf-8"));
 } catch (err) {
-  console.warn('[portfolio] Failed to load project-overrides.json:', err instanceof Error ? err.message : err);
+  console.warn(
+    "[portfolio] Failed to load project-overrides.json:",
+    err instanceof Error ? err.message : err,
+  );
 }
 
 // Load portfolio data at build time
-const portfolioPath = path.join(process.cwd(), 'content', 'portfolio.json');
+const portfolioPath = path.join(process.cwd(), "content", "portfolio.json");
 let portfolioData: PortfolioData;
 
 try {
-  const rawData = JSON.parse(fs.readFileSync(portfolioPath, 'utf-8'));
+  const rawData = JSON.parse(fs.readFileSync(portfolioPath, "utf-8"));
   const projects = (rawData.projects as PortfolioProject[]).map((p) => {
     const overrides = projectOverrides[p.slug] || {};
     const thumbnailFallback = `https://opengraph.githubassets.com/1/${GITHUB_OWNER}/${p.repo_name}`;
@@ -83,25 +97,29 @@ try {
       ? resolveAssetUrl(overrides.thumbnail, SELF_REPO)
       : resolveAssetUrl(p.thumbnail, p.repo_name);
 
-    // Resolve hero images
+    // Resolve hero images — resolve each src while preserving bilingual alt text
     const resolvedHeroImages = p.hero_images
-      .map((img) => resolveAssetUrl(img, p.repo_name))
-      .filter((url): url is string => url !== null);
+      .map((img): HeroImage | null => {
+        const src = resolveAssetUrl(img.src, p.repo_name);
+        return src ? { src, alt_en: img.alt_en, alt_es: img.alt_es } : null;
+      })
+      .filter((img): img is HeroImage => img !== null);
 
     // Resolve video URL and poster — overrides are local to this app
     const videoUrl = overrides.video_url
-      ? resolveAssetUrl(overrides.video_url, SELF_REPO) || ''
-      : resolveAssetUrl(p.demo_video_url || '', p.repo_name) || '';
+      ? resolveAssetUrl(overrides.video_url, SELF_REPO) || ""
+      : resolveAssetUrl(p.demo_video_url || "", p.repo_name) || "";
     const videoPoster = overrides.video_poster
-      ? resolveAssetUrl(overrides.video_poster, SELF_REPO) || ''
-      : resolveAssetUrl(p.video_poster || '', p.repo_name) || '';
+      ? resolveAssetUrl(overrides.video_poster, SELF_REPO) || ""
+      : resolveAssetUrl(p.video_poster || "", p.repo_name) || "";
 
     return {
       ...p,
       // Order config is the source of truth for featured status
-      portfolio_featured: orderConfig.featured.length > 0
-        ? orderConfig.featured.includes(p.slug)
-        : p.portfolio_featured,
+      portfolio_featured:
+        orderConfig.featured.length > 0
+          ? orderConfig.featured.includes(p.slug)
+          : p.portfolio_featured,
       // Compute thumbnail fallback from GitHub OpenGraph
       thumbnail_fallback: thumbnailFallback,
       // Resolved thumbnail with fallback chain
@@ -124,14 +142,21 @@ try {
     projects,
   };
 } catch (err) {
-  console.warn('[portfolio] Failed to load portfolio.json — site will render with 0 projects:', err instanceof Error ? err.message : err);
-  portfolioData = { generated_at: '', projects: [] };
+  console.warn(
+    "[portfolio] Failed to load portfolio.json — site will render with 0 projects:",
+    err instanceof Error ? err.message : err,
+  );
+  portfolioData = { generated_at: "", projects: [] };
 }
 
 export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
   return portfolioData.projects.filter((p) => p.portfolio_enabled);
 }
 
-export async function getProjectBySlug(slug: string): Promise<PortfolioProject | undefined> {
-  return portfolioData.projects.find((p) => p.slug === slug && p.portfolio_enabled);
+export async function getProjectBySlug(
+  slug: string,
+): Promise<PortfolioProject | undefined> {
+  return portfolioData.projects.find(
+    (p) => p.slug === slug && p.portfolio_enabled,
+  );
 }

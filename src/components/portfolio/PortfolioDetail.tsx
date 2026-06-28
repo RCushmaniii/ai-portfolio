@@ -1,14 +1,14 @@
-import ReactMarkdown from 'react-markdown';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ImageCarousel } from './ImageCarousel';
-import { Breadcrumb } from './Breadcrumb';
-import { HighlightBoxes } from './HighlightBoxes';
-import { ProjectSidebar } from './ProjectSidebar';
-import { ProjectAside } from './ProjectAside';
-import { Check } from 'lucide-react';
-import { t, type Locale } from '@/i18n';
-import type { PortfolioProject } from '@/lib/portfolio/types';
+import ReactMarkdown from "react-markdown";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ImageCarousel } from "./ImageCarousel";
+import { Breadcrumb } from "./Breadcrumb";
+import { HighlightBoxes } from "./HighlightBoxes";
+import { ProjectSidebar } from "./ProjectSidebar";
+import { ProjectAside } from "./ProjectAside";
+import { Check } from "lucide-react";
+import { t, type Locale } from "@/i18n";
+import type { PortfolioProject } from "@/lib/portfolio/types";
 
 interface PortfolioDetailProps {
   project: PortfolioProject;
@@ -39,6 +39,7 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
           <ImageCarousel
             images={project.hero_images}
             title={project.title}
+            locale={locale}
             fallbackImage={project.thumbnail || project.thumbnail_fallback}
           />
 
@@ -48,18 +49,24 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
               <Badge>{project.category}</Badge>
               <Badge variant="outline">{project.status}</Badge>
               {project.portfolio_featured && (
-                <Badge className="bg-yellow-500 hover:bg-yellow-600">{dict.card_featured}</Badge>
+                <Badge className="bg-yellow-500 hover:bg-yellow-600">
+                  {dict.card_featured}
+                </Badge>
               )}
             </div>
 
             <h1 className="text-3xl font-bold mb-2">{displayTitle}</h1>
-            <p className="text-xl text-muted-foreground mb-6">{displaySubtitle}</p>
+            <p className="text-xl text-muted-foreground mb-6">
+              {displaySubtitle}
+            </p>
           </div>
 
           {/* Video */}
           {project.video_url && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3">{dict.detail_demo_video}</h2>
+              <h2 className="text-xl font-semibold mb-3">
+                {dict.detail_demo_video}
+              </h2>
               <video
                 controls
                 preload="metadata"
@@ -87,13 +94,17 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
             <section className="mb-8 grid md:grid-cols-2 gap-6">
               {project.problem && (
                 <div>
-                  <h2 className="text-xl font-semibold mb-3">{dict.detail_problem}</h2>
+                  <h2 className="text-xl font-semibold mb-3">
+                    {dict.detail_problem}
+                  </h2>
                   <p className="text-muted-foreground">{project.problem}</p>
                 </div>
               )}
               {project.solution && (
                 <div>
-                  <h2 className="text-xl font-semibold mb-3">{dict.detail_solution}</h2>
+                  <h2 className="text-xl font-semibold mb-3">
+                    {dict.detail_solution}
+                  </h2>
                   <p className="text-muted-foreground">{project.solution}</p>
                 </div>
               )}
@@ -103,7 +114,9 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
           {/* Key Features */}
           {project.key_features.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3">{dict.detail_key_features}</h2>
+              <h2 className="text-xl font-semibold mb-3">
+                {dict.detail_key_features}
+              </h2>
               <ul className="space-y-2">
                 {project.key_features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -118,7 +131,9 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
           {/* Metrics */}
           {project.metrics.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3">{dict.detail_results}</h2>
+              <h2 className="text-xl font-semibold mb-3">
+                {dict.detail_results}
+              </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {project.metrics.map((metric, i) => (
                   <div key={i} className="p-4 bg-muted rounded-lg text-center">
@@ -134,13 +149,31 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
             <section className="mb-8 prose prose-neutral dark:prose-invert max-w-none prose-headings:mt-8 prose-headings:mb-4 prose-p:leading-relaxed prose-li:leading-relaxed prose-hr:my-8">
               <ReactMarkdown
                 allowedElements={[
-                  'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-                  'p', 'br', 'hr',
-                  'ul', 'ol', 'li',
-                  'strong', 'em', 'del',
-                  'a', 'code', 'pre',
-                  'blockquote',
-                  'table', 'thead', 'tbody', 'tr', 'th', 'td',
+                  "h1",
+                  "h2",
+                  "h3",
+                  "h4",
+                  "h5",
+                  "h6",
+                  "p",
+                  "br",
+                  "hr",
+                  "ul",
+                  "ol",
+                  "li",
+                  "strong",
+                  "em",
+                  "del",
+                  "a",
+                  "code",
+                  "pre",
+                  "blockquote",
+                  "table",
+                  "thead",
+                  "tbody",
+                  "tr",
+                  "th",
+                  "td",
                 ]}
               >
                 {project.body_markdown}
@@ -150,7 +183,9 @@ export function PortfolioDetail({ project, locale }: PortfolioDetailProps) {
 
           {/* CTA */}
           <section className="mt-12 p-6 bg-muted rounded-lg text-center">
-            <h2 className="text-xl font-semibold mb-2">{dict.detail_cta_title}</h2>
+            <h2 className="text-xl font-semibold mb-2">
+              {dict.detail_cta_title}
+            </h2>
             <p className="text-muted-foreground mb-4">
               {dict.detail_cta_subtitle}
             </p>

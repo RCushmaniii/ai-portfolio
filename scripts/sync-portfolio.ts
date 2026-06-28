@@ -1,25 +1,68 @@
-import 'dotenv/config';
-import * as fs from 'fs/promises';
-import * as fsSync from 'fs';
-import * as path from 'path';
-import * as os from 'os';
-import { execSync } from 'child_process';
-import matter from 'gray-matter';
-import { PortfolioFrontmatterSchema } from '../src/lib/portfolio/schema';
-import type { PortfolioProject, PortfolioData } from '../src/lib/portfolio/types';
+import "dotenv/config";
+import * as fs from "fs/promises";
+import * as fsSync from "fs";
+import * as path from "path";
+import * as os from "os";
+import { execSync } from "child_process";
+import matter from "gray-matter";
+import yaml from "js-yaml";
+import { PortfolioFrontmatterSchema } from "../src/lib/portfolio/schema";
+import type {
+  PortfolioProject,
+  PortfolioData,
+} from "../src/lib/portfolio/types";
 
-const GITHUB_API = 'https://api.github.com';
-const GITHUB_USER = 'RCushmaniii';
-const SELF_REPO = 'ai-portfolio';
-const SYNC_LABEL = 'portfolio-sync';
-const OUTPUT_PATH = path.join(process.cwd(), 'content', 'portfolio.json');
+const GITHUB_API = "https://api.github.com";
+const GITHUB_USER = "RCushmaniii";
+const SELF_REPO = "ai-portfolio";
+const SYNC_LABEL = "portfolio-sync";
+const OUTPUT_PATH = path.join(process.cwd(), "content", "portfolio.json");
 
 interface SyncIssue {
-  level: 'error' | 'warning';
+  level: "error" | "warning";
   repo: string;
   message: string;
 }
 const syncIssues: SyncIssue[] = [];
+
+/**
+ * Parse PORTFOLIO.md frontmatter. Tries strict YAML first; if the source has
+ * malformed YAML (e.g. duplicate `health_status:` keys from a buggy audit
+ * script), falls back to a lenient parse (js-yaml `json: true`, last-key-wins)
+ * so one bad key never silently drops an entire project. The recovery is logged
+ * LOUDLY and tracked as a sync warning — never silently swallowed.
+ */
+function parseFrontmatter(
+  content: string,
+  repoName: string,
+): { data: Record<string, unknown>; body: string } {
+  try {
+    const parsed = matter(content);
+    return {
+      data: parsed.data as Record<string, unknown>,
+      body: parsed.content,
+    };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.warn(
+      `     ⚠️  Lenient YAML parse — source frontmatter is malformed: ${msg}`,
+    );
+    syncIssues.push({
+      level: "warning",
+      repo: repoName,
+      message: `Malformed frontmatter recovered via lenient parse (fix the source PORTFOLIO.md) — ${msg}`,
+    });
+    const parsed = matter(content, {
+      engines: {
+        yaml: (s: string) => (yaml.load(s, { json: true }) ?? {}) as object,
+      },
+    });
+    return {
+      data: parsed.data as Record<string, unknown>,
+      body: parsed.content,
+    };
+  }
+}
 
 interface GitHubRepo {
   name: string;
@@ -43,15 +86,15 @@ async function fetchUserRepos(token: string): Promise<GitHubRepo[]> {
       {
         headers: {
           Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github.v3+json',
-          'User-Agent': 'portfolio-sync-script',
+          Accept: "application/vnd.github.v3+json",
+          "User-Agent": "portfolio-sync-script",
         },
-      }
+      },
     );
 
     if (!response.ok) {
-      if (response.status === 401) throw new Error('Invalid GitHub token');
-      if (response.status === 403) throw new Error('Rate limit exceeded');
+      if (response.status === 401) throw new Error("Invalid GitHub token");
+      if (response.status === 403) throw new Error("Rate limit exceeded");
       throw new Error(`GitHub API error: ${response.status}`);
     }
 
@@ -65,23 +108,30 @@ async function fetchUserRepos(token: string): Promise<GitHubRepo[]> {
   return repos;
 }
 
-async function fetchPortfolioMd(repoName: string, token: string): Promise<string | null> {
+async function fetchPortfolioMd(
+  repoName: string,
+  token: string,
+): Promise<string | null> {
   // Try both casings — GitHub Contents API is case-sensitive
-  for (const filename of ['PORTFOLIO.md', 'portfolio.md']) {
+  for (const filename of ["PORTFOLIO.md", "portfolio.md"]) {
     const response = await fetch(
       `${GITHUB_API}/repos/${GITHUB_USER}/${repoName}/contents/${filename}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github.v3.raw',
-          'User-Agent': 'portfolio-sync-script',
+          Accept: "application/vnd.github.v3.raw",
+          "User-Agent": "portfolio-sync-script",
         },
-      }
+      },
     );
 
     if (response.status === 404) continue;
     if (response.status === 403) {
-      syncIssues.push({ level: 'error', repo: repoName, message: '403 Forbidden — token lacks access to this repo' });
+      syncIssues.push({
+        level: "error",
+        repo: repoName,
+        message: "403 Forbidden — token lacks access to this repo",
+      });
       return null;
     }
     if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
@@ -99,13 +149,16 @@ async function fetchPortfolioMd(repoName: string, token: string): Promise<string
 const GH_REPO_FLAG = `--repo ${GITHUB_USER}/${SELF_REPO}`;
 
 function gh(args: string): string {
-  return execSync(`gh ${args}`, { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }).trim();
+  return execSync(`gh ${args}`, {
+    encoding: "utf-8",
+    stdio: ["pipe", "pipe", "pipe"],
+  }).trim();
 }
 
 /** Write body to a temp file for gh --body-file (avoids shell escaping issues) */
 function withBodyFile(body: string, fn: (filePath: string) => string): string {
   const tmpFile = path.join(os.tmpdir(), `sync-issue-${Date.now()}.md`);
-  fsSync.writeFileSync(tmpFile, body, 'utf-8');
+  fsSync.writeFileSync(tmpFile, body, "utf-8");
   try {
     return fn(tmpFile);
   } finally {
@@ -116,7 +169,9 @@ function withBodyFile(body: string, fn: (filePath: string) => string): string {
 function findExistingSyncIssue(): number | null {
   try {
     // Search for open issues with the portfolio-sync label
-    const result = gh(`issue list ${GH_REPO_FLAG} --label "${SYNC_LABEL}" --state open --json number --limit 1`);
+    const result = gh(
+      `issue list ${GH_REPO_FLAG} --label "${SYNC_LABEL}" --state open --json number --limit 1`,
+    );
     const issues = JSON.parse(result);
     if (issues.length > 0) return issues[0].number;
   } catch {
@@ -124,7 +179,9 @@ function findExistingSyncIssue(): number | null {
   }
 
   try {
-    const result = gh(`issue list ${GH_REPO_FLAG} --state open --search "Portfolio Sync: in:title" --json number --limit 1`);
+    const result = gh(
+      `issue list ${GH_REPO_FLAG} --state open --search "Portfolio Sync: in:title" --json number --limit 1`,
+    );
     const issues = JSON.parse(result);
     if (issues.length > 0) return issues[0].number;
   } catch {
@@ -135,8 +192,8 @@ function findExistingSyncIssue(): number | null {
 }
 
 function buildIssueBody(issues: SyncIssue[]): string {
-  const errors = issues.filter(i => i.level === 'error');
-  const warnings = issues.filter(i => i.level === 'warning');
+  const errors = issues.filter((i) => i.level === "error");
+  const warnings = issues.filter((i) => i.level === "warning");
   const timestamp = new Date().toISOString();
 
   const groupByRepo = (items: SyncIssue[]) => {
@@ -156,7 +213,7 @@ function buildIssueBody(issues: SyncIssue[]): string {
     for (const [repo, msgs] of Object.entries(grouped)) {
       body += `### \`${repo}\`\n`;
       for (const msg of msgs) body += `- ${msg}\n`;
-      body += '\n';
+      body += "\n";
     }
   }
 
@@ -166,7 +223,7 @@ function buildIssueBody(issues: SyncIssue[]): string {
     for (const [repo, msgs] of Object.entries(grouped)) {
       body += `### \`${repo}\`\n`;
       for (const msg of msgs) body += `- ${msg}\n`;
-      body += '\n';
+      body += "\n";
     }
   }
 
@@ -182,9 +239,9 @@ function buildIssueBody(issues: SyncIssue[]): string {
 
 function reportSyncIssues(issues: SyncIssue[]): void {
   try {
-    const errors = issues.filter(i => i.level === 'error').length;
-    const warnings = issues.filter(i => i.level === 'warning').length;
-    const date = new Date().toISOString().split('T')[0];
+    const errors = issues.filter((i) => i.level === "error").length;
+    const warnings = issues.filter((i) => i.level === "warning").length;
+    const date = new Date().toISOString().split("T")[0];
     const title = `Portfolio Sync: ${errors} error(s), ${warnings} warning(s) — ${date}`;
     const body = buildIssueBody(issues);
 
@@ -192,20 +249,28 @@ function reportSyncIssues(issues: SyncIssue[]): void {
 
     if (existing) {
       // Update existing issue: add comment with latest report + update title
-      withBodyFile(body, (f) => gh(`issue comment ${existing} ${GH_REPO_FLAG} --body-file "${f}"`));
-      gh(`issue edit ${existing} ${GH_REPO_FLAG} --title ${JSON.stringify(title)}`);
+      withBodyFile(body, (f) =>
+        gh(`issue comment ${existing} ${GH_REPO_FLAG} --body-file "${f}"`),
+      );
+      gh(
+        `issue edit ${existing} ${GH_REPO_FLAG} --title ${JSON.stringify(title)}`,
+      );
       console.log(`\n📋 Updated GitHub Issue #${existing}: ${title}`);
     } else {
       // Create new issue with label
       const result = withBodyFile(body, (f) =>
-        gh(`issue create ${GH_REPO_FLAG} --title ${JSON.stringify(title)} --body-file "${f}" --label "${SYNC_LABEL}"`)
+        gh(
+          `issue create ${GH_REPO_FLAG} --title ${JSON.stringify(title)} --body-file "${f}" --label "${SYNC_LABEL}"`,
+        ),
       );
       const match = result.match(/\/issues\/(\d+)/);
-      const num = match ? `#${match[1]}` : '';
+      const num = match ? `#${match[1]}` : "";
       console.log(`\n📋 Created GitHub Issue ${num}: ${title}`);
     }
   } catch (err) {
-    console.warn(`\n⚠️  Could not report sync issues to GitHub: ${err instanceof Error ? err.message : err}`);
+    console.warn(
+      `\n⚠️  Could not report sync issues to GitHub: ${err instanceof Error ? err.message : err}`,
+    );
   }
 }
 
@@ -214,26 +279,34 @@ function closeResolvedIssue(): void {
     const existing = findExistingSyncIssue();
     if (!existing) return;
 
-    gh(`issue comment ${existing} ${GH_REPO_FLAG} --body "✅ All sync issues resolved as of ${new Date().toISOString()}. Closing automatically."`);
+    gh(
+      `issue comment ${existing} ${GH_REPO_FLAG} --body "✅ All sync issues resolved as of ${new Date().toISOString()}. Closing automatically."`,
+    );
     gh(`issue close ${existing} ${GH_REPO_FLAG}`);
     console.log(`\n📋 Closed GitHub Issue #${existing} — all issues resolved`);
   } catch (err) {
-    console.warn(`\n⚠️  Could not close resolved GitHub Issue: ${err instanceof Error ? err.message : err}`);
+    console.warn(
+      `\n⚠️  Could not close resolved GitHub Issue: ${err instanceof Error ? err.message : err}`,
+    );
   }
 }
 
 async function main() {
   const token = process.env.GITHUB_TOKEN || process.env.PROJECT_SYNC_TOKEN;
   if (!token) {
-    console.error('❌ GITHUB_TOKEN or PROJECT_SYNC_TOKEN environment variable is required');
+    console.error(
+      "❌ GITHUB_TOKEN or PROJECT_SYNC_TOKEN environment variable is required",
+    );
     process.exit(1);
   }
 
-  console.log('🔄 Starting portfolio sync...\n');
+  console.log("🔄 Starting portfolio sync...\n");
 
   const repos = await fetchUserRepos(token);
-  const privateCount = repos.filter(r => r.private).length;
-  console.log(`📦 Found ${repos.length} repositories (${privateCount} private)\n`);
+  const privateCount = repos.filter((r) => r.private).length;
+  console.log(
+    `📦 Found ${repos.length} repositories (${privateCount} private)\n`,
+  );
 
   const projects: PortfolioProject[] = [];
 
@@ -244,25 +317,34 @@ async function main() {
       const content = await fetchPortfolioMd(repo.name, token);
 
       if (!content) {
-        console.log('⏭️  No PORTFOLIO.md');
+        console.log("⏭️  No PORTFOLIO.md");
         continue;
       }
 
-      const { data: frontmatter, content: body } = matter(content);
+      const { data: frontmatter, body } = parseFrontmatter(content, repo.name);
+
+      // Skip disabled repos BEFORE strict validation. Disabled stubs intentionally
+      // omit required fields (title, slug, etc.) and must not be flagged as errors.
+      if (frontmatter.portfolio_enabled !== true) {
+        console.log("⏭️  Disabled");
+        continue;
+      }
+
       const result = PortfolioFrontmatterSchema.safeParse(frontmatter);
 
       if (!result.success) {
-        console.log('❌ Invalid frontmatter');
-        const details = result.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join('; ');
-        syncIssues.push({ level: 'error', repo: repo.name, message: `Invalid frontmatter — ${details}` });
-        result.error.issues.forEach((issue) => {
-          console.log(`     - ${issue.path.join('.')}: ${issue.message}`);
+        console.log("❌ Invalid frontmatter");
+        const details = result.error.issues
+          .map((i) => `${i.path.join(".")}: ${i.message}`)
+          .join("; ");
+        syncIssues.push({
+          level: "error",
+          repo: repo.name,
+          message: `Invalid frontmatter — ${details}`,
         });
-        continue;
-      }
-
-      if (!result.data.portfolio_enabled) {
-        console.log('⏭️  Disabled');
+        result.error.issues.forEach((issue) => {
+          console.log(`     - ${issue.path.join(".")}: ${issue.message}`);
+        });
         continue;
       }
 
@@ -276,21 +358,48 @@ async function main() {
         github_forks: repo.forks_count,
         github_language: repo.language,
         github_updated_at: repo.updated_at,
-        github_description: repo.description || '',
+        github_description: repo.description || "",
         github_topics: repo.topics || [],
       };
 
       // Quality checks — warnings only, project still gets added
-      if (!project.tagline)                 syncIssues.push({ level: 'warning', repo: repo.name, message: 'Missing tagline' });
-      if (!project.thumbnail)               syncIssues.push({ level: 'warning', repo: repo.name, message: 'Missing thumbnail' });
-      if (project.tech_stack.length === 0)  syncIssues.push({ level: 'warning', repo: repo.name, message: 'Empty tech stack' });
-      if (!project.problem)                 syncIssues.push({ level: 'warning', repo: repo.name, message: 'Missing problem/challenge description' });
-      if (project.hero_images.length === 0) syncIssues.push({ level: 'warning', repo: repo.name, message: 'No portfolio slides/screenshots' });
+      if (!project.tagline)
+        syncIssues.push({
+          level: "warning",
+          repo: repo.name,
+          message: "Missing tagline",
+        });
+      if (!project.thumbnail)
+        syncIssues.push({
+          level: "warning",
+          repo: repo.name,
+          message: "Missing thumbnail",
+        });
+      if (project.tech_stack.length === 0)
+        syncIssues.push({
+          level: "warning",
+          repo: repo.name,
+          message: "Empty tech stack",
+        });
+      if (!project.problem)
+        syncIssues.push({
+          level: "warning",
+          repo: repo.name,
+          message: "Missing problem/challenge description",
+        });
+      if (project.hero_images.length === 0)
+        syncIssues.push({
+          level: "warning",
+          repo: repo.name,
+          message: "No portfolio slides/screenshots",
+        });
 
       projects.push(project);
-      console.log('✅ Added');
+      console.log("✅ Added");
     } catch (error) {
-      console.log(`❌ Error: ${error instanceof Error ? error.message : error}`);
+      console.log(
+        `❌ Error: ${error instanceof Error ? error.message : error}`,
+      );
     }
   }
 
@@ -302,23 +411,25 @@ async function main() {
   };
 
   await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-  await fs.writeFile(OUTPUT_PATH, JSON.stringify(output, null, 2), 'utf-8');
+  await fs.writeFile(OUTPUT_PATH, JSON.stringify(output, null, 2), "utf-8");
 
   console.log(`\n📄 Wrote to: ${OUTPUT_PATH}`);
   console.log(`✅ Sync complete: ${projects.length} projects`);
 
   // Report sync issues to GitHub Issues
   if (syncIssues.length > 0) {
-    const errors = syncIssues.filter(i => i.level === 'error').length;
-    const warnings = syncIssues.filter(i => i.level === 'warning').length;
-    console.log(`\n⚠️  ${syncIssues.length} sync issue(s): ${errors} error(s), ${warnings} warning(s)`);
+    const errors = syncIssues.filter((i) => i.level === "error").length;
+    const warnings = syncIssues.filter((i) => i.level === "warning").length;
+    console.log(
+      `\n⚠️  ${syncIssues.length} sync issue(s): ${errors} error(s), ${warnings} warning(s)`,
+    );
     reportSyncIssues(syncIssues);
   } else {
-    console.log('\n✅ No sync issues detected');
+    console.log("\n✅ No sync issues detected");
     closeResolvedIssue();
   }
 
-  console.log('');
+  console.log("");
 }
 
 main().catch(console.error);

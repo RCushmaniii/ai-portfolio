@@ -1,18 +1,26 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useCallback, useEffect, useState } from 'react';
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useCallback, useEffect, useState } from "react";
+import type { Locale } from "@/i18n";
+import type { HeroImage } from "@/lib/portfolio/types";
 
 interface ImageCarouselProps {
-  images: string[];
+  images: HeroImage[];
   title: string;
+  locale: Locale;
   fallbackImage?: string;
 }
 
-export function ImageCarousel({ images, title, fallbackImage }: ImageCarouselProps) {
+export function ImageCarousel({
+  images,
+  title,
+  locale,
+  fallbackImage,
+}: ImageCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
@@ -23,13 +31,21 @@ export function ImageCarousel({ images, title, fallbackImage }: ImageCarouselPro
   useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on('select', onSelect);
+    emblaApi.on("select", onSelect);
     onSelect();
-    return () => { emblaApi.off('select', onSelect); };
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi]);
 
   const handleImageError = (index: number) => {
     setFailedImages((prev) => new Set(prev).add(index));
+  };
+
+  // Descriptive bilingual alt text, falling back to a generated label.
+  const altFor = (img: HeroImage, index: number) => {
+    const alt = locale === "es" ? img.alt_es : img.alt_en;
+    return alt || `${title} screenshot ${index + 1} of ${images.length}`;
   };
 
   const validImages = images.filter((_, i) => !failedImages.has(i));
@@ -56,10 +72,14 @@ export function ImageCarousel({ images, title, fallbackImage }: ImageCarouselPro
   }
 
   return (
-    <div className="relative" role="region" aria-label={`${title} image gallery`}>
+    <div
+      className="relative"
+      role="region"
+      aria-label={`${title} image gallery`}
+    >
       <div className="overflow-hidden rounded-lg" ref={emblaRef}>
         <div className="flex">
-          {images.map((src, index) => (
+          {images.map((img, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0">
               <div className="relative aspect-video">
                 {failedImages.has(index) ? (
@@ -68,8 +88,8 @@ export function ImageCarousel({ images, title, fallbackImage }: ImageCarouselPro
                   </div>
                 ) : (
                   <Image
-                    src={src}
-                    alt={`${title} screenshot ${index + 1} of ${images.length}`}
+                    src={img.src}
+                    alt={altFor(img, index)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 800px"
@@ -102,12 +122,16 @@ export function ImageCarousel({ images, title, fallbackImage }: ImageCarouselPro
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5" role="tablist" aria-label="Image slides">
+          <div
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"
+            role="tablist"
+            aria-label="Image slides"
+          >
             {images.map((_, index) => (
               <button
                 key={index}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === selectedIndex ? 'bg-white' : 'bg-white/50'
+                  index === selectedIndex ? "bg-white" : "bg-white/50"
                 }`}
                 onClick={() => emblaApi?.scrollTo(index)}
                 role="tab"

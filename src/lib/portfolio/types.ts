@@ -1,6 +1,21 @@
-export type PortfolioCategory = 'AI Automation' | 'Templates' | 'Tools' | 'Developer Tools' | 'Client Work' | 'Games' | 'Marketing' | 'Creative';
-export type ProjectStatus = 'Production' | 'MVP' | 'Demo' | 'Archived';
-export type SortOption = 'priority' | 'recent' | 'popular';
+export type PortfolioCategory =
+  | "AI Automation"
+  | "Templates"
+  | "Tools"
+  | "Developer Tools"
+  | "Client Work"
+  | "Games"
+  | "Marketing"
+  | "Creative";
+export type ProjectStatus = "Production" | "MVP" | "Demo" | "Archived";
+export type SortOption = "priority" | "recent" | "popular";
+
+/** A hero/carousel image with optional bilingual alt text (EN/ES). */
+export interface HeroImage {
+  src: string;
+  alt_en?: string;
+  alt_es?: string;
+}
 
 export interface PortfolioProject {
   // Control flags
@@ -41,7 +56,7 @@ export interface PortfolioProject {
   demo_video_url: string;
 
   // Optional extras
-  hero_images: string[];
+  hero_images: HeroImage[];
   tags: string[];
   date_completed?: string;
 
@@ -65,7 +80,7 @@ export interface PortfolioData {
 }
 
 export interface PortfolioFilters {
-  category: PortfolioCategory | 'all' | 'featured';
+  category: PortfolioCategory | "all" | "featured";
   sort: SortOption;
   search: string;
 }
