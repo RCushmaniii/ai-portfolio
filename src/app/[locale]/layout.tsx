@@ -117,7 +117,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 },
                 sameAs: [
                   "https://github.com/RCushmaniii",
-                  "https://linkedin.com/in/robertcushman",
+                  "https://linkedin.com/in/robert-cushman3",
                 ],
               }}
             />
