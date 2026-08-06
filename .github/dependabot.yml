@@ -3,13 +3,20 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
     open-pull-requests-limit: 5
     labels:
       - dependencies
     commit-message:
       prefix: "deps:"
+    groups:
+      # One PR per month bundling all minor + patch updates.
+      # Major bumps still arrive individually, for review.
+      npm-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
     ignore:
       # Tailwind 3 → 4 is a breaking migration (config removal, @theme blocks,
       # CSS var namespace collisions). Handle as a deliberate effort, not a
@@ -20,10 +27,17 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
     open-pull-requests-limit: 3
     labels:
       - dependencies
     commit-message:
       prefix: "ci:"
+    groups:
+      # One PR per month bundling all minor + patch updates.
+      # Major bumps still arrive individually, for review.
+      actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
