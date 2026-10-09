@@ -5,7 +5,7 @@
 portfolio_enabled: true
 portfolio_priority: 22
 portfolio_featured: false
-portfolio_last_reviewed: "2026-03-02"
+portfolio_last_reviewed: "2026-09-13"
 
 title: "AI Portfolio"
 tagline: "A static portfolio system that syncs project data from GitHub repos into a filterable showcase"
